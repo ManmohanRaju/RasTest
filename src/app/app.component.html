@@ -1,0 +1,19 @@
+<div class="page">
+  <div class="page-header">
+      <app-page-header></app-page-header>
+  </div>
+  <div class="page-content">
+      <mat-sidenav-container autosize style="position: absolute;right: 0px;left: 0px;bottom: 0px;top: 0px;">
+          <mat-sidenav #sideNav mode="side" class="sidenav">
+              <app-side-nav-items></app-side-nav-items> 
+          </mat-sidenav>
+          <mat-sidenav-content class="router-content">
+              <router-outlet></router-outlet>
+          </mat-sidenav-content>
+      </mat-sidenav-container>
+  </div>
+
+  <div class="page-footer">
+      <app-page-footer></app-page-footer>
+  </div>
+</div>
