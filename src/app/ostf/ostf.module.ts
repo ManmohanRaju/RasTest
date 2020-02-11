@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
-import { OstfApplicationComponent } from './ostf-application/ostf-application.component';
+
+import { OstfRoutingModule } from './ostf-routing.module';
+import { OstfAppComponent } from './ostf-app/ostf-app.component';
+
+
 
 @NgModule({
-  declarations: [OstfApplicationComponent],
+  declarations: [OstfAppComponent],
   imports: [
     CommonModule,
-    RouterModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    OstfRoutingModule,
   ]
 })
 export class OstfModule { }
