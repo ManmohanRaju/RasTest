@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class OstfAppComponent implements OnInit {
 
   navLinks: any[];
-  activeLinkIndex = 0;
+  activeLinkIndex = -1;
   constructor(private router: Router) {
     this.navLinks = [
       {

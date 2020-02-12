@@ -1,6 +1,10 @@
 <nav mat-tab-nav-bar>
-    <a style="margin-right:1.25em;" mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive
+    <!-- <a style="margin-right:1.25em;" mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive
         #rla="routerLinkActive" [active]="rla.isActive">
+        {{link.label}}
+    </a> -->
+
+    <a style="margin-right:1.25em;" mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link">
         {{link.label}}
     </a>
 </nav>
