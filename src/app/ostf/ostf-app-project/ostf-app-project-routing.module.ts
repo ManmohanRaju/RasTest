@@ -5,6 +5,7 @@ import { OstfAppProjectEditComponent } from '../ostf-app-project/ostf-app-projec
 import { OstfAppProjectViewComponent } from '../ostf-app-project/ostf-app-project-view/ostf-app-project-view.component';
 
 
+
 const routes: Routes = [
   {
     path:'projedit/:id', component: OstfAppProjectEditComponent

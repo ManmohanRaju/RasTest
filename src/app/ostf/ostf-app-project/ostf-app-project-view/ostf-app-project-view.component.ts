@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FileHandle } from '../dragDrop.directive';
 
 @Component({
   selector: 'app-ostf-app-project-view',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ostf-app-project-view.component.scss']
 })
 export class OstfAppProjectViewComponent implements OnInit {
+  name = 'Angular 5';
+  files: FileHandle[] = [];
 
-  constructor() { }
-
+  filesDropped(files: FileHandle[]): void {
+    this.files = files;
+  }
   ngOnInit(): void {
   }
 

@@ -1,1 +1,87 @@
-<p>ostf-app-project-view works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Create Profile</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td mat-card align="left">
+            <div *ngIf="!files.length" class="col-12 rmpm dropzone" appDrag (files)="filesDropped($event)">
+              <div class="text-wrapper">
+                <div class="centered">Drop your file here!</div>
+              </div>
+            </div>
+            <!--droped image preview-->
+            <div *ngFor="let file of files">
+              <img *ngIf="file" [src]="file.url" width="100px" height="100px">
+            </div>
+
+            <button type="button">Upload Image</button>
+
+          </td>
+          <td>
+            <table class="right-table">
+              <tr>
+                <td>
+                  <mat-label>Project Title </mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <input matInput placeholder="Project Titile" width="800px" />
+                  </mat-form-field>
+                </td>
+              </tr>
+              <td><table><tr><td><mat-checkbox>Municipality</mat-checkbox></td><td>
+                <mat-checkbox>Charitable Trust</mat-checkbox>
+              </td></tr></table></td>
+              <tr>
+                <td>
+                  <mat-label>Bonton Town </mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <input matInput placeholder="Bonton Town" />
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Address</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Is the site designated for compliance with a Mount Laurel court settlement or identified in a complaint</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
+                    <mat-checkbox>No</mat-checkbox>
+                  </td></tr></table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="right">
+    <button mat-raised-button color="primary">Reset</button>
+    <button mat-raised-button color="primary">Save Changes</button>
+    <button mat-raised-button color="primary">Next ----></button>
+  </mat-card-actions>
+</mat-card>
