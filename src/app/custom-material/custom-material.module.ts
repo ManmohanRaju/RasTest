@@ -12,6 +12,11 @@ import { MatTableModule } from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 
 const matModules = [
@@ -21,7 +26,8 @@ const matModules = [
   MatListModule, MatDividerModule,
   MatTableModule,
   MatTabsModule,
-  MatInputModule,MatFormFieldModule
+  MatInputModule,MatFormFieldModule,
+  MatCardModule,MatFormFieldModule,MatCheckboxModule,MatRadioModule,MatDatepickerModule,MatSelectModule
 ]
 
 @NgModule({
