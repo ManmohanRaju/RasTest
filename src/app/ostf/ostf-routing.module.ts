@@ -7,14 +7,16 @@ import { OstfAppRoleModule } from './ostf-app-role/ostf-app-role.module';
 
 const ostfRoutes: Routes = [
   {
-    path: '', component: OstfAppComponent
+    path: '', component: OstfAppComponent,
+    children: [
+      {
+        path: 'project', loadChildren: () => import('./ostf-app-project/ostf-app-project.module').then(m => m.OstfAppProjectModule), },
+      {
+        path: 'role', loadChildren: () => import('./ostf-app-role/ostf-app-role.module').then(m => m.OstfAppRoleModule),
+      },
+    ]
   },
-  {
-    path: 'project', loadChildren: () => import('./ostf-app-project/ostf-app-project.module').then(m => m.OstfAppProjectModule),
-  },
-  {
-    path: 'role', loadChildren: () => import('./ostf-app-role/ostf-app-role.module').then(m => m.OstfAppRoleModule),
-  },
+ 
 ];
 
 @NgModule({

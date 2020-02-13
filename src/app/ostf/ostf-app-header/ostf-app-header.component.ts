@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-ostf-app',
-  templateUrl: './ostf-app.component.html',
-  styleUrls: ['./ostf-app.component.scss']
+  selector: 'app-ostf-app-header',
+  templateUrl: './ostf-app-header.component.html',
+  styleUrls: ['./ostf-app-header.component.scss']
 })
-export class OstfAppComponent implements OnInit {
-
-  navLinks: any[];
+export class OstfAppHeaderComponent implements OnInit {
+  navLinks=[];
+  avLinks: any[];
   activeLinkIndex = -1;
-  constructor(private router: Router) {
+  constructor() { 
     this.navLinks = [
       {
         label: 'Project',
-        link: 'projectview/1',
-        index: 0,
+        link: './project/projedit/1',
+        index: 0
       }, {
         label: 'Role',
-        link: 'role',
+        link: './role',
         index: 1
       }, {
         label: 'Overview',
@@ -59,9 +58,6 @@ export class OstfAppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe((res) => {
-      this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
-    });
   }
 
 }

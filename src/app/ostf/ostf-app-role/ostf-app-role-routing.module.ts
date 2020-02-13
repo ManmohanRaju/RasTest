@@ -8,10 +8,13 @@ import { OstfAppRoleViewComponent } from '../ostf-app-role/ostf-app-role-view/os
 
 const routes: Routes = [
   {
+    path:'', component: OstfAppRoleViewComponent
+  },
+  {
     path:'roleedit/:id', component: OstfAppRoleEditComponent
   },
   {
-    path:'roleview/:id', component: OstfAppRoleViewComponent
+    path:'roleview', component: OstfAppRoleViewComponent
   }
 ];
 
