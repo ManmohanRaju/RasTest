@@ -14,7 +14,7 @@ export class OstfAppComponent implements OnInit {
     this.navLinks = [
       {
         label: 'Project',
-        link: './project/projview/1',
+        link: 'project/projectview/1',
         index: 0
       }, {
         label: 'Role',

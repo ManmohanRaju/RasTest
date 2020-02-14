@@ -10,6 +10,7 @@ import { PresTrustCoreModule } from './pres-trust-core/pres-trust-core.module';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
     PresTrustCoreModule,
     CustomMaterialModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

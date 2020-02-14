@@ -1,0 +1,46 @@
+.mat-card.mat-card.statistics-tabs{
+    width: 100px !important;
+    box-shadow: inherit;
+}
+.mat-card-title {
+    font-size: 15px;
+}
+.product{
+    display: flex;
+}
+.card-container-right{
+  display: inline;
+  float: right;
+}
+
+.card-container-left{
+  display: inline;
+}
+.audit{
+    background-color:darkblue;
+    color: white;
+}
+.other-docs{
+    background: aliceblue;
+}
+.application-img {
+    width: 70px;
+}
+.example-section{
+    margin-top: 20px;
+}
+.mat-card{
+   padding:inherit !important; 
+}
+.icon-title {
+    margin-left: 24px;
+    margin-top: 1px !important;
+}
+.card-icon{
+    font-size: 25px;
+    margin-top: 10px;
+    color: cornflowerblue;
+}
+.app-date {
+    margin-bottom: inherit;
+}

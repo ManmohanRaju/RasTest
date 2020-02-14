@@ -1,7 +1,11 @@
+<!-- breadcrumbs -->
+<app-ostf-app-breadcrumb></app-ostf-app-breadcrumb>
+<!-- ostf header -->
+<app-ostf-app-header></app-ostf-app-header>
 <div>
     <nav mat-tab-nav-bar>
         <a mat-tab-link *ngFor="let link of navLinks"
-           routerLink="'projectview/1'"> 
+        [routerLink]="link.link"> 
            {{link.label}} </a>
       </nav>
     <router-outlet></router-outlet>

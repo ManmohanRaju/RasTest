@@ -6,20 +6,6 @@
     <form>
       <table class="example-full-width" cellspacing="0">
         <tr>
-          <td mat-card align="left">
-            <div *ngIf="!files.length" class="col-12 rmpm dropzone" appDrag (files)="filesDropped($event)">
-              <div class="text-wrapper">
-                <div class="centered">Drop your file here!</div>
-              </div>
-            </div>
-            <!--droped image preview-->
-            <div *ngFor="let file of files">
-              <img *ngIf="file" [src]="file.url" width="100px" height="100px">
-            </div>
-
-            <button type="button">Upload Image</button>
-
-          </td>
           <td>
             <table class="right-table">
               <tr>
@@ -73,6 +59,44 @@
                   </td></tr></table>
                 </td>
               </tr>
+              <mat-divider></mat-divider>
+              <tr>
+                <td>
+                  <mat-label>Does your Muncipality share any active recreation facilities with another municipality</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
+                    <mat-checkbox>No</mat-checkbox>
+                  </td></tr></table>
+                </td>
+              </tr> 
+              <tr>
+                <td>
+                  <mat-label>If yes which town's and how?</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>If acqired,how will the lands be managed</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr></tr>
             </table>
           </td>
         </tr>
