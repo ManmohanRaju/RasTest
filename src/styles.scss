@@ -84,3 +84,6 @@ body,
 .sidenav-list-item-focus{
     background-color: rgba(85, 139, 47, 0.3);
 }
+mat-sidenav-content.mat-drawer-content.mat-sidenav-content.router-content{
+    overflow-x: hidden;
+}

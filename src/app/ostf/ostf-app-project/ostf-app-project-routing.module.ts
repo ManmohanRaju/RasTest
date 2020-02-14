@@ -5,12 +5,16 @@ import { OstfAppProjectEditComponent } from '../ostf-app-project/ostf-app-projec
 import { OstfAppProjectViewComponent } from '../ostf-app-project/ostf-app-project-view/ostf-app-project-view.component';
 
 
+
 const routes: Routes = [
+  {
+    path:'', component: OstfAppProjectViewComponent
+  },
   {
     path:'projedit/:id', component: OstfAppProjectEditComponent
   },
   {
-    path:'projview/:id', component: OstfAppProjectViewComponent
+    path:'projectview/:id', component: OstfAppProjectViewComponent
   }
 ];
 

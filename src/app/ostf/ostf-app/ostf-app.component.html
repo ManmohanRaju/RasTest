@@ -1,11 +1,15 @@
-<nav mat-tab-nav-bar>
-    <!-- <a style="margin-right:1.25em;" mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive
-        #rla="routerLinkActive" [active]="rla.isActive">
-        {{link.label}}
-    </a> -->
+<!-- breadcrumbs -->
+<app-ostf-app-breadcrumb></app-ostf-app-breadcrumb>
+<!-- ostf header -->
+<app-ostf-app-header></app-ostf-app-header>
+<div>
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let link of navLinks"
+        [routerLink]="link.link"> 
+           {{link.label}} </a>
+      </nav>
+    <router-outlet></router-outlet>
+</div>
 
-    <a style="margin-right:1.25em;" mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link">
-        {{link.label}}
-    </a>
-</nav>
-<router-outlet></router-outlet>
+
+
