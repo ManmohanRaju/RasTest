@@ -1,6 +1,6 @@
-.mat-card.mat-card.statistics-tabs{
-    width: 100px !important;
-    box-shadow: inherit;
+
+.statistics-tabs {
+    display: inline-flex !important;
 }
 .mat-card-title {
     font-size: 15px;
@@ -10,7 +10,7 @@
 }
 .card-container-right{
   display: inline;
-  float: right;
+  float: right !important;
 }
 
 .card-container-left{
@@ -31,6 +31,7 @@
 }
 .mat-card{
    padding:inherit !important; 
+   box-shadow: inherit;
 }
 .icon-title {
     margin-left: 24px;
@@ -43,4 +44,5 @@
 }
 .app-date {
     margin-bottom: inherit;
+    box-shadow: inherit;
 }

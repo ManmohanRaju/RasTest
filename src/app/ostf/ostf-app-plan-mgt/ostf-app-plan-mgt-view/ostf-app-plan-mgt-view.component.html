@@ -1,0 +1,251 @@
+<mat-card>
+<mat-card-content>
+    <form>
+      <h4>Infrastructure Issues</h4>
+        <table>
+          <tr>
+            <td>
+              <mat-label>Is the site currently public water?</mat-label>
+            </td>
+            <td><mat-checkbox>Yes</mat-checkbox></td><td>
+              <mat-checkbox>No</mat-checkbox>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-label>Is the site currently public sewer?</mat-label>
+            </td>
+            <td><mat-checkbox>Yes</mat-checkbox></td><td>
+              <mat-checkbox>No</mat-checkbox>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-label>Are there plans to extend sewer or water to the site? </mat-label>
+            </td>
+            <td><mat-checkbox>Yes</mat-checkbox></td><td>
+              <mat-checkbox>No</mat-checkbox>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-label>The nearest water hookup is </mat-label>
+            </td>
+            <td>
+              <mat-form-field appearance="standard">
+                <mat-select placeholder="set option">
+                  <mat-option value="opt1">Option 1</mat-option>
+                  <mat-option value="opt1">Option 2</mat-option>
+                  <mat-option value="opt1">Option 3</mat-option>
+  
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-label>The nearest sewer hookup is </mat-label>
+            </td>
+            <td>
+              <mat-form-field appearance="standard">
+                <mat-select placeholder="set option">
+                  <mat-option value="opt1">Option 1</mat-option>
+                  <mat-option value="opt1">Option 2</mat-option>
+                  <mat-option value="opt1">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      <h4>Potential for development of Non-open Space uses on the site </h4>
+<table>
+  <tr>
+   
+    <td><mat-checkbox>Conceptual Plan</mat-checkbox></td>
+    <td>
+      <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+        <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"
+        />
+<span>Upload</span>
+      </label> 
+    </td>
+      <td>
+        <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip
+              *ngFor="let fruit of currentInput;let i=index;"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(i)">
+              {{fruit.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            </mat-chip-list>
+            </mat-form-field>
+      </td>
+
+  </tr>
+  <tr>
+    <td><mat-checkbox>Preliminary Subdivision</mat-checkbox></td>
+    <td>
+      <label for="fileUpload1"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+
+      <input type="file" hidden id="fileUpload1" name="fileUpload" multiple="multiple" (change)="onFileSelected1($event)"
+      />
+<span>Upload</span>
+
+    </label>
+    </td>
+      <td>
+        <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip
+              *ngFor="let fruit of currentInput1"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(fruit)">
+              {{fruit.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            </mat-chip-list>
+            </mat-form-field>
+      </td>
+  </tr>
+  <tr>
+    <td><mat-checkbox>Final Subdivision</mat-checkbox></td>
+        <td>
+      <label for="fileUpload2"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+        <span>Upload</span>
+        <input hidden type="file" id="fileUploa2" name="fileUpload" multiple="multiple" (change)="onFileSelected2($event)"
+      />
+      </label>
+    </td>
+      <td>
+        <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip
+              *ngFor="let fruit of currentInput2"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(fruit)">
+              {{fruit.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            </mat-chip-list>
+            </mat-form-field>
+      </td>
+  </tr>
+  <tr>
+    <td><mat-checkbox>Preliminary Site Plan</mat-checkbox></td>
+    <td>
+      <label for="fileUpload3"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+<input hidden type="file" id="fileUpload" name="fileUpload3" multiple="multiple" (change)="onFileSelected3($event)"
+      />
+      <span>Upload</span>
+    </label>
+    </td>
+      <td>
+        <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip
+              *ngFor="let fruit of currentInput3"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(fruit)">
+              {{fruit.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            </mat-chip-list>
+            </mat-form-field>
+      </td>
+  </tr>
+  <tr>
+    <td><mat-checkbox>Final Site Plan</mat-checkbox></td>
+    <td>
+      <label for="fileUpload4"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+ <input hidden type="file" id="fileUpload4" name="fileUpload" multiple="multiple" (change)="onFileSelected4($event)"
+      />
+      </label>
+      <span>Upload</span>
+    </td>
+      <td>
+        <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip
+              *ngFor="let fruit of currentInput4"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(fruit)">
+              {{fruit.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            </mat-chip-list>
+            </mat-form-field>
+      </td>
+  </tr>
+</table>
+<h4>Load would principally serve(check one only) </h4>
+<tr>
+  <td><mat-checkbox>Neighborhood</mat-checkbox></td>
+  <td><mat-checkbox>Town</mat-checkbox></td>
+  <td><mat-checkbox>Region</mat-checkbox></td>
+  <td><mat-checkbox>Country</mat-checkbox></td>
+  <td><mat-checkbox>State</mat-checkbox></td>
+</tr>
+<h4>Consistency other plans:</h4>
+<table  class="example-full-width" cellspacing="0">
+  <tr>
+    <td mat-card align="left">
+      <table>
+        <tr>
+          <td>
+            <mat-label><mat-checkbox>Municipal Master Plan</mat-checkbox></mat-label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <textarea matInput></textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-label><mat-checkbox>Currently Open Space Elements </mat-checkbox></mat-label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <textarea matInput></textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td rowspan="2">
+      <table>
+        <tr>
+          <td>
+            <mat-label><mat-checkbox>Currently Adopted State Plan </mat-checkbox></mat-label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <textarea matInput></textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<mat-card-actions align="right">
+  <button mat-raised-button color="primary">Back</button>
+  <button mat-raised-button color="primary">Save Changes</button>
+  <button mat-raised-button color="primary">Next ----></button>
+</mat-card-actions>
+    </form>
+</mat-card-content>
+</mat-card>

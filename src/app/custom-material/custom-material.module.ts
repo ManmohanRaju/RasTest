@@ -14,11 +14,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatChipsModule} from '@angular/material/chips';
+
+
 
 
 const matModules = [
@@ -29,7 +33,8 @@ const matModules = [
   MatTableModule,
   MatTabsModule,
   MatInputModule,MatFormFieldModule,MatGridListModule,
-  MatCardModule,MatFormFieldModule,MatCheckboxModule,MatRadioModule,MatDatepickerModule,MatSelectModule
+  MatCardModule,MatCheckboxModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule,MatSelectModule,
+  MatChipsModule
 ]
 
 @NgModule({

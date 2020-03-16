@@ -1,3 +1,4 @@
+import { OstfService } from './../ostf.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,7 +11,7 @@ export class OstfAppComponent implements OnInit {
 
   navLinks: any[];
   activeLinkIndex = -1;
-  constructor(private router: Router) {
+  constructor(private router: Router,private ostfService:OstfService) {
     this.navLinks = [
       {
         label: 'Project',
@@ -18,11 +19,11 @@ export class OstfAppComponent implements OnInit {
         index: 0
       }, {
         label: 'Role',
-        link: 'role',
+        link: 'role/roleview/1',
         index: 1
       }, {
         label: 'Overview',
-        link: './role/roleedit/1',
+        link: './overview/view/1',
         index: 2
       },
       {
@@ -42,17 +43,22 @@ export class OstfAppComponent implements OnInit {
       },
       {
         label: 'Planning & Management',
-        link: './role/roleedit/1',
+        link: 'planning/view/1',
         index: 6
       },
       {
         label: 'Project Narrative',
-        link: './role/roleedit/1',
+        link: 'projectNarrative/view/1',
         index:  7
       },
       {
         label: 'Signature',
-        link: './role/roleedit/1',
+        link: 'signature/view/1',
+        index: 8
+      },
+      {
+        label: 'Other Documents',
+        link: 'otherDocs/view/1',
         index: 8
       },
     ];
@@ -62,6 +68,11 @@ export class OstfAppComponent implements OnInit {
     this.router.events.subscribe((res) => {
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
     });
+    this.getNavLinks();
   }
-
+getNavLinks(){
+  this.ostfService.getData().subscribe(res=> {
+console.log(res);
+  });
+}
 }

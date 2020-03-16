@@ -14,7 +14,7 @@ const routes: Routes = [
     path:'roleedit/:id', component: OstfAppRoleEditComponent
   },
   {
-    path:'roleview', component: OstfAppRoleViewComponent
+    path:'roleview/:id', component: OstfAppRoleViewComponent
   }
 ];
 

@@ -1,0 +1,202 @@
+
+<mat-card-content>
+    <form>
+      <table class="example-full-width" cellspacing="0" align="cnetre">
+        <tr>
+          <td mat-card align="left">
+            <table class="right-table">
+              <tr>
+                <td>
+                  <mat-label>Recreation Type </mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-select >
+                          <mat-option   label="Select">Select</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Is this the priority application being submitted by the applicant</mat-label><br/>
+                <mat-label>(if more than one application is being submitted)?</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td><table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
+                    <mat-checkbox>No</mat-checkbox> </td>
+                  <td>  <mat-checkbox>NA</mat-checkbox></td>
+                 </tr></table></td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Have you made an application for this project to the Morris CountyOpen Space Trust Fund before</mat-label><br/>
+                </td>
+              </tr>
+              <tr>
+                <td><table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
+                    <mat-checkbox>No</mat-checkbox> </td>
+                  <td><input matInput placeholder="Year" />
+                  </td>
+                 </tr></table></td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Upload the copy of the application </mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="choose-file">
+                        <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                        <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+                    </div>
+                </td>
+              </tr>
+              <mat-divider></mat-divider>
+              <tr>
+                <td>
+                  <mat-label>Application Type </mat-label>
+                </td>
+              </tr> 
+              <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-select >
+                          <mat-option   label="Select">Select</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Upload the copy of the easement/deed language with your application and said language shall be supplied to appraiser </mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="choose-file">
+                        <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                        <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Has the value of the easement been determined</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>How and who will monitor owner's compliance with the terms of the easement?</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              
+            </table>
+          </td>
+         
+            <td>
+                <table class="right-table">
+                    <tr>
+                        <td>
+                          <mat-label>Recreation Facilities need assessment</mat-label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                         In order for committee to have a better understanding of the underlying need for Additional active relation facilities in your municipality,please provide the following Information
+                        </td>
+                      </tr>
+                    <tr>
+                        <td>
+                          <mat-label>Canceptually speaking,what type of relation facilities are proposed for the site</mat-label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-form-field appearance="outline">
+                            <textarea matInput></textarea>
+                          </mat-form-field>
+                        </td>
+                      </tr>
+                    <tr>
+                        <td>
+                          <mat-label>Explain what factors are contributing to the need for additional active relation facilities in your municipality</mat-label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-form-field appearance="outline">
+                            <textarea matInput></textarea>
+                          </mat-form-field>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-label>Specify type of easement summarize deed restrictions placed on land </mat-label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-form-field appearance="outline">
+                            <textarea matInput></textarea>
+                          </mat-form-field>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td><table><tr> <td>Will the public have the access </td><td><mat-checkbox>Yes</mat-checkbox></td><td>
+                          <mat-checkbox>No</mat-checkbox> </td>
+                       </tr></table></td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <mat-label>Please explain below </mat-label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-form-field appearance="outline">
+                            <textarea matInput></textarea>
+                          </mat-form-field>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-label>What is planned for residual property</mat-label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-form-field appearance="outline">
+                            <textarea matInput></textarea>
+                          </mat-form-field>
+                        </td>
+                      </tr>  
+                  </table>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <mat-card-actions align="right">
+        <button mat-raised-button >Back</button>
+        <button mat-raised-button color="primary">Save Changes</button>
+        <button mat-raised-button color="primary">Next ----></button>
+      </mat-card-actions>
+  </mat-card-content>

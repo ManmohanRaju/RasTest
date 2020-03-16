@@ -53,12 +53,11 @@ export class SideNavService {
 
   updateMainNavigationLinksTest() {
     var sideNavItems: SideNavItemDto[] = [
-      new SideNavItemDto(1, 0, 'Home', 'dashboard', [], 1, []),
-      new SideNavItemDto(2, 0, 'Applications', 'applications', [], 2, []),
-      new SideNavItemDto(3, 0, 'Reports', '#', [], 3, []),
-      new SideNavItemDto(4, 0, 'Admin', '#', [], 4, []),
+      new SideNavItemDto(1, 0, 'Home','home', 'dashboard', [], 1, []),
+      new SideNavItemDto(2, 0, 'Applications','more', 'applications', [], 2, []),
+      new SideNavItemDto(3, 0, 'Reports','report', '#', [], 3, []),
+      new SideNavItemDto(4, 0, 'Admin','question_answer', '#', [], 4, []),
     ];
-
     this.updateMainNavigationLinks(sideNavItems);
   }
 

@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content>
     <form>
-      <table class="example-full-width" cellspacing="0">
+      <table class="example-full-width" cellspacing="0" align="cnetre">
         <tr>
           <td>
             <table class="right-table">
@@ -96,7 +96,66 @@
                   </mat-form-field>
                 </td>
               </tr>
-              <tr></tr>
+                <h4>Please upload the copy of the following:</h4>
+              <tr>
+                  <td>
+                    <table><tr><td><mat-checkbox> <button id="uploadButton" class="md-raised md-primary">The organiations by Laws </button>
+                      <input id="fileInput" name="file" type="file" class="ng-hide" multiple></mat-checkbox></td><td>
+                     </td></tr></table>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-checkbox> <button id="uploadButton" class="md-raised md-primary">The organiations certifications of incorporation </button>
+                    <input id="fileInput" name="file" type="file" class="ng-hide" multiple></mat-checkbox>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Current proof of qualification charitable conservancy*</mat-label>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  *Is the site designated compliance
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>Is the charitable conservancy maintain the property?(Please explain)</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>What would happen if the if the conservancy no longer existed(Please explain)</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-label>What lands do you currently own</mat-label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </td>
+              </tr>
             </table>
           </td>
         </tr>
@@ -104,7 +163,6 @@
     </form>
   </mat-card-content>
   <mat-card-actions align="right">
-    <button mat-raised-button color="primary">Reset</button>
     <button mat-raised-button color="primary">Save Changes</button>
     <button mat-raised-button color="primary">Next ----></button>
   </mat-card-actions>
