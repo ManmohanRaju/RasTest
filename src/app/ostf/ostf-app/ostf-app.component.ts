@@ -11,6 +11,7 @@ export class OstfAppComponent implements OnInit {
 
   navLinks: any[];
   activeLinkIndex = -1;
+  activeLink='project/projectview/1';
   constructor(private router: Router,private ostfService:OstfService) {
     this.navLinks = [
       {
@@ -59,7 +60,27 @@ export class OstfAppComponent implements OnInit {
       {
         label: 'Other Documents',
         link: 'otherDocs/view/1',
-        index: 8
+        index: 9
+      },
+      {
+        label: 'Staff Info',
+        link: 'staffInfo/view/1',
+        index: 10
+      },
+      {
+        label: 'Apprisal Survey',
+        link: 'survey/view/1',
+        index: 10
+      },
+      {
+        label: 'Admin Pending',
+        link: 'pending/view/1',
+        index: 10
+      },
+      {
+        label: 'Admin Closing',
+        link: 'closing/view/1',
+        index: 10
       },
     ];
   }
@@ -67,12 +88,13 @@ export class OstfAppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((res) => {
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
-    });
+this.activeLink=this.router.url;
+});
     this.getNavLinks();
   }
 getNavLinks(){
   this.ostfService.getData().subscribe(res=> {
-console.log(res);
+this.activeLink=this.router.url;
   });
 }
 }

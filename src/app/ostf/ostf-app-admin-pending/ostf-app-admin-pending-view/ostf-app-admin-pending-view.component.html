@@ -1,0 +1,274 @@
+<mat-card>
+    <mat-card-content>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <div class="choose-file">
+                            <label for="fileUpload"> 
+                              <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"
+                              />
+                              <button type="button"   color="primary">Choose Files</button>
+                        <span>Upload</span>
+                              </label> 
+                        </div>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-chip-list">
+                          <mat-chip-list #chipList aria-label="Fruit selection">
+                            <mat-chip
+                              *ngFor="let fruit of currentInput;let i=index;"
+                              [selectable]="selectable"
+                              [removable]="removable"
+                              (removed)="remove(i)">
+                              {{fruit.name}}
+                              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            </mat-chip-list>
+                            </mat-form-field>
+                      </td>
+                  </tr>
+            </table>
+            <table>
+                <tr>
+                    <td align="left">
+<table>
+    <tr>
+        <td>
+          <mat-label>Grant Mailed </mat-label>
+        </td>
+        <td>
+          <mat-label>Freeholder Meeting Date  </mat-label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field appearance="outline">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        </td>
+      </tr>
+</table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                  <mat-label>CAF# </mat-label>
+                                </td>
+                                <td>
+                                  <mat-label>MUA/PC Resoluation  </mat-label>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput />
+                                      </mat-form-field>
+                                </td>
+                                <td>
+                                  <mat-form-field appearance="outline">
+                                      <mat-label>Choose a date</mat-label>
+                                      <input matInput [matDatepicker]="picker4">
+                                      <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                                      <mat-datepicker #picker4></mat-datepicker>
+                                    </mat-form-field>
+                                </td>
+                              </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table>
+              <tr>
+                <td>
+                    <mat-label>MUA/PC Resoluation Date </mat-label>
+                  </td>
+                  <td>
+                    <mat-label>Wire Transfer Date  </mat-label>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker2">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Choose a date</mat-label>
+                      <input matInput [matDatepicker]="picker3">
+                      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                      <mat-datepicker #picker3></mat-datepicker>
+                    </mat-form-field>
+                </td>
+              </tr>
+            </table>
+            <mat-divider></mat-divider>
+            <h3>Grant Expiration Info</h3>
+            <table class="grant-expiration">
+               <td align="left">
+                <tr>
+                    <td>
+                      <mat-label>Grant Expiration Date </mat-label>
+                    </td>
+                    <td>
+                      <mat-label>Grant Extension Expiration Date  </mat-label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker5">
+                            <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                            <mat-datepicker #picker5></mat-datepicker>
+                          </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field appearance="outline">
+                          <mat-label>Choose a date</mat-label>
+                          <input matInput [matDatepicker]="picker6">
+                          <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+                          <mat-datepicker #picker6></mat-datepicker>
+                        </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <mat-label>Freeholder Resoluation  </mat-label>
+                      </td> 
+                      <td>
+                        <mat-label>Freeholder Resoluation  </mat-label>
+                      </td> 
+                  </tr>
+                  <tr>
+                      <td>
+                        <div class="choose-file">
+                            <label for="fileUpload"> 
+                              <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"
+                              />
+                              <button type="button"   color="primary">Choose Files</button>
+                        <span>Upload</span>
+                              </label> 
+                        </div>
+                      </td>
+                      <td>
+                        <div class="choose-file">
+                            <label for="fileUpload"> 
+                              <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"
+                              />
+                              <button type="button"   color="primary">Choose Files</button>
+                        <span>Upload</span>
+                              </label> 
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <mat-form-field class="example-chip-list">
+                          <mat-chip-list #chipList aria-label="Fruit selection">
+                            <mat-chip
+                              *ngFor="let fruit of currentInput;let i=index;"
+                              [selectable]="selectable"
+                              [removable]="removable"
+                              (removed)="remove(i)">
+                              {{fruit.name}}
+                              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            </mat-chip-list>
+                            </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="example-chip-list">
+                          <mat-chip-list #chipList aria-label="Fruit selection">
+                            <mat-chip
+                              *ngFor="let fruit of currentInput;let i=index;"
+                              [selectable]="selectable"
+                              [removable]="removable"
+                              (removed)="remove(i)">
+                              {{fruit.name}}
+                              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            </mat-chip-list>
+                            </mat-form-field>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td><button mat-raised-button color="primary">Send Email</button></td>
+                  </tr>
+               </td> 
+               <td>
+                <tr>
+                    <td>
+                      <mat-label>2nd Grant Extension Expiration Date </mat-label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker7">
+                            <mat-datepicker-toggle matSuffix [for]="picker7"></mat-datepicker-toggle>
+                            <mat-datepicker #picker7></mat-datepicker>
+                          </mat-form-field>
+                      </td>
+                  </tr>
+                  <tr>
+                    <mat-label>Freeholder Resoluation  </mat-label>
+                  </tr>
+                  <tr>
+                    <td>
+                        <div class="choose-file">
+                            <label for="fileUpload"> 
+                              <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"
+                              />
+                              <button type="button"   color="primary">Choose Files</button>
+                        <span>Upload</span>
+                              </label> 
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <mat-form-field class="example-chip-list">
+                          <mat-chip-list #chipList aria-label="Fruit selection">
+                            <mat-chip
+                              *ngFor="let fruit of currentInput;let i=index;"
+                              [selectable]="selectable"
+                              [removable]="removable"
+                              (removed)="remove(i)">
+                              {{fruit.name}}
+                              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            </mat-chip-list>
+                            </mat-form-field>
+                      </td>
+                  </tr>
+                  <tr>
+ <td><button mat-raised-button color="primary">Send Email</button></td>
+                  </tr>
+               </td>
+            </table>
+            <mat-card-actions align="right">
+                <button mat-raised-button class="back-button">Back</button>
+                <button mat-raised-button color="primary">Save Changes</button>
+              </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -55,11 +55,11 @@ export class OstfAppHeaderComponent implements OnInit {
         link: './role/roleedit/1',
         index:  7
       },
-      {
-        label: 'Signature',
-        link: './role/roleedit/1',
-        index: 8
-      },
+      // {
+      //   label: 'Signature',
+      //   link: './role/roleedit/1',
+      //   index: 8
+      // },
     ];
     this.tests= [
      
@@ -92,5 +92,5 @@ export class OstfAppHeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  changeLang(){}
 }

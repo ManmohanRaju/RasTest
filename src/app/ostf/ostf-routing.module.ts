@@ -28,6 +28,18 @@ const ostfRoutes: Routes = [
       },
       {
         path:'otherDocs',loadChildren:() => import('./ostf-app-other-docs/ostf-app-other-docs.module').then(m => m.OstfAppOtherDocsModule)
+      },
+      {
+        path:'staffInfo',loadChildren:() => import('./ostf-app-staff-info/ostf-app-staff-info.module').then(m => m.OstfAppStaffInfoModule)
+      },
+      {
+        path:'survey',loadChildren:() => import('./ostf-app-appr-survey/ostf-app-appr-survey.module').then(m => m.OstfAppApprSurveyModule)
+      },
+      {
+        path:'pending',loadChildren:() => import('./ostf-app-admin-pending/ostf-app-admin-pending.module').then(m => m.OstfAppAdminPendingModule)
+      },
+      {
+        path:'closing',loadChildren:() => import('./ostf-app-admin-closing/ostf-app-admin-closing.module').then(m => m.OstfAppAdminClosingModule)
       }
     ]
   },

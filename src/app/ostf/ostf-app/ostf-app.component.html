@@ -4,8 +4,8 @@
 <app-ostf-app-header></app-ostf-app-header>
 <div>
     <nav mat-tab-nav-bar>
-        <a mat-tab-link *ngFor="let link of navLinks"
-        [routerLink]="link.link"> 
+        <a mat-tab-link *ngFor="let link of navLinks" 
+        [routerLink]="link.link"   (click)="activeLink='/ostf/'+link.link" [active]="activeLink == '/ostf/'+link.link"> 
            {{link.label}} </a>
       </nav>
     <router-outlet></router-outlet>
