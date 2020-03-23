@@ -1,16 +1,18 @@
+import { OstfAppProjectViewComponent } from './ostf-app-project/ostf-app-project-view/ostf-app-project-view.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OstfAppComponent } from './ostf-app/ostf-app.component';
-
-
-
 
 const ostfRoutes: Routes = [
   {
     path: '', component: OstfAppComponent,
     children: [
       {
-        path: 'project', loadChildren: () => import('./ostf-app-project/ostf-app-project.module').then(m => m.OstfAppProjectModule), },
+        path: '', loadChildren: () => import('./ostf-app-project/ostf-app-project.module').then(m => m.OstfAppProjectModule), 
+      },
+      {
+        path: 'project', loadChildren: () => import('./ostf-app-project/ostf-app-project.module').then(m => m.OstfAppProjectModule), 
+  },
       {
         path: 'role', loadChildren: () => import('./ostf-app-role/ostf-app-role.module').then(m => m.OstfAppRoleModule),
       },
