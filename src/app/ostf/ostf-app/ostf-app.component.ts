@@ -61,6 +61,11 @@ export class OstfAppComponent implements OnInit {
         link: 'otherDocs/view/1',
         index: 8
       },
+      {
+        label: 'Document CheckList',
+        link: 'checklist/view/1',
+        index: 9
+      },
     ];
   }
 

@@ -28,6 +28,9 @@ const ostfRoutes: Routes = [
       },
       {
         path:'otherDocs',loadChildren:() => import('./ostf-app-other-docs/ostf-app-other-docs.module').then(m => m.OstfAppOtherDocsModule)
+      },
+      {
+        path:'checklist',loadChildren:() => import('./ostf-app-doc-checklist/ostf-app-doc-checklist.module').then(m => m.OstfAppDocChecklistModule)
       }
     ]
   },
