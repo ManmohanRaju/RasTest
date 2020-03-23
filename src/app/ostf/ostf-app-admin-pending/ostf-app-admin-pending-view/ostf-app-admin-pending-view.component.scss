@@ -1,0 +1,22 @@
+.choose-file{
+    border: 2px dotted;
+    padding: 20px;
+    width: 450px;
+    text-align: center;
+}
+.correct-btn{
+    background: green;
+    color: white;
+    width: 100%;
+}
+.mat-form-field{
+    width: 250px;
+}
+.grant-expiration {
+    .mat-form-field{
+        width: 315px;
+    }
+    .choose-file{
+        width: 250px;
+    }
+}

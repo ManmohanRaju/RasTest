@@ -1,7 +1,7 @@
 
 
 <mat-card-title-group>
-
+  
     <mat-card-title class="card-container-left">    <img class="application-img" src ="../../../assets/images/download.jpg" alt = "Learn HTML5">
     </mat-card-title>
     <mat-card-title class="card-container-right"> 
@@ -11,7 +11,20 @@
 
     </mat-card-title>
       <mat-card-actions align="right"> 
-        <button mat-button class="other-docs">Other Documents</button>
+        <!-- <button mat-button class="other-docs">Other Documents</button> -->
+        <!-- <button ngClass="menu-filter-item-button" type="button" mat-button (click)="select.open()">
+          <strong class="menu-filter-item-title">Button</strong>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button> -->
+        <mat-form-field appearance="standard">
+          <mat-select placeholder="Other Documents">
+            <mat-option value="opt1">Documents CheckList</mat-option>
+            <mat-option value="opt1" routerLink="staffInfo/view/1">Staff Info</mat-option>
+            <mat-option value="opt1" routerLink="survey/view/1">Appraisal-Survey</mat-option>
+            <mat-option value="opt1" routerLink="pending/view/1">Admin Pending</mat-option>
+            <mat-option value="opt1" routerLink="closing/view/1">Admin Closing</mat-option>
+ </mat-select>
+        </mat-form-field>
         <button mat-button class="audit">Audit</button>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>

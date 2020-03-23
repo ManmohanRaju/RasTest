@@ -1,0 +1,104 @@
+<mat-card>
+    <mat-card-content>
+        <form>
+            <table>
+                <tr>
+                    <table>
+                        <tr>
+                            <td align="left">
+                                <table>
+                                    <tr>
+                                        <td>
+                                          <mat-label>Deed Book </mat-label>
+                                        </td>
+                                        <td>
+                                          <mat-label>Deed Page  </mat-label>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                            <mat-form-field appearance="outline">
+                                                <input matInput />
+                                              </mat-form-field>
+                                        </td>
+                                        <td>
+                                            <mat-form-field appearance="outline">
+                                                <input matInput />
+                                              </mat-form-field>
+                                        </td>
+                                      </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                          <mat-label>Deed Date</mat-label>
+                                        </td>
+                                        <td>
+                                          <mat-label>Deed Type</mat-label>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                            <mat-form-field appearance="outline">
+                                                <mat-label>Choose a date</mat-label>
+                                                <input matInput [matDatepicker]="picker">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                              </mat-form-field>
+                                        </td>
+                                          <td>
+                                            <mat-form-field appearance="outline">
+                                              <mat-select placeholder="set option">
+                                                <mat-option value="opt1">Option 1</mat-option>
+                                                <mat-option value="opt1">Option 2</mat-option>
+                                                <mat-option value="opt1">Option 3</mat-option>
+                                              </mat-select>
+                                            </mat-form-field>
+                                          </td>
+                                      </tr>
+                                </table>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>   
+                    <table>
+                        <tr>
+                            <td>
+                                <mat-label>Closing Date </mat-label>
+                              </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Choose a date</mat-label>
+                                    <input matInput [matDatepicker]="picker1">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                  </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-label>Notes</mat-label>
+                              </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                  <textarea matInput></textarea>
+                                </mat-form-field>
+                              </td>
+                        </tr>
+                    </table>
+                </tr>
+            </table>
+            <mat-card-actions align="right">
+                <button mat-raised-button class="back-button">Back</button>
+                <button mat-raised-button color="primary">Save Changes</button>
+              </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>
