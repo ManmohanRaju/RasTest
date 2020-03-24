@@ -1,6 +1,127 @@
+// /* You can add global styles to this file, and also import other style files */
+
+// $font-weight-base: 400 !default;
+
+// .fill-remaining-space {
+//     flex: 1 1 auto;
+// }
+
+// .section-border {
+//     border-top: 1pt solid #777;
+//     padding-bottom: 10px;
+// }
+
+// .border-outline {
+//     border-right: 1px solid #5f8f39;
+// }
+
+// html,
+// body,
+// .page {
+//     height: 100%; /* needed for proper layout */
+//     margin: 0;
+//     padding: 0;
+//     font-weight: $font-weight-base;
+//     line-height: 1.5;
+//     overflow:hidden;
+//     &.pace-done {
+//         background: #6b6b6b;
+//     }
+// }
+
+// //body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// .page {
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .page-header {
+//     flex: 0 0 auto;
+//     background-color: #F5F2E1;
+//     border-bottom: 1px solid #5f8f39;
+// }
+
+// .page-content {
+//     flex: 1 1 auto;
+//     position: relative; /* need this to position inner content */
+//     overflow-y: auto;
+// }
+
+// .router-content {
+//     height: 100%;
+//     min-height: 100%;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .page-footer {
+//     flex: 0 0 auto;
+//     background-color: #F5F2E1;
+//     border-top: 1px solid #5f8f39;
+//     font-family: Arial, sans-serif;
+//     font-size: 12px;
+//     font-weight: 400;
+//     height: 20px;
+//     vertical-align: middle;
+// }
+
+// .toolbar {
+//     background-color: #F3FCF3 !important;
+// }
+
+// .sidenav {
+//     background-color: #F3FCF3 !important;
+// }
+
+// .sidenav-content {
+//     font-size:12px;
+//     font-family: Arial, sans-serif;
+//     font-weight:600;
+//     height:40px !important;
+//   }
+
+// .sidenav-list-item-focus{
+//     background-color: rgba(85, 139, 47, 0.3);
+// }
+// mat-sidenav-content.mat-drawer-content.mat-sidenav-content.router-content{
+//     overflow-x: hidden;
+// }
+// .mat-elevation-z8{
+//     width: 100%;
+// }
+// .buttons {
+//     display: none !important;
+// }
+// .upload-file {
+// width: 30px;
+// }
+// .back-button {
+//     background: azure;
+// }
 /* You can add global styles to this file, and also import other style files */
 
-$font-weight-base: 400 !default;
+@import "assets/font-icons/flaticon/flaticon.css";
+@import "assets/font-icons/flaticon2/flaticon.css";
+@import "assets/font-icons/line-awesome/css/line-awesome.css";
+
+
+@import "~bootstrap/scss/bootstrap";
+
+
+@import "./sass/general";
+@import "./sass/button";
+@import "./sass/checkbox";
+// @import "./sass/components/forms";
+
+
+
+@import "mc-variables";
+@import "material";
+@import "mcbootstrap";
+@import "custom";
+
+
 
 .fill-remaining-space {
     flex: 1 1 auto;
@@ -12,7 +133,7 @@ $font-weight-base: 400 !default;
 }
 
 .border-outline {
-    border-right: 1px solid #5f8f39;
+    border-right: 1px solid $green;
 }
 
 html,
@@ -21,14 +142,22 @@ body,
     height: 100%; /* needed for proper layout */
     margin: 0;
     padding: 0;
-    font-weight: $font-weight-base;
+    font-weight: $font-weight-light;
     line-height: 1.5;
+    font-size: 13px;
     overflow:hidden;
+    background: $gray-light;
     &.pace-done {
-        background: #6b6b6b;
+        background: $gray-600;
+    }
+    .mat-drawer-container{
+        background-color:$gray-light;
     }
 }
 
+.font-weight-500 {
+    font-weight: 500;
+}
 //body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .page {
@@ -38,8 +167,6 @@ body,
 
 .page-header {
     flex: 0 0 auto;
-    background-color: #F5F2E1;
-    border-bottom: 1px solid #5f8f39;
 }
 
 .page-content {
@@ -56,13 +183,8 @@ body,
 }
 
 .page-footer {
-    flex: 0 0 auto;
-    background-color: #F5F2E1;
-    border-top: 1px solid #5f8f39;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    height: 20px;
+    font-size: $font-size-12;
+    font-weight: $font-weight-base;
     vertical-align: middle;
 }
 
@@ -71,31 +193,35 @@ body,
 }
 
 .sidenav {
-    background-color: #F3FCF3 !important;
+    background-color: $white;
+    -webkit-box-shadow: 13px -2px 27px -12px rgba(41,50,66,.075);
+    box-shadow: 13px -2px 27px -12px rgba(41,50,66,.075);
+    width: 65px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    border: 0;
+    .sidenav-content {
+        font-size: $font-size-12;
+        font-weight: $font-weight-600;
+        height:40px !important;
+      }
+      .sidemenu-title {
+        display: none;
+    }
+}
+.logo-brand {
+    position: absolute;
+    padding: 10px;
+    margin: 0;
+    width: 65px;
+    height: 100%;
+    background: #F5F6FC;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.sidenav-content {
-    font-size:12px;
-    font-family: Arial, sans-serif;
-    font-weight:600;
-    height:40px !important;
-  }
 
-.sidenav-list-item-focus{
-    background-color: rgba(85, 139, 47, 0.3);
-}
-mat-sidenav-content.mat-drawer-content.mat-sidenav-content.router-content{
-    overflow-x: hidden;
-}
-.mat-elevation-z8{
-    width: 100%;
-}
-.buttons {
-    display: none !important;
-}
-.upload-file {
-width: 30px;
-}
-.back-button {
-    background: azure;
-}

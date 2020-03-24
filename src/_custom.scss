@@ -1,0 +1,187 @@
+
+
+body { margin: 0; font-family: Poppins,Helvetica,sans-serif !important; font-weight: 300; font-size: 0.875rem; }
+.top-header {
+    -webkit-box-shadow: 0 0 6px 0 rgba(82, 63, 105, 0.1);
+    box-shadow: 0 0 6px 0 rgba(82, 63, 105, 0.1);
+    z-index: 2;
+}
+.breadcrum {
+    color: $blue;
+    text-decoration: none;
+}
+
+// .sidenav{
+//     width: 60px;
+// }
+.openmenu{
+    width: 60px;
+}
+
+.mc-page-header {
+    h2 {
+        font-size: 20px;
+        font-weight: 300;
+        color: #444756;
+        line-height: 20px;
+    }
+    small {
+        color: #8D95A2;
+        font-size: 10px;
+    }
+}
+.searchbox {
+    position: relative;
+    width: 260px;
+    input {
+        border-radius: 50px;
+        padding-left: 24px;
+        padding-right: 45px;
+        font-size: 14px;
+        &::placeholder {
+            color: #94A0AB;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    i {
+        position: absolute;
+        right: 15px;
+        top: 8px;
+        color: #83909B;
+    }
+}
+
+.padContent {
+    min-height: 580px;
+}
+.main-header {
+    width: 100%;
+}
+.main-title {
+    padding-left: 70px;
+    margin: 0;
+}
+.p-header-image{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+.p-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    align-self: center;
+  } 
+  .logo-brand{
+      img{
+          max-width: 100%;
+      }
+  }
+  .fab-header{
+      i{
+        color: $white
+      }
+  }
+  .header-icons{
+    .nav-item{
+        margin-right: 2px;
+        i{
+            color: #b8bac3;
+            font-size: 16px;
+          }
+          .header-topbar-icon{
+              &:hover{
+                  background-color: #f5f6fc;
+              }
+          }
+    }
+    
+}
+.page-footer {
+    padding: 20px;
+    background: $white;
+}
+.mc-footer__copyright{
+    color: $gray-600;
+    padding: 0 1.25rem 0 0;
+    font-size: 1rem;
+    font-weight: 400;
+} 
+.mc-link {
+    color: #74788d;
+}
+.mc-footer__menu{
+    .mc-link {
+    margin: 0 0 0 1.25rem;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: $font-weight-base;
+    color: $gray-600;
+    }
+}
+.mc-badge {
+    font-size: $font-size-12;
+    font-weight: $font-weight-500;
+}
+.btn.btn-label-brand {
+    background-color: $mc-bg-primary;
+    color: $blue;
+}
+a.btn.btn-label-brand.active, a.btn.btn-label-brand:focus, a.btn.btn-label-brand:hover, button.btn.btn-label-brand.active, button.btn.btn-label-brand:focus, button.btn.btn-label-brand:hover, input.btn.btn-label-brand.active, input.btn.btn-label-brand:focus, input.btn.btn-label-brand:hover, label.btn.btn-label-brand.active, label.btn.btn-label-brand:focus, label.btn.btn-label-brand:hover {
+    background-color: $blue;
+    color: $white;
+}
+.app-user-profile {
+    .app-username-small {
+        color: $gray-600;
+        font-size: $font-size-12;
+    }
+    .app-username-title {
+        font-size: 20px;
+        color: $gray-900;
+        font-weight: $font-weight-light;
+    }
+    .app-date {
+        font-size: $font-size-11;
+        color: $gray-900;
+        .btn {
+            font-size: $font-size-11;
+        }
+    }
+    .app-userdetails-footer {
+        border-top: 1px solid $border-color;
+        .icon-title {
+            margin-left: 10px;
+            font-size: $font-size-11;
+        }
+        .icon-sub-title {
+            font-size: $font-size-11;
+            color: $blue;
+            font-weight: $font-weight-500;
+        }
+        .card-icon {
+            margin-top: 6px;
+            font-size: 20px;
+        }
+    }
+}
+
+.form-center-container{
+    max-width: 600px;
+    margin: auto;
+}
+
+.step-footer{
+    padding: 1rem 0;
+    margin-top: 20px;
+    border-top: 1px solid $border-color;
+}
+label{
+    font-size: $font-size-12;
+    font-weight: $font-weight-base;
+    color: $gray-900;
+}

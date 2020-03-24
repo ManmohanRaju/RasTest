@@ -1,11 +1,28 @@
-<mat-nav-list>
+<!-- <mat-nav-list>
     <div *ngFor="let link of navigationLinks">
       <mat-list-item class="sidenav-content">
         <a mat-list-item cdk-focus-region-start routerLinkActive="sidenav-list-item-focus" [routerLink]='link.routerLink'
           class="sidenav-content">
-          <span><mat-icon>{{link.icon}}</mat-icon></span>
-          {{link.displayName}}
+          <mat-icon> {{link.icons}}</mat-icon>
+          <span>
+            {{link.displayName}}
+          </span>
         </a>
       </mat-list-item>
     </div>
-  </mat-nav-list>
+  </mat-nav-list> -->
+
+  <mat-nav-list>
+      <div *ngFor="let link of navigationLinks">
+        <mat-list-item class="sidenav-content">
+          <a mat-list-item cdk-focus-region-start routerLinkActive="sidenav-list-item-focus" [routerLink]='link.routerLink'
+            class="sidenav-content">
+            <span class="aside_menu_link_icon">
+                <!-- <i class="fa fa-report"></i> -->
+              <mat-icon>{{link.icon}}</mat-icon>
+            </span>
+            <span class="sidemenu-title">{{link.displayName}}</span>
+          </a>
+        </mat-list-item>
+      </div>
+    </mat-nav-list>

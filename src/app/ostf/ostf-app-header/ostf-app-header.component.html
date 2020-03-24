@@ -1,71 +1,62 @@
 
 
-<mat-card-title-group>
-  
-    <mat-card-title class="card-container-left">    <img class="application-img" src ="../../../assets/images/download.jpg" alt = "Learn HTML5">
-    </mat-card-title>
-    <mat-card-title class="card-container-right"> 
-      <mat-card-title>Application Name</mat-card-title>
-      <mat-card-subtitle><h2>DiVinci Property</h2></mat-card-subtitle>
-      <mat-card-subtitle class="app-date"><span>Start Date: 05 Dec 2019</span>&nbsp; &nbsp; &nbsp;   <span>Due Date: 25 Dec 2019</span></mat-card-subtitle>
+<mat-card-title-group class="">
 
-    </mat-card-title>
-      <mat-card-actions align="right"> 
-        <!-- <button mat-button class="other-docs">Other Documents</button> -->
-        <!-- <button ngClass="menu-filter-item-button" type="button" mat-button (click)="select.open()">
-          <strong class="menu-filter-item-title">Button</strong>
-          <mat-icon>keyboard_arrow_down</mat-icon>
-        </button> -->
-        <mat-form-field appearance="standard">
-          <mat-select placeholder="Other Documents">
-            <mat-option value="opt1">Documents CheckList</mat-option>
-            <mat-option value="opt1" routerLink="staffInfo/view/1">Staff Info</mat-option>
-            <mat-option value="opt1" routerLink="survey/view/1">Appraisal-Survey</mat-option>
-            <mat-option value="opt1" routerLink="pending/view/1">Admin Pending</mat-option>
-            <mat-option value="opt1" routerLink="closing/view/1">Admin Closing</mat-option>
- </mat-select>
-        </mat-form-field>
-        <button mat-button class="audit">Audit</button>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
+  <mat-card-title class="card-container-left">    <img class="application-img" src ="https://material.angular.io/assets/img/examples/shiba1.jpg" alt = "User Profile">
+  </mat-card-title>
+  <mat-card-title class="card-container-right ml-3 pt-1 mb-0"> 
+    <mat-card-subtitle class="mb-2 app-username-small">Application Name</mat-card-subtitle>
+    <mat-card-title><h3 class="app-username-title">DiVinci Property</h3></mat-card-title>
+    <mat-card-subtitle class="app-date pt-1"><span>Start Date <span class="btn btn-sm btn-label-brand ml-1">05 Dec 2019</span></span>  <span class="ml-4">Due Date <span class="btn btn-sm btn-label-brand ml-1">25 Dec 2019</span></span></mat-card-subtitle>
+
+  </mat-card-title>
+    <mat-card-actions align="right" class="mb-0"> 
+      <button mat-button class="other-docs mr-2">Other Documents</button>
+      <button mat-flat-button color="primary" class="audit mr-2">Audit</button>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>dialpad</mat-icon>
-              <span>Redial</span>
-            </button>
-            <button mat-menu-item disabled>
-              <mat-icon>voicemail</mat-icon>
-              <span>Check voice mail</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>notifications_off</mat-icon>
-              <span>Disable alerts</span>
-            </button>
-          </mat-menu>
-          
-              <section class="example-section">
-                  <mat-progress-bar
-                      class="example-margin"
-                      
-                      [mode]="mode"
-                      [value]="value"
-                      [bufferValue]="bufferValue">
-                  </mat-progress-bar>
-                </section>
-      </mat-card-actions>
-  </mat-card-title-group>
-  <div class="container margin-top-20 flex-container" fxLayout="row wrap" fxLayoutAlign="space-evenly stretch" fxLayoutGap="20px" class="statistics-tabs">
-    <mat-card fxFlex="0 1 calc(20% - 20px)" *ngFor="let card of tests; let i = index" class="product" fxLayout="column">
-          <mat-card-header class="card-container">
-                <mat-card-title class="card-container-left" ><mat-icon class="card-icon" aria-hidden="false" aria-label="Example home icon">{{card.icon}}</mat-icon></mat-card-title>
-                <mat-card-title class="card-container-right icon-title">
-                    {{card.title}}
-                    <mat-card-subtitle>{{card.subTitle}}</mat-card-subtitle>
-                </mat-card-title>
-              </mat-card-header>
-        </mat-card>
-        </div>
-  
-  
-   
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+        
+            <section class="example-section">
+                <mat-progress-bar
+                    class="example-margin"
+                    
+                    [mode]="mode"
+                    [value]="value"
+                    [bufferValue]="bufferValue">
+                </mat-progress-bar>
+              </section>
+    </mat-card-actions>
+</mat-card-title-group>
+<div class="statistics-tabs mt-3 app-userdetails-footer" fxLayout="row wrap" fxLayoutAlign="space-evenly stretch" fxLayoutGap="20px">
+  <mat-card fxFlex="0 1 calc(20% - 20px)" *ngFor="let card of tests; let i = index" class="product" fxLayout="column">
+        <mat-card-header class="card-container mt-1 mb-2 pt-2">
+              <mat-card-title class="card-container-left mb-0" >
+                <mat-icon class="card-icon" aria-hidden="false" aria-label="Example home icon">{{card.icon}}</mat-icon></mat-card-title>
+              <mat-card-title class="card-container-right icon-title mb-0">
+                  {{card.title}}
+                  <mat-card-subtitle class="icon-sub-title mb-0">
+                    <a href="#">{{card.subTitle}}</a>
+                  </mat-card-subtitle>
+              </mat-card-title>
+            </mat-card-header>
+    </mat-card>
+</div>
+
+
+ 

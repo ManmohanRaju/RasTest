@@ -1,15 +1,12 @@
-<!-- breadcrumbs -->
+ <!-- breadcrumbs  -->
 <app-ostf-app-breadcrumb></app-ostf-app-breadcrumb>
 <!-- ostf header -->
-<app-ostf-app-header></app-ostf-app-header>
-<div>
+<app-ostf-app-header class="card card-body pb-0 border-0 app-user-profile"></app-ostf-app-header>
+<div class="mt-2 card border-0 mc-tab-content">
     <nav mat-tab-nav-bar>
-        <a mat-tab-link *ngFor="let link of navLinks" 
-        [routerLink]="link.link"   (click)="activeLink='/ostf/'+link.link" [active]="activeLink == '/ostf/'+link.link"> 
+        <a mat-tab-link *ngFor="let link of navLinks"
+        [routerLink]="link.link"> 
            {{link.label}} </a>
       </nav>
     <router-outlet></router-outlet>
 </div>
-
-
-
