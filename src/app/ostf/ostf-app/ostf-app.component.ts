@@ -87,6 +87,11 @@ export class OstfAppComponent implements OnInit {
         link: 'checklist/view/1',
         index: 9
       },
+      {
+        label: 'Muncipal Finance',
+        link: 'finance/view/1',
+        index: 11
+      }
     ];
   }
 

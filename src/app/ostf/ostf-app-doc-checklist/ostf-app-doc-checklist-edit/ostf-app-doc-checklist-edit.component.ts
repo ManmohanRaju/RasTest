@@ -23,11 +23,11 @@ const ELEMENT_DATA: DocumentChecklist[] = [
 ];
 
 @Component({
-  selector: 'app-ostf-app-doc-checklist-view',
-  templateUrl: './ostf-app-doc-checklist-view.component.html',
-  styleUrls: ['./ostf-app-doc-checklist-view.component.scss']
+  selector: 'app-ostf-app-doc-checklist-edit',
+  templateUrl: './ostf-app-doc-checklist-edit.component.html',
+  styleUrls: ['./ostf-app-doc-checklist-edit.component.scss']
 })
-export class OstfAppDocChecklistViewComponent implements OnInit {
+export class OstfAppDocChecklistEditComponent implements OnInit {
 
   panelOpenState = false;
   public displayedColumns: string[] = [ 'name', 'icon', 'showcommittee', 'hardcopy', 'approved', 'comments'];
@@ -41,4 +41,5 @@ export class OstfAppDocChecklistViewComponent implements OnInit {
   {
     return element.showcommittee;
   }
+
 }
