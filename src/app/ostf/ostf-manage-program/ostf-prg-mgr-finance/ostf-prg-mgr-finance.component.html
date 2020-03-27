@@ -1,48 +1,152 @@
+<button mat-button [matMenuTriggerFor]="menu">Chester Toenship</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>Option 1</button>
+    <button mat-menu-item>Option 2</button>
+    <button mat-menu-item>Option 3</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="menu2">Export</button>
+<mat-menu #menu2="matMenu">
+    <button mat-menu-item>PDF</button>
+    <button mat-menu-item>CSV</button>
+    <button mat-menu-item>Excel</button>
+</mat-menu>
+
+<mat-icon>print</mat-icon>
+
+<br />
+<br />
 <!-- Document Checklist table -->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Document Checklist Name </th>
-        <td mat-cell *matCellDef="let element"><mat-icon *ngIf="element.show">description</mat-icon> {{element.name}} </td>
+    <!-- Year Column -->
+    <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef> Year </th>
+        <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+        <td mat-footer-cell *matFooterCellDef> Total </td>
     </ng-container>
 
-    <ng-container matColumnDef="icon">
+    <!-- Annual Tax Levy Column -->
+    <ng-container matColumnDef="annualTaxLevy">
+        <th mat-header-cell *matHeaderCellDef> Annual Tax Levy </th>
+        <td mat-cell *matCellDef="let element"> {{ element.annualTaxLevy }} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getAnnualTaxLevy() }} </td>
+    </ng-container>
+
+    <!-- Reimbursements Column -->
+    <ng-container matColumnDef="reimbursements">
+        <th mat-header-cell *matHeaderCellDef> Reimbursements </th>
+        <td mat-cell *matCellDef="let element"> {{ element.reimbursements }} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getReimbursements() }} </td>
+    </ng-container>
+
+    <!-- Cash Receipts Column -->
+    <ng-container matColumnDef="cashReceipts">
+        <th mat-header-cell *matHeaderCellDef> Cash Receipts </th>
+        <td mat-cell *matCellDef="let element"> {{ element.cashReceipts }} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getCashReceipts() }} </td>
+    </ng-container>
+
+    <!-- Interest Column -->
+    <ng-container matColumnDef="interest">
+        <th mat-header-cell *matHeaderCellDef> Interest </th>
+        <td mat-cell *matCellDef="let element"> {{ element.interest }} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getInterest() }} </td>
+    </ng-container>
+
+    <!-- Other Column -->
+    <ng-container matColumnDef="other">
+        <th mat-header-cell *matHeaderCellDef> Other </th>
+        <td mat-cell *matCellDef="let element"> {{element.other}} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getOther1() }} </td>
+    </ng-container>
+
+    <!-- Total Column -->
+    <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total Revenues per year </th>
+        <td mat-cell *matCellDef="let element"> {{ isCalculateTotal(element) }} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getTotal1() }} </td>
+    </ng-container>
+
+    <!-- Disbursements Column -->
+    <ng-container matColumnDef="disbursements">
+        <th mat-header-cell *matHeaderCellDef> Disbursements </th>
+        <td mat-cell *matCellDef="let element"> {{ element.disbursements }} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getDisbursements() }} </td>
+    </ng-container>
+
+    <!-- Debt Payments Column -->
+    <ng-container matColumnDef="debtPayments">
+        <th mat-header-cell *matHeaderCellDef> Debt Payments </th>
+        <td mat-cell *matCellDef="let element"> {{element.debtPayments}} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getDebtPayments() }} </td>
+    </ng-container>
+
+    <!-- Other Column -->
+    <ng-container matColumnDef="other2">
+        <th mat-header-cell *matHeaderCellDef> Other </th>
+        <td mat-cell *matCellDef="let element"> {{element.other2}} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getOther2() }} </td>
+    </ng-container>
+
+    <!-- Total Column -->
+    <ng-container matColumnDef="total2">
+        <th mat-header-cell *matHeaderCellDef> Total Expenses per year </th>
+        <td mat-cell *matCellDef="let element"> {{ isCalculateTotal2(element) }} </td>
+        <td mat-footer-cell *matFooterCellDef> {{ getTotal2() }} </td>
+    </ng-container>
+
+    <!-- edit Column -->
+    <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef> </th>
-        <td mat-cell *matCellDef="let element"><mat-icon *ngIf="element.show">edit</mat-icon></td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="showcommittee">
-        <th mat-header-cell *matHeaderCellDef> Show Committee </th>
-        <td mat-cell *matCellDef="let element">
-            <mat-checkbox *ngIf="element.checkshow" class="example-margin" [checked]="element.showcommittee"></mat-checkbox>
-        </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="hardcopy">
-        <th mat-header-cell *matHeaderCellDef> Hard Copy </th>
-        <td mat-cell *matCellDef="let element">
-            <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.hardcopy"></mat-slide-toggle>
-        </td>
-    </ng-container>
-
-    <ng-container matColumnDef="approved">
-        <th mat-header-cell *matHeaderCellDef> Approved </th>
-        <td mat-cell *matCellDef="let element"> 
-            <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.approved"></mat-slide-toggle>
-        </td>
-    </ng-container>
-
-    <ng-container matColumnDef="comments">
-        <th mat-header-cell *matHeaderCellDef> Comments </th>
-        <td mat-cell *matCellDef="let element"> 
-            <textarea matInput placeholder="Comments" *ngIf="element.checkshow"></textarea>
-        </td>
+        <td mat-cell *matCellDef="let element"> edit </td>
+        <td mat-footer-cell *matFooterCellDef> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
     <!-- routerLink="/ostf/" -->
 </table>
+
+<br />
+<br />
+<mat-label>Available Balance</mat-label>
+<input matInput placeholder="" value="{{Balance}}">
+
+<br />
+<br />
+<mat-label>Muncipal Trust Fund Permitted Uses</mat-label>
+<br />
+<mat-checkbox>Acquisition of lands for conservation and recreation, including easements</mat-checkbox>
+<br />
+<mat-checkbox>Acquisition of formland for formland preservation</mat-checkbox>
+<br />
+<mat-checkbox>Development and improvement of lands acquired for conservation and recreation</mat-checkbox>
+<br />
+<mat-checkbox>Maintenance of lands acquired for conservation and recreation</mat-checkbox>
+<br />
+<mat-checkbox>Salaries and benefits for employees of trust fund related activities</mat-checkbox>
+<br />
+<mat-checkbox>Bond down payments and debt service</mat-checkbox>
+<br />
+<mat-checkbox>Historic preservation</mat-checkbox>
+<br />
+<p>
+    <b>Other:</b> Trust fund approved in 1999. Maximum collection rate=0.02. Resolution of june 20, 2000 reaffirmed
+    continuation of trust fund.<br />
+    Permitted uses of trust fund includes salaries (only, not benefit) for employees conducting trust fund related
+    activities (maintenance of<br />
+    lands acquired conservation and recreation)
+</p>
+<mat-checkbox>Muncipality has Ann adopted Open Space Master Plan</mat-checkbox>
+<br />
+<p><b>Date: </b> 06/18/2000 </p>
+<br />
+<mat-checkbox>Muncipality has a Green Acres Planning Incentives Grant</mat-checkbox>
+<br />
+<textarea matInput rows="5" cols="60" placeholder="Please enter Comments"></textarea>
+
+<mat-card-actions align="right">
+    <button mat-raised-button color="primary">Save</button>
+</mat-card-actions>
