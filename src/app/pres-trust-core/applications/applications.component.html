@@ -2,18 +2,40 @@
 
 
   <div>
-    <!-- <mat-card>
-      <mat-card-title>
-        Applications
-      <mat-card-subtitle>Create and Manage Applications</mat-card-subtitle>
-      </mat-card-title>
-      <div class="search-table">
-        <mat-form-field appearance="standard">
-          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-        </mat-form-field>
-      <button mat-raised-button color="primary">+ Create Application</button>
+    <div class="mc-page-header pb-2 d-flex justify-content-between align-items-center">
+      <div>
+          <h2 class="mb-0">Applications</h2>
+          <small>
+              Create and Manage Applications
+          </small>
       </div>
-    </mat-card> -->
+      <div class="">
+          <div class="searchbox d-inline-block mr-2">
+              <input class="form-control py-2" type="search" placeholder="Search">
+              <i class="flaticon2-search-1"></i>
+          </div>
+
+          <button mat-raised-button color="primary">
+              <i class="flaticon2-add-1 mr-1"></i> Create Application
+          </button>
+          <!-- <div class="row">
+              <div class="col">
+                  <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                          <mat-label>Favorite food</mat-label>
+                          <input matInput placeholder="Ex. Pizza" value="Sushi">
+                      </mat-form-field>
+                  </form>
+              </div>
+              <div class="col text-right">
+                  <button mat-raised-button color="primary">
+                      <mat-icon>add</mat-icon>
+                      Create Application
+                  </button>
+              </div>
+          </div> -->
+      </div>
+  </div>
     <table #table mat-table [dataSource]="dataSource" class="mc-table">
     
         <!--- Note that these columns can be defined in any order.
