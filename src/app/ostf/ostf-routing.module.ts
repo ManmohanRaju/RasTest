@@ -47,6 +47,9 @@ const ostfRoutes: Routes = [
       },
       {
         path: 'finance', loadChildren: () => import('./ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)
+      },
+      {
+        path: 'programManager', loadChildren: () => import('./ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)
       }
     ]
   },

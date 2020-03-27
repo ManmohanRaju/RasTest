@@ -28,6 +28,10 @@ const appRoutes: Routes = [
     loadChildren: () => import('./ostf/ostf.module').then(m => m.OstfModule)
   },
   {
+    path: 'programManager',
+    loadChildren: () => import('./ostf/ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)
+  },
+  {
     path: 'page-not-found',
     component: PageNotFoundComponent
   },

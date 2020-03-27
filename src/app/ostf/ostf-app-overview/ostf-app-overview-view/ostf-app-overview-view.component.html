@@ -1,202 +1,419 @@
+<div class="mc-mat-tab-content">
+  <form class="p-4">
 
-<mat-card-content>
-    <form>
-      <table class="example-full-width" cellspacing="0" align="cnetre">
-        <tr>
-          <td mat-card align="left">
-            <table class="right-table">
-              <tr>
-                <td>
-                  <mat-label>Recreation Type </mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <mat-form-field>
-                        <mat-select >
-                          <mat-option   label="Select">Select</mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Is this the priority application being submitted by the applicant</mat-label><br/>
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
+        <div class="form-group">
+          <label>Recreation Type</label>
+          <select class="form-control">
+            <option selected>Select</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="yes-group">
+          <p class="text-muted">
+            Is this the priority application being submitted by the applicant
+            (If more than one application is being submitted)?
+          </p>
+          <div class="form-group mat-chk-group">
+            <span class="mr-4 mb-1">
+              <mat-checkbox>Yes </mat-checkbox>
+            </span>
+            <span class="mb-1 mr-4">
+              <mat-checkbox>No </mat-checkbox>
+            </span>
+            <span class="mb-1">
+              <mat-checkbox>NA </mat-checkbox>
+            </span>
+          </div>
+        </div>
+
+        <div class="yes-group">
+          <p class="text-muted">
+            Have you made an application for this project to the Morris County
+            Open Space Trust Fund before?
+          </p>
+          <div class="form-group mat-chk-group d-flex align-items-center">
+            <span class="mr-4 mb-1">
+              <mat-checkbox>Yes </mat-checkbox>
+            </span>
+            <span class="mb-1 mr-4">
+              <mat-checkbox>No </mat-checkbox>
+            </span>
+            <span class="mb-1">
+              <input type="text" class="form-control" placeholder="Year?">
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p class="text-muted">
+            Upload a copy of the application.
+          </p>
+          <div class="choose-file">
+            <button mat-flat-button color="primary" (click)="fileInput.click()">Choose File</button>
+            <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
+        <div class="form-group">
+          <label class="mb-1"><strong class="font-weight-500">Recreation Facilities need assessment</strong></label>
+          <p class="text-muted mb-2">In order for committee to have a better understanding of the underlying need for
+            Additional active relational facilities in your municipality, please provide the following
+            Information. </p>
+          <label>Conceptually speaking, what type of relational facilities are proposed for the site?</label>
+          <textarea rows="4" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Explain what factors are contributing to the need for additional active relational facilities
+            In your municipality </label>
+          <textarea rows="4" class="form-control"></textarea>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </form>
+
+
+  <hr class="my-4">
+
+
+  <form class="p-4">
+
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
+        <div class="form-group">
+          <label>Application Type</label>
+          <select class="form-control">
+            <option selected>Select</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p class="text-muted">
+            Upload a copy of your easement/ deed language with your application and said language shall be
+            supplied to your appraiser.
+          </p>
+          <div class="choose-file-bg">
+              <div class="choose-file">
+                  <div class="mb-3"><span>Drag and Drop File Here</span></div>
+                  <button mat-flat-button color="primary" (click)="fileInput.click()">Choose File</button>
+                  <!-- <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button> -->
+                  <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+                </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Has the value of the easement been determined</label>
+          <textarea rows="4" class="form-control"></textarea>
+        </div>
+
+
+        <div class="form-group">
+          <label>How and who will monitor owner’s compliance with the terms of the easement?</label>
+          <textarea rows="4" class="form-control"></textarea>
+        </div>
+
+
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
+        <div class="form-group">
+          <label>Specify type of easement summarize deed restrictions placed on land </label>
+          <textarea rows="4" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group mat-chk-group">
+          <label class="mr-3">Will the public have the access ?</label>
+          <span class="mr-4 mb-1">
+            <mat-checkbox>Yes </mat-checkbox>
+          </span>
+          <span class="mb-1 mr-4">
+            <mat-checkbox>No </mat-checkbox>
+          </span>
+          <span class="mb-1">
+            <mat-checkbox>NA </mat-checkbox>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label>Please explain below</label>
+          <textarea rows="4" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What is planned for residual property?</label>
+          <textarea rows="4" class="form-control"></textarea>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </form>
+
+  <div class="step-footer d-flex justify-content-end px-4">
+    <button mat-flat-button class="mat-light mr-2">Back</button>
+    <button mat-flat-button color="accent" class="mr-2">Save Changes</button>
+    <button mat-flat-button color="primary">
+      Next <i class="la la-arrow-right ml-1"></i>
+    </button>
+  </div>
+
+</div>
+
+
+
+<!-- <mat-card-content>
+  <form>
+    <table class="example-full-width" cellspacing="0" align="cnetre">
+      <tr>
+        <td mat-card align="left">
+          <table class="right-table">
+            <tr>
+              <td>
+                <mat-label>Recreation Type </mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <mat-select>
+                    <mat-option label="Select">Select</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Is this the priority application being submitted by the applicant</mat-label><br />
                 <mat-label>(if more than one application is being submitted)?</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td><table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
-                    <mat-checkbox>No</mat-checkbox> </td>
-                  <td>  <mat-checkbox>NA</mat-checkbox></td>
-                 </tr></table></td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Have you made an application for this project to the Morris CountyOpen Space Trust Fund before</mat-label><br/>
-                </td>
-              </tr>
-              <tr>
-                <td><table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
-                    <mat-checkbox>No</mat-checkbox> </td>
-                  <td><input matInput placeholder="Year" />
-                  </td>
-                 </tr></table></td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Upload the copy of the application </mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <div class="choose-file">
-                        <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-                        <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
-                    </div>
-                </td>
-              </tr>
-              <mat-divider></mat-divider>
-              <tr>
-                <td>
-                  <mat-label>Application Type </mat-label>
-                </td>
-              </tr> 
-              <tr>
-                <td>
-                    <mat-form-field>
-                        <mat-select >
-                          <mat-option   label="Select">Select</mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Upload the copy of the easement/deed language with your application and said language shall be supplied to appraiser </mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <div class="choose-file">
-                        <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-                        <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
-                    </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Has the value of the easement been determined</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>How and who will monitor owner's compliance with the terms of the easement?</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-              
-            </table>
-          </td>
-         
-            <td>
-                <table class="right-table">
-                    <tr>
-                        <td>
-                          <mat-label>Recreation Facilities need assessment</mat-label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                         In order for committee to have a better understanding of the underlying need for Additional active relation facilities in your municipality,please provide the following Information
-                        </td>
-                      </tr>
-                    <tr>
-                        <td>
-                          <mat-label>Canceptually speaking,what type of relation facilities are proposed for the site</mat-label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <mat-form-field appearance="outline">
-                            <textarea matInput></textarea>
-                          </mat-form-field>
-                        </td>
-                      </tr>
-                    <tr>
-                        <td>
-                          <mat-label>Explain what factors are contributing to the need for additional active relation facilities in your municipality</mat-label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <mat-form-field appearance="outline">
-                            <textarea matInput></textarea>
-                          </mat-form-field>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <mat-label>Specify type of easement summarize deed restrictions placed on land </mat-label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <mat-form-field appearance="outline">
-                            <textarea matInput></textarea>
-                          </mat-form-field>
-                        </td>
-                      </tr>
-                      <tr>
-                      <td><table><tr> <td>Will the public have the access </td><td><mat-checkbox>Yes</mat-checkbox></td><td>
-                          <mat-checkbox>No</mat-checkbox> </td>
-                       </tr></table></td>
-                    </tr>
-                    <tr>
-                        <td>
-                          <mat-label>Please explain below </mat-label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <mat-form-field appearance="outline">
-                            <textarea matInput></textarea>
-                          </mat-form-field>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <mat-label>What is planned for residual property</mat-label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <mat-form-field appearance="outline">
-                            <textarea matInput></textarea>
-                          </mat-form-field>
-                        </td>
-                      </tr>  
-                  </table>
-          </td>
-        </tr>
-      </table>
-    </form>
-    <mat-card-actions align="right">
-        <button mat-raised-button >Back</button>
-        <button mat-raised-button color="primary">Save Changes</button>
-        <button mat-raised-button color="primary">Next ----></button>
-      </mat-card-actions>
-  </mat-card-content>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <mat-checkbox>Yes</mat-checkbox>
+                    </td>
+                    <td>
+                      <mat-checkbox>No</mat-checkbox>
+                    </td>
+                    <td>
+                      <mat-checkbox>NA</mat-checkbox>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Have you made an application for this project to the Morris CountyOpen Space Trust Fund
+                  before</mat-label><br />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <mat-checkbox>Yes</mat-checkbox>
+                    </td>
+                    <td>
+                      <mat-checkbox>No</mat-checkbox>
+                    </td>
+                    <td><input matInput placeholder="Year" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Upload the copy of the application </mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="choose-file">
+                  <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                  <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+                </div>
+              </td>
+            </tr>
+            <mat-divider></mat-divider>
+            <tr>
+              <td>
+                <mat-label>Application Type </mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <mat-select>
+                    <mat-option label="Select">Select</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Upload the copy of the easement/deed language with your application and said language shall
+                  be supplied to appraiser </mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="choose-file">
+                  <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                  <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Has the value of the easement been determined</mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>How and who will monitor owner's compliance with the terms of the easement?</mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+
+        <td>
+          <table class="right-table">
+            <tr>
+              <td>
+                <mat-label>Recreation Facilities need assessment</mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                In order for committee to have a better understanding of the underlying need for Additional active
+                relation facilities in your municipality,please provide the following Information
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Canceptually speaking,what type of relation facilities are proposed for the site</mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Explain what factors are contributing to the need for additional active relation facilities
+                  in your municipality</mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Specify type of easement summarize deed restrictions placed on land </mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>Will the public have the access </td>
+                    <td>
+                      <mat-checkbox>Yes</mat-checkbox>
+                    </td>
+                    <td>
+                      <mat-checkbox>No</mat-checkbox>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>Please explain below </mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-label>What is planned for residual property</mat-label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <mat-card-actions align="right">
+    <button mat-raised-button>Back</button>
+    <button mat-raised-button color="primary">Save Changes</button>
+    <button mat-raised-button color="primary">Next</button>
+  </mat-card-actions>
+</mat-card-content> -->
