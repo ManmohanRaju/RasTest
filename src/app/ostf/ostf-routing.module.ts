@@ -19,6 +19,9 @@ const ostfRoutes: Routes = [
         path: 'overview', loadChildren: () => import('./ostf-app-overview/ostf-app-overview.module').then(m => m.OstfAppOverviewModule),
       },
       {
+        path: 'location', loadChildren: () => import('./ostf-app-location/ostf-app-location.module').then(m => m.OstfAppLocationModule)
+      },
+      {
         path: 'projectNarrative', loadChildren: () => import('./ostf-app-projectNarrative/ostf-app-project-narrative.module').then(m => m.OstfAppProjectNarrativeModule),
       },
       {
@@ -34,16 +37,22 @@ const ostfRoutes: Routes = [
         path: 'checklist', loadChildren: () => import('./ostf-app-admin-doc-checklist/ostf-app-admin-doc-checklist.module').then(m => m.OstfAppAdminDocChecklistModule)
       },
       {
+        path: 'pending', loadChildren: () => import('./ostf-app-pending/ostf-app-pending.module').then(m => m.OstfAppPendingModule)
+      },
+      {
+        path: 'preserved', loadChildren: () => import('./ostf-app-preserved/ostf-app-preserved.module').then(m => m.OstfAppPreservedModule)
+      },
+      {
         path: 'staffInfo', loadChildren: () => import('./ostf-app-staff-info/ostf-app-staff-info.module').then(m => m.OstfAppStaffInfoModule)
       },
       {
         path: 'survey', loadChildren: () => import('./ostf-app-appr-survey/ostf-app-appr-survey.module').then(m => m.OstfAppApprSurveyModule)
       },
       {
-        path: 'pending', loadChildren: () => import('./ostf-app-admin-pending/ostf-app-admin-pending.module').then(m => m.OstfAppAdminPendingModule)
+        path: 'adminpending', loadChildren: () => import('./ostf-app-admin-pending/ostf-app-admin-pending.module').then(m => m.OstfAppAdminPendingModule)
       },
       {
-        path: 'closing', loadChildren: () => import('./ostf-app-admin-closing/ostf-app-admin-closing.module').then(m => m.OstfAppAdminClosingModule)
+        path: 'adminclosing', loadChildren: () => import('./ostf-app-admin-closing/ostf-app-admin-closing.module').then(m => m.OstfAppAdminClosingModule)
       },
       {
         path: 'finance', loadChildren: () => import('./ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)

@@ -11,32 +11,17 @@
       </div>
       <div class="">
           <div class="searchbox d-inline-block mr-2">
-              <input class="form-control py-2" type="search" placeholder="Search">
+              <input (keyup)="doFilter($event.target.value)" class="form-control py-2" type="search" placeholder="Search">
               <i class="flaticon2-search-1"></i>
           </div>
 
-          <button mat-raised-button color="primary">
+          <button mat-raised-button color="primary" routerLink="/ostf/project/projectview/1">
               <i class="flaticon2-add-1 mr-1"></i> Create Application
           </button>
-          <!-- <div class="row">
-              <div class="col">
-                  <form class="example-form">
-                      <mat-form-field class="example-full-width">
-                          <mat-label>Favorite food</mat-label>
-                          <input matInput placeholder="Ex. Pizza" value="Sushi">
-                      </mat-form-field>
-                  </form>
-              </div>
-              <div class="col text-right">
-                  <button mat-raised-button color="primary">
-                      <mat-icon>add</mat-icon>
-                      Create Application
-                  </button>
-              </div>
-          </div> -->
+         
       </div>
   </div>
-    <table #table mat-table [dataSource]="dataSource" class="mc-table">
+    <table  mat-table [dataSource]="dataSource" class="mc-table">
     
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -44,7 +29,7 @@
         <!-- ID Column -->
         <ng-container matColumnDef="projectId">
           <th mat-header-cell *matHeaderCellDef> By Applicant </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf">
+          <td mat-cell *matCellDef="let element" routerLink="/ostf/project/projectview/1">
             <div class="media align-items-center">
               <img class="thumbnail-img mr-3" src="https://avatars.services.sap.com/images/biplab.nits.png" alt="Profile" />
               <div class="media-body">
@@ -58,7 +43,7 @@
         <!-- Program Column -->
         <ng-container matColumnDef="applicant">
           <th mat-header-cell *matHeaderCellDef> Project Name </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> <a href="#" class="mc-projectname">{{element.applicant}}</a> </td>
+          <td mat-cell *matCellDef="let element" routerLink="/ostf/project/projectview/1"> <a href="#" class="mc-projectname">{{element.applicant}}</a> </td>
         </ng-container>
       
         <!-- ProjectTitle Column -->
@@ -69,7 +54,7 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>
+              <button mat-menu-item routerLink="/ostf/project/projectview/1/project/view/1">
                 <mat-icon>edit</mat-icon>
                 <span>Edit</span>
               </button>
@@ -89,127 +74,44 @@
         <!-- FundingYear Column -->
         <ng-container matColumnDef="fundingYear">
           <th mat-header-cell *matHeaderCellDef> Created Date </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> {{element.fundingYear}} </td>
+          <td mat-cell *matCellDef="let element" routerLink="/ostf/project/projectview/1"> {{element.fundingYear}} </td>
         </ng-container>
        
         <!-- Applicant Column -->
         <ng-container matColumnDef="program">
           <th mat-header-cell *matHeaderCellDef> Fund </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> {{element.program}} </td>
+          <td mat-cell *matCellDef="let element" routerLink="/ostf/project/projectview/1"> {{element.program}} </td>
         </ng-container>
     
         <!-- Municipality Column -->
         <ng-container matColumnDef="municipality">
           <th mat-header-cell *matHeaderCellDef> Primary Contact </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> {{element.municipality}} </td>
+          <td mat-cell *matCellDef="let element" routerLink="/ostf/project/projectview/1"> {{element.municipality}} </td>
         </ng-container>
           
         <!-- Status Column -->
         <ng-container matColumnDef="status">
           <th mat-header-cell *matHeaderCellDef> Status </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"><span class="btn mc-badge btn-label-brand">{{element.status}}</span></td>
+          <td mat-cell *matCellDef="let element" routerLink="/ostf/project/projectview/1"><span class="btn mc-badge btn-label-brand">{{element.status}}</span></td>
         </ng-container>
         
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>  
-        <!-- routerLink="/ostf/" -->
+        <!-- routerLink="/ostf/project/projectview/1/" -->
       </table>
     </div>
     
 
 
   <div>
-    <!-- <mat-card>
-      <mat-card-title>
-        Applications
-      <mat-card-subtitle>Create and Manage Applications</mat-card-subtitle>
-      </mat-card-title>
-      <div class="search-table">
-        <mat-form-field appearance="standard">
-          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-        </mat-form-field>
-      <button mat-raised-button color="primary">+ Create Application</button>
-      </div>
-    </mat-card> -->
-    <table #table mat-table [dataSource]="dataSource" class="mc-table">
-    
-        <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
       
-        <!-- ID Column -->
-        <ng-container matColumnDef="projectId">
-          <th mat-header-cell *matHeaderCellDef> By Applicant </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf">
-            <div class="media align-items-center">
-              <img class="thumbnail-img mr-3" src="https://avatars.services.sap.com/images/biplab.nits.png" alt="Profile" />
-              <div class="media-body">
-                <h6 class="mt-0 mb-1">{{element.projectTitle}}</h6>
-                <p class="mb-0">{{element.projectId}}</p>
-              </div>
-            </div>
-            </td>
-        </ng-container>
-      
-        <!-- Program Column -->
-        <ng-container matColumnDef="applicant">
-          <th mat-header-cell *matHeaderCellDef> Project Name </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> <a href="#" class="mc-projectname">{{element.applicant}}</a> </td>
-        </ng-container>
-      
-        <!-- ProjectTitle Column -->
-        <ng-container matColumnDef="projectTitle">
-          <th mat-header-cell *matHeaderCellDef> Actions </th>
-          <td mat-cell *matCellDef="let element">
-            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <mat-icon>edit</mat-icon>
-                <span>Edit</span>
-              </button>
-              <button mat-menu-item disabled>
-                <mat-icon>visibility</mat-icon>
-                <span>View</span>
-              </button>
-              <button mat-menu-item>
-                <mat-icon>delete</mat-icon>
-                <span>Delete</span>
-              </button>
-            </mat-menu>
-             </td>
-            
-        </ng-container>
-      
-        <!-- FundingYear Column -->
-        <ng-container matColumnDef="fundingYear">
-          <th mat-header-cell *matHeaderCellDef> Created Date </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> {{element.fundingYear}} </td>
-        </ng-container>
-       
-        <!-- Applicant Column -->
-        <ng-container matColumnDef="program">
-          <th mat-header-cell *matHeaderCellDef> Fund </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> {{element.program}} </td>
-        </ng-container>
-    
-        <!-- Municipality Column -->
-        <ng-container matColumnDef="municipality">
-          <th mat-header-cell *matHeaderCellDef> Primary Contact </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"> {{element.municipality}} </td>
-        </ng-container>
-          
-        <!-- Status Column -->
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef> Status </th>
-          <td mat-cell *matCellDef="let element" routerLink="/ostf"><span class="btn mc-badge btn-label-brand">{{element.status}}</span></td>
-        </ng-container>
+
         
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>  
-        <!-- routerLink="/ostf/" -->
-      </table>
+        <!-- routerLink="/ostf/project/projectview/1/" -->
+     
     </div>
     

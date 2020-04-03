@@ -226,4 +226,20 @@ body,
 table {
     width: 100%;
 }
-
+// manmohan new
+.buttons{
+    display: none !important;
+}
+.upload-file{
+    width:30px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+  }
+  .mat-chk-group{
+      display: inherit !important;
+  }
+  .modal-backdrop { /* bug fix - no overlay */
+    display: none;
+}

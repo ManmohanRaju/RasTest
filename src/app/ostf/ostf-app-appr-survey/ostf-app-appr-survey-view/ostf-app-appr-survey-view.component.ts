@@ -10,6 +10,7 @@ export class OstfAppApprSurveyViewComponent implements OnInit {
   removable = true;
   selectable=true;
   myArr=[];
+  timeArr=["8 AM","9 AM"];
   constructor() { }
 
   ngOnInit(): void {}

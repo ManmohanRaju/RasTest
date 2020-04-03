@@ -6,13 +6,13 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
         <div class="form-group">
           <label>Recreation Type</label>
-          <select class="form-control">
-            <option selected>Select</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+          <mat-form-field appearance="outline">
+            <mat-select placeholder="Select" name="recreation">
+                <mat-option value="One">One</mat-option>
+                <mat-option value="Two">Two</mat-option>
+                <mat-option value="Three">Three</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
 
         <div class="yes-group">
@@ -46,7 +46,9 @@
               <mat-checkbox>No </mat-checkbox>
             </span>
             <span class="mb-1">
-              <input type="text" class="form-control" placeholder="Year?">
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Year?"/>
+              </mat-form-field>
             </span>
           </div>
         </div>
@@ -70,12 +72,16 @@
             Additional active relational facilities in your municipality, please provide the following
             Information. </p>
           <label>Conceptually speaking, what type of relational facilities are proposed for the site?</label>
-          <textarea rows="4" class="form-control"></textarea>
+             <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
         </div>
         <div class="form-group">
           <label>Explain what factors are contributing to the need for additional active relational facilities
             In your municipality </label>
-          <textarea rows="4" class="form-control"></textarea>
+             <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
         </div>
 
       </div>
@@ -96,13 +102,13 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
         <div class="form-group">
           <label>Application Type</label>
-          <select class="form-control">
-            <option selected>Select</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+          <mat-form-field appearance="outline">
+            <mat-select placeholder="Select" name="recreation">
+                <mat-option value="One">One</mat-option>
+                <mat-option value="Two">Two</mat-option>
+                <mat-option value="Three">Three</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
 
         <div class="form-group">
@@ -122,13 +128,17 @@
 
         <div class="form-group">
           <label>Has the value of the easement been determined</label>
-          <textarea rows="4" class="form-control"></textarea>
+             <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
         </div>
 
 
         <div class="form-group">
           <label>How and who will monitor owner’s compliance with the terms of the easement?</label>
-          <textarea rows="4" class="form-control"></textarea>
+             <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
         </div>
 
 
@@ -137,7 +147,9 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
         <div class="form-group">
           <label>Specify type of easement summarize deed restrictions placed on land </label>
-          <textarea rows="4" class="form-control"></textarea>
+             <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
         </div>
 
         <div class="form-group mat-chk-group">
@@ -155,12 +167,16 @@
 
         <div class="form-group">
           <label>Please explain below</label>
-          <textarea rows="4" class="form-control"></textarea>
+             <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
         </div>
 
         <div class="form-group">
           <label>What is planned for residual property?</label>
-          <textarea rows="4" class="form-control"></textarea>
+             <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
         </div>
 
       </div>

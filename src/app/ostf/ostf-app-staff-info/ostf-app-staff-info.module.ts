@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 
 import { OstfAppStaffInfoRoutingModule } from './ostf-app-staff-info-routing.module';
 import { OstfAppStaffInfoViewComponent } from './ostf-app-staff-info-view/ostf-app-staff-info-view.component';
+import { OstfAppStaffInfoEditComponent } from './ostf-app-staff-info-edit/ostf-app-staff-info-edit.component';
 
 
 
 @NgModule({
-  declarations: [OstfAppStaffInfoViewComponent],
+  declarations: [OstfAppStaffInfoViewComponent, OstfAppStaffInfoEditComponent],
   imports: [
     CommonModule,
     OstfAppStaffInfoRoutingModule,

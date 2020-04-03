@@ -109,12 +109,8 @@ export class ApplicationsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  applyFilter(filterValue) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-    console.log(this.dataSource.filter);
-    
+  doFilter(value: string)  {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
   
 

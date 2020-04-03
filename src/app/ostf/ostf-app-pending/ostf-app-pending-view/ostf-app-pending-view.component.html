@@ -1,0 +1,121 @@
+<div class="mc-mat-tab-content">
+    <form class="p-4">
+      <div class="table-box">
+        <!-- <div class="row">
+          <div class="form-inline">
+            <label>Documents to submit differ based on profile:</label>
+            <div class="form-group mat-chk-group ml-3">
+              <span class="mr-4 mb-1">
+                <mat-checkbox>Yes </mat-checkbox>
+              </span>
+              <span class="mb-1 mr-4">
+                <mat-checkbox>No </mat-checkbox>
+              </span>
+            </div>
+          </div>
+         </div> -->
+         <div class="row">
+           <div> 
+            <h6>Applicant</h6>
+            <p>Each file is an individual submission Mandatory fields marked in * as an indiactor for the use to upload files</p>
+           </div>
+         </div>
+         <div class="form-group mat-chk-group">
+         <span>
+           <label>Contract*</label>
+         </span>
+          <span>
+            <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+            <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
+          </span>
+          <span>
+            <mat-form-field class="example-chip-list">
+              <mat-chip-list #chipList aria-label="Fruit selection">
+                <mat-chip
+                  *ngFor="let file of currentInput;let i=index;"
+                  [selectable]="selectable"
+                  [removable]="removable"
+                  (removed)="remove(i)">
+                  <mat-icon>upload</mat-icon>{{file.name}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                </mat-chip-list>
+                </mat-form-field>
+          </span>
+        </div>  
+        <div class="form-group mat-chk-group">
+          <span>
+            <label>Digital Survey*</label>
+          </span>
+           <span>
+             <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+             <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
+           </span>
+           <span>
+             <mat-form-field class="example-chip-list">
+               <mat-chip-list #chipList aria-label="Fruit selection">
+                 <mat-chip
+                   *ngFor="let file of currentInput;let i=index;"
+                   [selectable]="selectable"
+                   [removable]="removable"
+                   (removed)="remove(i)">
+                   <mat-icon>upload</mat-icon>{{file.name}}
+                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                 </mat-chip>
+                 </mat-chip-list>
+                 </mat-form-field>
+           </span>
+         </div>  
+         <div class="form-group mat-chk-group">
+          <span>
+            <label>Deeds*</label>
+          </span>
+           <span>
+             <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+             <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
+           </span>
+           <span>
+             <mat-form-field class="example-chip-list">
+               <mat-chip-list #chipList aria-label="Fruit selection">
+                 <mat-chip
+                   *ngFor="let file of currentInput;let i=index;"
+                   [selectable]="selectable"
+                   [removable]="removable"
+                   (removed)="remove(i)">
+                   <mat-icon>upload</mat-icon>{{file.name}}
+                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                 </mat-chip>
+                 </mat-chip-list>
+                 </mat-form-field>
+           </span>
+         </div>
+         <div class="form-group mat-chk-group">
+          <span>
+            <label>Ordinance*</label>
+          </span>
+           <span>
+             <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+             <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
+           </span>
+           <span>
+             <mat-form-field class="example-chip-list">
+               <mat-chip-list #chipList aria-label="Fruit selection">
+                 <mat-chip
+                   *ngFor="let file of currentInput;let i=index;"
+                   [selectable]="selectable"
+                   [removable]="removable"
+                   (removed)="remove(i)">
+                   <mat-icon>upload</mat-icon>{{file.name}}
+                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                 </mat-chip>
+                 </mat-chip-list>
+                 </mat-form-field>
+           </span>
+         </div>
+        </div>
+        <div class="step-footer d-flex justify-content-end px-4">
+          <button mat-flat-button class="mat-light mr-2">Back</button>
+          <button mat-flat-button color="accent" class="mr-2">Save Changes</button>
+        </div>
+      </form>
+      </div>
