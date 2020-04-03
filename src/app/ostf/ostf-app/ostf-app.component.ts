@@ -34,7 +34,7 @@ export class OstfAppComponent implements OnInit {
       },
       {
         label: 'Site Characteristics',
-        link: './role/roleedit/1',
+        link: 'sitecharacteristics/view/1',
         index: 4
       },
       {

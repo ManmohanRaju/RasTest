@@ -31,7 +31,7 @@ const ostfRoutes: Routes = [
         path: 'otherDocs', loadChildren: () => import('./ostf-app-other-docs/ostf-app-other-docs.module').then(m => m.OstfAppOtherDocsModule)
       },
       {
-        path: 'checklist', loadChildren: () => import('./ostf-app-doc-checklist/ostf-app-doc-checklist.module').then(m => m.OstfAppDocChecklistModule)
+        path: 'checklist', loadChildren: () => import('./ostf-app-admin-doc-checklist/ostf-app-admin-doc-checklist.module').then(m => m.OstfAppAdminDocChecklistModule)
       },
       {
         path: 'staffInfo', loadChildren: () => import('./ostf-app-staff-info/ostf-app-staff-info.module').then(m => m.OstfAppStaffInfoModule)
@@ -50,6 +50,9 @@ const ostfRoutes: Routes = [
       },
       {
         path: 'programManager', loadChildren: () => import('./ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)
+      },
+      {
+        path: 'sitecharacteristics', loadChildren: () => import('./ostf-app-site-characteristics/ostf-app-site-characteristics.module').then(m => m.OstfAppSiteCharacteristicsModule)
       }
     ]
   },

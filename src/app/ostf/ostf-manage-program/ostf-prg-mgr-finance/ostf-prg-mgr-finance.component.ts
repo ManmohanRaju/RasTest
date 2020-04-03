@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from './_modal';
 
 export interface RevenueExpenses {
   year: number;
@@ -34,11 +35,34 @@ export class OstfPrgMgrFinanceComponent implements OnInit {
   public RevenueTotal: number = 0;
   public ExpenseTotal: number = 0;
   public Balance: number = 0;
-  constructor() { }
+  public bodyText: string;
+  public revenueExpenses: RevenueExpenses = this.dataSource[0];
+
+  constructor(private modalService: ModalService) { }
 
   ngOnInit(): void {
   }
 
+  //model dailog close and open methods
+  openModal(id: string, revenueObj: RevenueExpenses) {
+    this.modalService.open(id);
+    this.dataSource.filter(x => {
+      if (x.year === revenueObj.year) {
+        this.revenueExpenses = revenueObj;
+      }
+    })
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
+  }
+
+  // save the finance record
+  saveFinance() {
+
+  }
+
+  // calculating revenue total and expenses total
   isCalculateTotal(object: RevenueExpenses) {
     object.total = object.annualTaxLevy + object.cashReceipts + object.reimbursements + object.interest +
       object.other;
@@ -50,6 +74,7 @@ export class OstfPrgMgrFinanceComponent implements OnInit {
     return object.total2;
   }
 
+  // calculating column totals
   getAnnualTaxLevy() {
     return this.dataSource.map(t => t.annualTaxLevy).reduce((acc, value) => acc + value, 0);
   }
@@ -89,7 +114,7 @@ export class OstfPrgMgrFinanceComponent implements OnInit {
 
   getTotal2() {
     this.ExpenseTotal = this.dataSource.map(t => t.total2).reduce((acc, value) => acc + value, 0);
-    this.Balance = this.RevenueTotal-this.ExpenseTotal;
+    this.Balance = this.RevenueTotal - this.ExpenseTotal;
     return this.ExpenseTotal;
   }
 

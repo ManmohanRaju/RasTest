@@ -8,7 +8,8 @@ import { OstfPrgMgrUsersComponent } from './ostf-prg-mgr-users/ostf-prg-mgr-user
 import { OstfPrgMgrEmailTemplatesComponent } from './ostf-prg-mgr-email-templates/ostf-prg-mgr-email-templates.component';
 import { OstfPrgMgrParcelsComponent } from './ostf-prg-mgr-parcels/ostf-prg-mgr-parcels.component';
 import { OstfManageProgramRoutingModule } from './ostf-prg-mgr-routing.module';
-
+import { ModalModule } from './ostf-prg-mgr-finance/_modal';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [OstfPrgMgrDashboardComponent, OstfPrgMgrFinanceComponent, 
@@ -17,7 +18,9 @@ import { OstfManageProgramRoutingModule } from './ostf-prg-mgr-routing.module';
   imports: [
     CommonModule,
     CustomMaterialModule,
-    OstfManageProgramRoutingModule
+    OstfManageProgramRoutingModule,
+    ModalModule,
+    FormsModule
   ]
 })
 export class OstfManageProgramModule { }

@@ -1,0 +1,398 @@
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Project</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- Document Checklist table -->
+        <table mat-table [dataSource]="dataSourceProject" class="mat-elevation-z8">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Document Checklist Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon *ngIf="element.show">description</mat-icon> {{element.name}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="icon">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="openModal('custom-modal-1', element, dataSourceProject)">
+                        <mat-icon *ngIf="element.editshow">edit</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="showcommittee">
+                <th mat-header-cell *matHeaderCellDef> Show Committee </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox *ngIf="element.checkshow" class="example-margin" [checked]="element.showcommittee">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="hardcopy">
+                <th mat-header-cell *matHeaderCellDef> Hard Copy </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.hardcopy">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="approved">
+                <th mat-header-cell *matHeaderCellDef> Approved </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.approved">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef> Comments </th>
+                <td mat-cell *matCellDef="let element">
+                    <textarea matInput placeholder="Comments" *ngIf="element.checkshow"></textarea>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- routerLink="/ostf/" -->
+        </table>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>Overview</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- Overview table -->
+        <table mat-table [dataSource]="dataSourceOverview" class="mat-elevation-z8">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Document Checklist Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon *ngIf="element.show">description</mat-icon> {{element.name}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="icon">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="openModal('custom-modal-1', element, dataSourceOverview)">
+                        <mat-icon *ngIf="element.editshow">edit</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="showcommittee">
+                <th mat-header-cell *matHeaderCellDef> Show Committee </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox *ngIf="element.checkshow" class="example-margin" [checked]="element.showcommittee">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="hardcopy">
+                <th mat-header-cell *matHeaderCellDef> Hard Copy </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.hardcopy">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="approved">
+                <th mat-header-cell *matHeaderCellDef> Approved </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.approved">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef> Comments </th>
+                <td mat-cell *matCellDef="let element">
+                    <textarea matInput placeholder="Comments" *ngIf="element.checkshow"></textarea>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- routerLink="/ostf/" -->
+        </table>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title> Location </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- Location table -->
+        <table mat-table [dataSource]="dataSourceLocation" class="mat-elevation-z8">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Document Checklist Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon *ngIf="element.show">description</mat-icon> {{element.name}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="icon">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="openModal('custom-modal-1', element, dataSourceLocation)">
+                        <mat-icon *ngIf="element.editshow">edit</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="showcommittee">
+                <th mat-header-cell *matHeaderCellDef> Show Committee </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox *ngIf="element.checkshow" class="example-margin" [checked]="element.showcommittee">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="hardcopy">
+                <th mat-header-cell *matHeaderCellDef> Hard Copy </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.hardcopy">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="approved">
+                <th mat-header-cell *matHeaderCellDef> Approved </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.approved">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef> Comments </th>
+                <td mat-cell *matCellDef="let element">
+                    <textarea matInput placeholder="Comments" *ngIf="element.checkshow"></textarea>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- routerLink="/ostf/" -->
+        </table>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title> Site Characteristics </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- Site Characteristics table -->
+        <table mat-table [dataSource]="dataSourceSite" class="mat-elevation-z8">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Document Checklist Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon *ngIf="element.show">description</mat-icon> {{element.name}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="icon">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="openModal('custom-modal-1', element, dataSourceSite)">
+                        <mat-icon *ngIf="element.editshow">edit</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="showcommittee">
+                <th mat-header-cell *matHeaderCellDef> Show Committee </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox *ngIf="element.checkshow" class="example-margin" [checked]="element.showcommittee">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="hardcopy">
+                <th mat-header-cell *matHeaderCellDef> Hard Copy </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.hardcopy">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="approved">
+                <th mat-header-cell *matHeaderCellDef> Approved </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.approved">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef> Comments </th>
+                <td mat-cell *matCellDef="let element">
+                    <textarea matInput placeholder="Comments" *ngIf="element.checkshow"></textarea>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- routerLink="/ostf/" -->
+        </table>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title> Finance </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- Finance table -->
+        <table mat-table [dataSource]="dataSourceFinance" class="mat-elevation-z8">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Document Checklist Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon *ngIf="element.show">description</mat-icon> {{element.name}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="icon">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="openModal('custom-modal-1', element, dataSourceFinance)">
+                        <mat-icon *ngIf="element.editshow">edit</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="showcommittee">
+                <th mat-header-cell *matHeaderCellDef> Show Committee </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox *ngIf="element.checkshow" class="example-margin" [checked]="element.showcommittee">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="hardcopy">
+                <th mat-header-cell *matHeaderCellDef> Hard Copy </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.hardcopy">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="approved">
+                <th mat-header-cell *matHeaderCellDef> Approved </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.approved">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef> Comments </th>
+                <td mat-cell *matCellDef="let element">
+                    <textarea matInput placeholder="Comments" *ngIf="element.checkshow"></textarea>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- routerLink="/ostf/" -->
+        </table>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title> Planning Management </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- Planning Management table -->
+        <table mat-table [dataSource]="dataSourcePlanning" class="mat-elevation-z8">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Document Checklist Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon *ngIf="element.show">description</mat-icon> {{element.name}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="icon">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="openModal('custom-modal-1', element, dataSourcePlanning)">
+                        <mat-icon *ngIf="element.editshow">edit</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="showcommittee">
+                <th mat-header-cell *matHeaderCellDef> Show Committee </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox *ngIf="element.checkshow" class="example-margin" [checked]="element.showcommittee">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="hardcopy">
+                <th mat-header-cell *matHeaderCellDef> Hard Copy </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.hardcopy">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="approved">
+                <th mat-header-cell *matHeaderCellDef> Approved </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-slide-toggle *ngIf="element.slideshow" class="example-margin" [checked]="element.approved">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef> Comments </th>
+                <td mat-cell *matCellDef="let element">
+                    <textarea matInput placeholder="Comments" *ngIf="element.checkshow"></textarea>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- routerLink="/ostf/" -->
+        </table>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<jw-modal id="custom-modal-1">
+    
+    <br />
+    <button (click)="closeModal('custom-modal-1');">Close</button>
+    <button (click)="saveDocument();">Save</button>
+</jw-modal>
