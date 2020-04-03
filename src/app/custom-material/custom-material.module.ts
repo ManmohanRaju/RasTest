@@ -23,6 +23,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,MatDialogModule} from '@angular/material/dialog';
+
 
 
 const matModules = [
@@ -34,7 +36,8 @@ const matModules = [
   MatTabsModule,
   MatInputModule, MatFormFieldModule, MatGridListModule,
   MatCardModule, MatCheckboxModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule,
-  MatChipsModule, MatExpansionModule, MatSlideToggleModule
+  MatChipsModule, MatExpansionModule, MatSlideToggleModule,
+  MatDialogModule,
 ]
 
 @NgModule({

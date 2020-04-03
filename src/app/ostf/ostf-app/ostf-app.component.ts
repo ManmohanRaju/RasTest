@@ -29,7 +29,7 @@ export class OstfAppComponent implements OnInit {
       },
       {
         label: 'Location',
-        link: './role/roleedit/1',
+        link: 'location/view/1',
         index: 3
       },
       {
@@ -63,35 +63,46 @@ export class OstfAppComponent implements OnInit {
         index: 9
       },
       {
-        label: 'Staff Info',
-        link: 'staffInfo/view/1',
-        index: 10
-      },
-      {
-        label: 'Apprisal Survey',
-        link: 'survey/view/1',
-        index: 10
-      },
-      {
-        label: 'Admin Pending',
+        label: 'Pending',
         link: 'pending/view/1',
         index: 10
       },
       {
-        label: 'Admin Closing',
-        link: 'closing/view/1',
-        index: 10
+        label: 'Closing',
+        link: 'preserved/view/1',
+        index: 11
       },
       {
         label: 'Document CheckList',
         link: 'checklist/view/1',
-        index: 9
+        index: 12
       },
       {
-        label: 'Muncipal Finance',
-        link: 'finance/view/1',
-        index: 11
-      }
+        label: 'Staff Info',
+        link: 'staffInfo/view/1',
+        index: 13
+      },
+      {
+        label: 'Apprisal Survey',
+        link: 'survey/view/1',
+        index: 14
+      },
+      {
+        label: 'Admin Pending',
+        link: 'adminpending/view/1',
+        index: 15
+      },
+      {
+        label: 'Admin Closing',
+        link: 'adminclosing/view/1',
+        index: 16
+      },
+    
+      // {
+      //   label: 'Muncipal Finance',
+      //   link: 'finance/view/1',
+      //   index: 11
+      // }
     ];
   }
 

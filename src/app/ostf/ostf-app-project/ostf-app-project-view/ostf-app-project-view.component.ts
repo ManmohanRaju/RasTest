@@ -9,9 +9,22 @@ import { FileHandle } from '../dragDrop.directive';
 export class OstfAppProjectViewComponent implements OnInit {
   name = 'Angular 5';
   files: FileHandle[] = [];
+  currentInput:any=[];
+  removable = true;
+  selectable=true;
+  currentInput1:any=[];
+  onFileSelected(event) {
+    console.log(event.target.files);
+    this.currentInput = event.target.files; 
+    // this.Arr.push(this.currentInput);
+  }
+  onFileSelected1(event) {
+    console.log(event.target.files);
+    this.currentInput1 = event.target.files; 
+    // this.Arr.push(this.currentInput);
+  }
+  remove(i){
 
-  filesDropped(files: FileHandle[]): void {
-    this.files = files;
   }
   ngOnInit(): void {
   }

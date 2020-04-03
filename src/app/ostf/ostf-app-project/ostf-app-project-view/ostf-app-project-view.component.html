@@ -1,28 +1,34 @@
 <div class="mc-mat-tab-content p-3">
   <form>
-
     <div class="form-center-container">
       <div class="form-group">
         <label>Project Title</label>
-        <input type="text" class="form-control">
+        <!-- <input type="text" class="form-control"> -->
+        <!-- <mat-label>Project Title </mat-label> -->
+        <mat-form-field appearance="outline">
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label>Agency Name</label>
+        <mat-form-field appearance="outline">
+          <input matInput />
+        </mat-form-field>
       </div>
       <div class="form-group mat-chk-group">
         <span class="mr-5 mb-2">
-          <mat-checkbox>Municipality </mat-checkbox>
+          <mat-checkbox [checked]>Municipality </mat-checkbox>
         </span>
         <span class="mr-3 mb-2">
           <mat-checkbox>Charitable Trust </mat-checkbox>
         </span>
       </div>
       <div class="form-group">
-        <label>Agency Name</label>
-        <input type="text" class="form-control">
+        <label>Site Address </label>
+        <mat-form-field appearance="outline">
+          <textarea matInput></textarea>
+        </mat-form-field>
       </div>
-      <div class="form-group">
-        <label>Address </label>
-        <textarea rows="4" class="form-control"></textarea>
-      </div>
-
       <div class="yes-group">
         <p class="text-muted">
           Is the site designated for compliance with a Mount Laurel court settlement or
@@ -46,11 +52,6 @@
 
     <hr class="my-5">
 
-
-
-
-
-
     <div class="form-center-container">
 
       <div class="yes-group">
@@ -72,14 +73,65 @@
 
       <div class="form-group">
         <label>If yes, which town’s and how? </label>
-        <textarea rows="4" class="form-control" placeholder="Please Enter Here"></textarea>
+        <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
+        <!-- <textarea rows="4" class="form-control" placeholder="Please Enter Here"></textarea> -->
       </div>
 
       <div class="form-group">
         <label>If acquired, how will the lands be managed? </label>
-        <textarea rows="4" class="form-control" placeholder="Please Enter Here"></textarea>
+        <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
       </div>
-
+      <h6>Please upload the copy of the following: </h6>
+      <div class="form-group mat-chk-group">
+        <span class="mr-4 mb-1">
+          <mat-checkbox color="primary"> The organiations by-Laws </mat-checkbox>
+        </span>
+        <span>
+          <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+          <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
+        </span>
+        <span>
+          <mat-form-field class="example-chip-list">
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip
+                *ngFor="let file of currentInput;let i=index;"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="remove(i)">
+                <mat-icon>upload</mat-icon>{{file.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              </mat-chip-list>
+              </mat-form-field>
+        </span>
+      </div>
+      <div class="form-group mat-chk-group">
+        <span class="mr-4 mb-1">
+          <mat-checkbox color="primary"> The organiations certifications of incorporation </mat-checkbox>
+        </span>
+        <span>
+          <label for="fileUpload1"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+          <input hidden type="file" id="fileUpload1" name="fileUpload" multiple="multiple" (change)="onFileSelected1($event)"/>Upload</label>
+        </span>
+        <span>
+          <mat-form-field class="example-chip-list">
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip
+                *ngFor="let file of currentInput1;let i=index;"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="remove(i)">
+                <mat-icon>upload</mat-icon>{{file.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              </mat-chip-list>
+              </mat-form-field>
+        </span>
+      </div>
       <div class="py-2 mb-3">
         <div><strong> Current proof of qualification as a charitable conservancy* </strong> </div>
         <small class="text-muted">
@@ -92,31 +144,30 @@
 
       <div class="form-group">
         <label>How will the charitable conservancy maintain the property? (Please explain) </label>
-        <textarea rows="4" class="form-control" placeholder="Please Enter Here"></textarea>
+        <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
       </div>
       <div class="form-group">
         <label>What would happen to land’s if the conservancy no longer existed? (Please explain) </label>
-        <textarea rows="4" class="form-control" placeholder="Please Enter Here"></textarea>
+        <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
       </div>
       <div class="form-group">
         <label>What land’s do you currently own? </label>
-        <textarea rows="4" class="form-control" placeholder="Please Enter Here"></textarea>
+        <mat-form-field appearance="outline">
+          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
+        </mat-form-field>
       </div>
 
     </div>
 
   </form>
 
-
-
-
-
-
-
-
   <div class="step-footer d-flex justify-content-end">
     <button mat-flat-button color="accent" class="mr-2">Save Changes</button>
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary" routerLink="/ostf/role/roleview/1">
       Next <i class="la la-arrow-right ml-1"></i>
     </button>
   </div>

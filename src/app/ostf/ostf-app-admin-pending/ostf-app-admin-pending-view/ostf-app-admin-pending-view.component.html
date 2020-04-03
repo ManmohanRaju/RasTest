@@ -1,4 +1,149 @@
-<mat-card>
+<!-- new code -->
+<div class="mc-mat-tab-content p-3">
+  <form>
+      <div class="row">
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <p class="text-muted">
+            Grant Agreement
+          </p>
+          <div class="choose-file">
+            <button mat-flat-button color="primary">Choose File</button>
+            <input multiple hidden (change)="onFileSelected($event.target.value)" #fileInput type="file" id="file">
+          </div>
+        </div>       
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+          <label>Grant Mailed</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+          <label>Freeholder Meeting Date</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+          <label>CAF#</label>
+          <mat-form-field appearance="outline">
+            <input matInput />
+          </mat-form-field>
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+          <label>MUA/PC Resoluation</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+          <label>MUA/PC Resoluation Date</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker3">
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+          <label>Wire Transfer Date</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker4">
+            <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+            <mat-datepicker #picker4></mat-datepicker>
+          </mat-form-field>
+        </div>
+        
+      </div>
+    <hr class="my-5">
+<h6>Grant Expiration Info</h6>
+<div class="row">
+  <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+    <label>Grant Expiration Date</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker5">
+      <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+      <mat-datepicker #picker5></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+    <label>Grant Extension Expiration Date</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker6">
+      <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+      <mat-datepicker #picker6></mat-datepicker>
+    </mat-form-field>
+  </div>
+  
+  <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+    <label> 2ndGrant Extension Expiration Date</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker7">
+      <mat-datepicker-toggle matSuffix [for]="picker7"></mat-datepicker-toggle>
+      <mat-datepicker #picker7></mat-datepicker>
+    </mat-form-field>
+  </div>
+  
+  
+</div>
+<div class="row">
+  <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+    <p class="text-muted">
+      Upload a copy of the application.
+    </p>
+    <div class="choose-file">
+      <button mat-flat-button color="primary">Choose File</button>
+      <input multiple hidden (change)="onFileSelected($event.target.value)" #fileInput type="file" id="file">
+    </div>
+  </div>
+  <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+    <p class="text-muted">
+      Upload a copy of the application.
+    </p>
+    <div class="choose-file">
+      <button mat-flat-button color="primary">Choose File</button>
+      <input multiple hidden (change)="onFileSelected($event.target.value)" #fileInput type="file" id="file">
+    </div>
+    <button  class="btn btn-success send-mail mt-2">Send Email</button>
+  </div>
+  <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+    <p class="text-muted">
+      Upload a copy of the application.
+    </p>
+    <div class="choose-file">
+      <button mat-flat-button color="primary">Choose File</button>
+      <input multiple hidden (change)="onFileSelected($event.target.value)" #fileInput type="file" id="file">
+    </div>
+    <button  class="btn btn-success send-mail mt-2">Send Email</button>
+  </div>
+  
+</div>
+    
+        
+        <div class="step-footer d-flex justify-content-end px-4">
+          <button mat-flat-button class="mat-light mr-2">Back</button>
+          <button mat-flat-button color="accent" class="mr-2">Save Changes</button>
+        </div>
+    </form>
+    </div>
+<!-- new code -->
+
+<!-- old code -->
+<!-- <mat-card>
     <mat-card-content>
         <form>
             <table>
@@ -271,4 +416,4 @@
               </mat-card-actions>
         </form>
     </mat-card-content>
-</mat-card>
+</mat-card> -->
