@@ -5,6 +5,7 @@ import { OstfAppSiteCharacteristicsViewComponent } from './ostf-app-site-charact
 import { OstfAppSiteCharacteristicsEditComponent } from './ostf-app-site-characteristics-edit/ostf-app-site-characteristics-edit.component';
 import { OstfAppSiteCharacteristicsRoutingModule } from './ostf-app-site-characteristics-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from './_modal';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     OstfAppSiteCharacteristicsRoutingModule,
     FormsModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    ModalModule
   ]
 })
 export class OstfAppSiteCharacteristicsModule { }
