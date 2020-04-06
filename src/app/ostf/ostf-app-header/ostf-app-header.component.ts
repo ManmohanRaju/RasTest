@@ -15,6 +15,7 @@ export class OstfAppHeaderComponent implements OnInit {
   mode: ProgressBarMode = 'determinate';
   value = 50;
   bufferValue = 75;
+  // @ViewChild()
   constructor() { 
     this.navLinks = [
       {

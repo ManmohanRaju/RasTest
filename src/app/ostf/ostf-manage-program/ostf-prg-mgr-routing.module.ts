@@ -1,4 +1,4 @@
-import { OstfPrgMgrDashboardComponent } from './ostf-prg-mgr-dashboard/ostf-prg-mgr-dashboard.component';
+import { OstfPrgMgrDashboardComponent } from './Dashboard/ostf-prg-mgr-dashboard/ostf-prg-mgr-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OstfPrgMgrFinanceComponent } from './ostf-prg-mgr-finance/ostf-prg-mgr-finance.component';

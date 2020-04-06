@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomMaterialModule } from './../../custom-material/custom-material.module';
-import { OstfPrgMgrDashboardComponent } from './ostf-prg-mgr-dashboard/ostf-prg-mgr-dashboard.component';
+import { OstfPrgMgrDashboardComponent } from './Dashboard/ostf-prg-mgr-dashboard/ostf-prg-mgr-dashboard.component';
 import { OstfPrgMgrFinanceComponent } from './ostf-prg-mgr-finance/ostf-prg-mgr-finance.component';
 import { OstfPrgMgrScheduleComponent } from './ostf-prg-mgr-schedule/ostf-prg-mgr-schedule.component';
 import { OstfPrgMgrUsersComponent } from './ostf-prg-mgr-users/ostf-prg-mgr-users.component';

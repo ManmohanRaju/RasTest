@@ -29,7 +29,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'programManager',
-    loadChildren: () => import('./ostf/ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)
+    loadChildren: () => import('./ostf-manage-prg/ostf-manage-prg.module').then(m => m.OstfManagePrgModule)
   },
   {
     path: 'page-not-found',
