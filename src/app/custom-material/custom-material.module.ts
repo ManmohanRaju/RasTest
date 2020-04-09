@@ -24,7 +24,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,MatDialogModule} from '@angular/material/dialog';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 const matModules = [
@@ -37,7 +37,7 @@ const matModules = [
   MatInputModule, MatFormFieldModule, MatGridListModule,
   MatCardModule, MatCheckboxModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule,
   MatChipsModule, MatExpansionModule, MatSlideToggleModule,
-  MatDialogModule,
+  MatDialogModule, MatPaginatorModule
 ]
 
 @NgModule({

@@ -51,7 +51,8 @@
                     </p>
                 </div>
                 <div style="float: right;">
-                    <button class="btn btn-primary" (click)="openModal('custom-modal-1', 'add', null)">Add</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Add</button>
                 </div>
             </div>
             <!-- Document Checklist table -->
@@ -120,10 +121,9 @@
                             <mat-icon>more_vert</mat-icon>
                         </button>
                         <mat-menu #menu="matMenu">
-                            <button mat-menu-item type="button">
-                                <a (click)="openModal('custom-modal-1', 'edit', i)">
-                                    <mat-icon>edit</mat-icon>
-                                </a>
+                            <button mat-menu-item data-toggle="modal" data-target="#exampleModalCenter"
+                                (click)="edit(i)">
+                                <mat-icon>edit</mat-icon>
                             </button>
                             <button mat-menu-item (click)="remove(i)">
                                 <mat-icon>delete</mat-icon>
@@ -139,14 +139,14 @@
         </div>
     </form>
 
-    <jw-modal id="custom-modal-1">
-
+    <!-- modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        (click)="closeModal('custom-modal-1');">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -196,8 +196,7 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary"
-                                (click)="closeModal('custom-modal-1');">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary" *ngIf="add==true"
                                 (click)="addStructure()">Add</button>
                             <button type="button" class="btn btn-primary" *ngIf="edit_id==true"
@@ -209,7 +208,8 @@
             </div>
 
         </div>
-    </jw-modal>
+    </div>
+    <!-- modal -->
 
     <form class="p-4">
 

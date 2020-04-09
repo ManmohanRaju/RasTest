@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import sampleData from './../documentChecklist_JSON.json';
-import { ModalService } from '../../ostf-app-admin-doc-checklist/_modal';
 
 export interface DocumentChecklist {
   docId: number;
@@ -46,7 +45,7 @@ export class OstfAppAdminDocChecklistViewComponent implements OnInit {
   public sections: any[];
   public docChecklist: DocumentChecklist;
 
-  constructor(private modalService: ModalService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.sections = sampleData.sections;
@@ -174,19 +173,6 @@ export class OstfAppAdminDocChecklistViewComponent implements OnInit {
     return element.showcommittee;
   }
 
-  //model dailog close and open methods for Project
-  openModal(id: string, revenueObj: DocumentChecklist, dataSource: DocumentChecklist[]) {
-    this.modalService.open(id);
-    dataSource.filter(x => {
-      if (x.docId === revenueObj.docId) {
-        this.docChecklist = revenueObj;
-      }
-    })
-  }
-
-  closeModal(id: string) {
-    this.modalService.close(id);
-  }
   
   // save document name in popup
   saveDocument(){

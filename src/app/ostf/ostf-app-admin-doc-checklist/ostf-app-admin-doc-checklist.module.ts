@@ -1,7 +1,6 @@
 import { CustomMaterialModule } from '../../custom-material/custom-material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ModalModule } from './_modal';
 import { FormsModule } from '@angular/forms';
 
 import { OstfAppAdminDocChecklistViewComponent } from './ostf-app-admin-doc-checklist-view/ostf-app-admin-doc-checklist-view.component';
@@ -14,7 +13,6 @@ import { OstfAppAdminDocChecklistEditComponent } from './ostf-app-admin-doc-chec
     CommonModule,
     OstfAppAdminDocChecklistRoutingModule,
     CustomMaterialModule,
-    ModalModule,
     FormsModule
   ]
 })

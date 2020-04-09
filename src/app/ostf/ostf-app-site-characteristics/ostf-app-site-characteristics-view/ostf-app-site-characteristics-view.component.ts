@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from './../_modal';
 import { MatTableDataSource } from '@angular/material/table';
 
 export interface ListOfStructuresModel {
@@ -33,7 +32,7 @@ export class OstfAppSiteCharacteristicsViewComponent implements OnInit {
   public structureArr: ListOfStructuresModel[] = [];
   public index: number;
 
-  constructor(private modalService: ModalService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.objectInitialize();
@@ -60,23 +59,11 @@ export class OstfAppSiteCharacteristicsViewComponent implements OnInit {
   }
 
   //model dailog close and open methods for Project
-  openModal(id: string, flag: string, index: number) {
-    if (flag === "edit") {
+  edit(index: number) {
       this.add = false;
       this.edit_id = true;
       this.index = index;
       this.listOfStructuresModel = Object.assign({}, this.structureArr[index]);
-    }
-    else if (flag === "add") {
-      this.objectInitialize();
-      this.add = true;
-      this.edit_id = false;
-    }
-    this.modalService.open(id);
-  }
-
-  closeModal(id: string) {
-    this.modalService.close(id);
   }
 
   addStructure() {
