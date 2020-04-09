@@ -1,0 +1,28 @@
+<div>
+    <!-- breadcrumb -->
+<a class="back-link" (click)="backClicked()"><span><</span> Back</a>
+
+    <nav aria-label="breadcrumb" class="row">
+        <ol class="breadcrumb m-0 bg-transparent">
+          <li class="breadcrumb-item"><a routerLink="/programManager">Program Manager</a></li>
+          <li class="breadcrumb-item active"> {{page}}</li>
+        </ol>
+      </nav>
+<a><h4>{{page}}</h4></a>
+<div class="" *ngIf="page=='sample'">
+  <div class="searchbox d-inline-block mr-2">
+      <input (keyup)="doFilter($event.target.value)" class="form-control py-2" type="search" placeholder="Search">
+      <i class="flaticon2-search-1"></i>
+  </div>
+
+  <button mat-raised-button color="primary" routerLink="/ostf/project/projectview/1">
+      <i class="flaticon2-add-1 mr-1"></i> Create Application
+  </button>
+ 
+</div>
+<!-- pagetitle -->
+
+</div>
+
+
+

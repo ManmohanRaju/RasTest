@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface RevenueExpenses {
   year: number;
@@ -29,7 +29,8 @@ const ELEMENT_DATA: RevenueExpenses[] = [
   styleUrls: ['./ostf-manage-prg-finance.component.scss']
 })
 export class OstfManagePrgFinanceComponent implements OnInit {
-
+  
+  public page = "Municipal Finance";
   public displayedColumns: string[] = ['year', 'annualTaxLevy', 'reimbursements', 'cashReceipts', 'interest', 'other', 'total',
     'disbursements', 'debtPayments', 'other2', 'total2', 'edit'];
   public dataSource = ELEMENT_DATA;

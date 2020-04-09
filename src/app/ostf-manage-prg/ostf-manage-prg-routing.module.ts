@@ -1,3 +1,5 @@
+import { OstfManagePrgEmailTemplatesComponent } from './Templates/ostf-manage-prg-email-templates/ostf-manage-prg-email-templates.component';
+
 import { OstfManagePrgFinanceComponent } from './Finance/ostf-manage-prg-finance/ostf-manage-prg-finance.component';
 import { OstfManagePrgDashboardComponent } from './Dashboard/ostf-manage-prg-dashboard/ostf-manage-prg-dashboard.component';
 import { NgModule } from '@angular/core';
@@ -9,11 +11,17 @@ import { OstfManagePrgParcelsComponent } from './Finance/ostf-manage-prg-parcels
 const routes: Routes = [
   {
     path: '',
-    component: OstfManagePrgDashboardComponent
+    component: OstfManagePrgDashboardComponent,
+    data: {
+      breadcrumb: 'Program Manager'
+    }
   },
   {
     path: 'finance',
-    component: OstfManagePrgFinanceComponent
+    component: OstfManagePrgFinanceComponent,
+    data: {
+      breadcrumb: 'finance'
+    }
   },
   {
     path: 'scheduling',
@@ -22,6 +30,13 @@ const routes: Routes = [
   {
     path: 'parcels',
     component: OstfManagePrgParcelsComponent
+  },
+  {
+    path: 'emailTemplates',
+    component: OstfManagePrgEmailTemplatesComponent,
+    data: {
+      breadcrumb: 'template'
+    }
   }
 ];
 
