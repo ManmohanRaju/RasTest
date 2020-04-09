@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 import { AppComponent } from './app.component';
 import { PresTrustCoreModule } from './pres-trust-core/pres-trust-core.module';
@@ -26,7 +27,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CustomMaterialModule,
     SharedModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

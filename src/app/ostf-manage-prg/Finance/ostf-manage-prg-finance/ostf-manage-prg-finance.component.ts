@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ostf-manage-prg-finance.component.scss']
 })
 export class OstfManagePrgFinanceComponent implements OnInit {
-
+page="Municipal Finance";
   constructor() { }
 
   ngOnInit(): void {
