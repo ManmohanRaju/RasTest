@@ -178,4 +178,10 @@ export class OstfAppAdminDocChecklistViewComponent implements OnInit {
   saveDocument(){
 
   }
+  openModal(e,e1,e2){
+
+  }
+  closeModal(e){
+
+  }
 }
