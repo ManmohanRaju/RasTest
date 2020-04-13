@@ -1,121 +1,85 @@
 <div class="mc-mat-tab-content">
-    <form class="p-4">
-      <div class="table-box">
-        <!-- <div class="row">
-          <div class="form-inline">
-            <label>Documents to submit differ based on profile:</label>
-            <div class="form-group mat-chk-group ml-3">
-              <span class="mr-4 mb-1">
-                <mat-checkbox>Yes </mat-checkbox>
-              </span>
-              <span class="mb-1 mr-4">
-                <mat-checkbox>No </mat-checkbox>
-              </span>
-            </div>
-          </div>
-         </div> -->
-         <div class="row">
-           <div> 
-            <h6>Applicant</h6>
-            <p>Each file is an individual submission Mandatory fields marked in * as an indiactor for the use to upload files</p>
-           </div>
-         </div>
-         <div class="form-group mat-chk-group">
-         <span>
-           <label>Contract*</label>
-         </span>
-          <span>
-            <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-            <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-          </span>
-          <span>
-            <mat-form-field class="example-chip-list">
-              <mat-chip-list #chipList aria-label="Fruit selection">
-                <mat-chip
-                  *ngFor="let file of currentInput;let i=index;"
-                  [selectable]="selectable"
-                  [removable]="removable"
-                  (removed)="remove(i)">
-                  <mat-icon>upload</mat-icon>{{file.name}}
-                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                </mat-chip>
-                </mat-chip-list>
-                </mat-form-field>
-          </span>
-        </div>  
-        <div class="form-group mat-chk-group">
-          <span>
-            <label>Digital Survey*</label>
-          </span>
-           <span>
-             <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-             <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-           </span>
-           <span>
-             <mat-form-field class="example-chip-list">
-               <mat-chip-list #chipList aria-label="Fruit selection">
-                 <mat-chip
-                   *ngFor="let file of currentInput;let i=index;"
-                   [selectable]="selectable"
-                   [removable]="removable"
-                   (removed)="remove(i)">
-                   <mat-icon>upload</mat-icon>{{file.name}}
-                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                 </mat-chip>
-                 </mat-chip-list>
-                 </mat-form-field>
-           </span>
-         </div>  
-         <div class="form-group mat-chk-group">
-          <span>
-            <label>Deeds*</label>
-          </span>
-           <span>
-             <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-             <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-           </span>
-           <span>
-             <mat-form-field class="example-chip-list">
-               <mat-chip-list #chipList aria-label="Fruit selection">
-                 <mat-chip
-                   *ngFor="let file of currentInput;let i=index;"
-                   [selectable]="selectable"
-                   [removable]="removable"
-                   (removed)="remove(i)">
-                   <mat-icon>upload</mat-icon>{{file.name}}
-                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                 </mat-chip>
-                 </mat-chip-list>
-                 </mat-form-field>
-           </span>
-         </div>
-         <div class="form-group mat-chk-group">
-          <span>
-            <label>Ordinance*</label>
-          </span>
-           <span>
-             <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-             <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-           </span>
-           <span>
-             <mat-form-field class="example-chip-list">
-               <mat-chip-list #chipList aria-label="Fruit selection">
-                 <mat-chip
-                   *ngFor="let file of currentInput;let i=index;"
-                   [selectable]="selectable"
-                   [removable]="removable"
-                   (removed)="remove(i)">
-                   <mat-icon>upload</mat-icon>{{file.name}}
-                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                 </mat-chip>
-                 </mat-chip-list>
-                 </mat-form-field>
-           </span>
-         </div>
-        </div>
-        <div class="step-footer d-flex justify-content-end px-4">
-          <button mat-flat-button class="mat-light mr-2">Back</button>
-          <button mat-flat-button color="accent" class="mr-2">Save Changes</button>
-        </div>
-      </form>
+  <form class="p-4">
+
+
+      <div class="d-flex align-items-center py-1 justify-content-between">
+          <div class="title2">  
+              <h6>Applicant</h6>
+              <p>Each file is an individual submission Mandatory fields marked in * as an indiactor for the use to upload files</p>
+             </div>
+          <!-- <div class="titile-actions"> 
+              <button mat-button color="primary"> + ADD </button>
+          </div> -->
       </div>
+
+    <div class="table-box mb-5">  
+        <div class="card card-body upload-chk-list">
+            <div class="d-flex align-items-center">
+                <div class="flex-item"><label> Contract*  </label> </div>
+                <div class="flex-item">
+                    <label for="fileUpload" class="m-0"> 
+                        <a mat-button class="btn-upload" color="primary"> 
+                          <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                          <span class="font-sm">Upload </span>    
+                        </a>
+                    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+                  </label>
+                </div>
+                <div class="flex-item flex-grow-1">
+                  <div class="font-xs">No files uploaded yet!</div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="flex-item"><label> Digital Survey* </label> </div>
+                <div class="flex-item">
+                    <label for="fileUpload" class="m-0"> 
+                        <a mat-button class="btn-upload" color="primary"> 
+                          <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                          <span class="font-sm">Upload </span>    
+                        </a>
+                    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+                  </label>
+                </div>
+                <div class="flex-item flex-grow-1">
+                  <div class="font-xs">No files uploaded yet! </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="flex-item"><label> Deeds*    </label> </div>
+                <div class="flex-item">
+                    <label for="fileUpload" class="m-0"> 
+                        <a mat-button class="btn-upload" color="primary"> 
+                          <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                          <span class="font-sm">Upload </span>    
+                        </a>
+                    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+                  </label>
+                </div>
+                <div class="flex-item flex-grow-1">
+                  <div class="font-xs">No files uploaded yet! </div>
+                </div>
+            </div> 
+            <div class="d-flex align-items-center">
+                <div class="flex-item"><label> Ordinance*    </label> </div>
+                <div class="flex-item">
+                    <label for="fileUpload" class="m-0"> 
+                        <a mat-button class="btn-upload" color="primary"> 
+                          <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                          <span class="font-sm">Upload </span>    
+                        </a>
+                    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+                  </label>
+                </div>
+                <div class="flex-item flex-grow-1">
+                  <div class="font-xs">No files uploaded yet! </div>
+                </div>
+            </div> 
+        </div>
+
+      </div>
+      <div class="step-footer d-flex justify-content-end px-4">
+        <button mat-flat-button class="mat-light mr-2">Back</button>
+        <button mat-flat-button color="accent" class="mr-2">Save Changes</button>
+      </div>
+    </form>
+    </div>

@@ -49,8 +49,11 @@
   <mat-card fxFlex="0 1 calc(20% - 20px)" *ngFor="let card of tests; let i = index" class="product" fxLayout="column">
         <mat-card-header class="card-container mt-1 mb-2 pt-2">
               <mat-card-title class="card-container-left mb-0" >
-                <mat-icon class="card-icon" aria-hidden="false" aria-label="Example home icon">{{card.icon}}</mat-icon></mat-card-title>
-              <mat-card-title class="card-container-right icon-title mb-0">
+                <!-- <mat-icon class="card-icon" aria-hidden="false" aria-label="Example home icon">{{card.icon}}</mat-icon> -->
+              <img [src]="card.svg"/>
+                
+              </mat-card-title>
+                <mat-card-title class="card-container-right icon-title mb-0">
                   {{card.title}}
                   <mat-card-subtitle class="icon-sub-title mb-0">
                     <a href="#">{{card.subTitle}}</a>

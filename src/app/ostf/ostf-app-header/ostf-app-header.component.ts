@@ -67,24 +67,24 @@ export class OstfAppHeaderComponent implements OnInit {
       {
         title:'Application ID',
         subTitle:5023,
-        icon:'assignment_turned_in'
+        svg:'../../assets/svg/app-id.svg'
               },
               {
                 title:'24 Comments',
                 subTitle:'View',
-        icon:'comments'
+        svg:'../../assets/svg/chat.svg'
 
                       },
                       {
                         title:'Feedback(03)',
                         subTitle:'Create Feedback',
-        icon:'feedback'
+        svg:'../../assets/svg/add-file.svg'
 
                               },
                               {
                                 title:'Initial Submission',
                         subTitle:'Change Status',
-        icon:'done'
+        svg:'../../assets/svg/checks.svg'
 
 
                                       }

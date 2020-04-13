@@ -2,13 +2,12 @@
     <form class="p-4">
 
         <div class="row">
-
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
-                <div class="form-group square">
-                    <div>
+                <div class="form-group card card-body bg-light">
+                    <div class="mb-2">
                         <mat-label><strong class="font-weight-500">Structures:</strong></mat-label>
                     </div>
-                    <span class="mb-1">
+                    <span class="mb-2">
                         <mat-checkbox>Site is predominantly covered by buildings or structures </mat-checkbox>
                     </span>
                     <span class="mb-1">
@@ -17,9 +16,9 @@
                 </div>
 
                 <div class="form-group">
-                    <p class="text-muted">
+                    <label>
                         Upload a copy of Existing Property Survey.
-                    </p>
+                    </label>
                     <div class="choose-file">
                         <button mat-flat-button color="primary" (click)="fileInput.click()">Choose File</button>
                         <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
@@ -30,7 +29,7 @@
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
                 <div class="form-group">
-                    <label class="mb-1"><strong class="font-weight-500">Existing Use of Site</strong></label>
+                    <label class="mb-1">Existing Use of Site </label>
                     <input type="text" class="form-control">
                 </div>
                 <div class="form-group">
@@ -43,110 +42,110 @@
     </form>
 
     <form class="p-4">
-        <div class="row">
-            <div style="width:100%;">
-                <div style="float: left;">
-                    <p class="text-muted">
-                        <b>List all structures on the site</b>
-                    </p>
+        <div class="form-table"> 
+            <div class="d-flex align-items-center py-1 justify-content-between">
+                <div class="card-title m-0">
+                    <b>List all structures on the site</b>
                 </div>
-                <div style="float: right;">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                        Add</button>
+                <div class="titile-actions"> 
+                    <button mat-button color="primary" (click)="openModal('custom-modal-1', 'add', null)">
+                        + ADD
+                    </button>
                 </div>
             </div>
             <!-- Document Checklist table -->
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <div class="card">
+                <table mat-table [dataSource]="dataSource" class="mat-table mc-table">
 
-                <ng-container matColumnDef="structures">
-                    <th mat-header-cell *matHeaderCellDef> Structures </th>
-                    <td mat-cell *matCellDef="let element">
-                        <!-- <input type="text" value="{{element.structures}}"> -->
-                        {{element.structures}}
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="structures">
+                        <th mat-header-cell *matHeaderCellDef> Structures </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- <input type="text" value="{{element.structures}}"> -->
+                            {{element.structures}}
+                        </td>
+                    </ng-container>
 
-                <ng-container matColumnDef="sqFoot">
-                    <th mat-header-cell *matHeaderCellDef> Sq Foot </th>
-                    <td mat-cell *matCellDef="let element">
-                        <!-- <input type="text" value="{{element.sqFoot}}"> -->
-                        {{element.sqFoot}}
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="sqFoot">
+                        <th mat-header-cell *matHeaderCellDef> Sq Foot </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- <input type="text" value="{{element.sqFoot}}"> -->
+                            {{element.sqFoot}}
+                        </td>
+                    </ng-container>
 
-                <ng-container matColumnDef="proposedUse">
-                    <th mat-header-cell *matHeaderCellDef> Proposed Use </th>
-                    <td mat-cell *matCellDef="let element">
-                        <!-- <input type="text" value="{{element.proposedUse}}"> -->
-                        {{element.proposedUse}}
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="proposedUse">
+                        <th mat-header-cell *matHeaderCellDef> Proposed Use </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- <input type="text" value="{{element.proposedUse}}"> -->
+                            {{element.proposedUse}}
+                        </td>
+                    </ng-container>
 
-                <ng-container matColumnDef="tobedemolished">
-                    <th mat-header-cell *matHeaderCellDef> To be demolished </th>
-                    <td mat-cell *matCellDef="let element">
-                        <mat-checkbox disabled="true" class="example-margin" [checked]="element.tobedemolished">
-                        </mat-checkbox>
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="tobedemolished">
+                        <th mat-header-cell *matHeaderCellDef> To be demolished </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox disabled="true" class="example-margin" [checked]="element.tobedemolished">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
 
-                <ng-container matColumnDef="costOfDemolition">
-                    <th mat-header-cell *matHeaderCellDef> Estimated Cost of Demolition </th>
-                    <td mat-cell *matCellDef="let element">
-                        <!-- <input type="text" value="{{element.costOfDemolition}}"> -->
-                        {{ element.costOfDemolition }}
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="costOfDemolition">
+                        <th mat-header-cell *matHeaderCellDef> Estimated Cost of Demolition </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- <input type="text" value="{{element.costOfDemolition}}"> -->
+                            {{ element.costOfDemolition }}
+                        </td>
+                    </ng-container>
 
-                <ng-container matColumnDef="demolitioncomplete">
-                    <th mat-header-cell *matHeaderCellDef> Demolition complete </th>
-                    <td mat-cell *matCellDef="let element">
-                        <mat-checkbox disabled="true" class="example-margin" [checked]="element.demolitioncomplete">
-                        </mat-checkbox>
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="demolitioncomplete">
+                        <th mat-header-cell *matHeaderCellDef> Demolition complete </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox disabled="true" class="example-margin" [checked]="element.demolitioncomplete">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
 
-                <ng-container matColumnDef="reimbursementCost">
-                    <th mat-header-cell *matHeaderCellDef> Reimbursement Cost </th>
-                    <td mat-cell *matCellDef="let element">
-                        {{element.reimbursementCost}}
-                    </td>
-                </ng-container>
+                    <ng-container matColumnDef="reimbursementCost">
+                        <th mat-header-cell *matHeaderCellDef> Reimbursement Cost </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{element.reimbursementCost}}
+                        </td>
+                    </ng-container>
 
-                <ng-container matColumnDef="actions">
-                    <th mat-header-cell *matHeaderCellDef> Actions</th>
-                    <td mat-cell *matCellDef="let element;let i=index">
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef> Actions</th>
+                        <td mat-cell *matCellDef="let element;let i=index">
 
-                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                            <mat-icon>more_vert</mat-icon>
-                        </button>
-                        <mat-menu #menu="matMenu">
-                            <button mat-menu-item data-toggle="modal" data-target="#exampleModalCenter"
-                                (click)="edit(i)">
-                                <mat-icon>edit</mat-icon>
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                <mat-icon>more_vert</mat-icon>
                             </button>
-                            <button mat-menu-item (click)="remove(i)">
-                                <mat-icon>delete</mat-icon>
-                            </button>
-                        </mat-menu>
-                    </td>
-                </ng-container>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item type="button">
+                                    <a (click)="openModal('custom-modal-1', 'edit', i)">
+                                        <mat-icon>edit</mat-icon>
+                                    </a>
+                                </button>
+                                <button mat-menu-item (click)="remove(i)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </mat-menu>
+                        </td>
+                    </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
         </div>
     </form>
 
-    <!-- modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <jw-modal id="custom-modal-1">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        (click)="closeModal('custom-modal-1');">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -196,7 +195,8 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary"
+                                (click)="closeModal('custom-modal-1');">Close</button>
                             <button type="button" class="btn btn-primary" *ngIf="add==true"
                                 (click)="addStructure()">Add</button>
                             <button type="button" class="btn btn-primary" *ngIf="edit_id==true"
@@ -208,81 +208,92 @@
             </div>
 
         </div>
-    </div>
-    <!-- modal -->
+    </jw-modal>
 
     <form class="p-4">
 
         <div class="row">
-
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
+            <div class="col-lg-12">
                 <div class="form-group">
                     <div>
                         <mat-label><strong class="font-weight-500">The site contains the following natural resource
                                 characteristics:</strong></mat-label>
                     </div>
-                    <div>
+                    <div class="text-muted small">
                         (Check all appropriate boxes)
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
-            </div>
+ 
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
 
-                <div class="form-group square">
-                    <div>
+                <div class="form-group card card-body chk-list">
+                    <div class="d-flex align-items-center justify-content-between chk-item">
                         <span class="mb-1">
                             <mat-checkbox>Flood plains </mat-checkbox>
                         </span>
-                        <span class="mb-1">
-                            <input placeholder="Percentage of Site" type="text"><label>%</label>
-                        </span>
+                        <div class="input-group mb-1 max-width-mini">
+                            <input type="text" class="form-control" placeholder="Percentage of Site">
+                            <div class="input-group-append">
+                              <span class="input-group-text" id="basic-addon2">%</span>
+                            </div>
+                          </div>
                     </div>
-                    <div>
+                    <div class="d-flex align-items-center justify-content-between chk-item">
                         <span class="mb-1">
                             <mat-checkbox>Wetlands </mat-checkbox>
                         </span>
-                        <span class="mb-1">
-                            <input placeholder="Percentage of Site" type="text"><label>%</label>
-                        </span>
+                        <div class="input-group mb-1 max-width-mini">
+                            <input type="text" class="form-control" placeholder="Percentage of Site">
+                            <div class="input-group-append">
+                              <span class="input-group-text" id="basic-addon2">%</span>
+                            </div>
+                          </div>
                     </div>
-                    <div>
+                    <div class="d-flex align-items-center justify-content-between chk-item">
                         <span class="mb-1">
                             <mat-checkbox>Steep Slopes </mat-checkbox>
                         </span>
-                        <span class="mb-1">
-                            <input placeholder="Percentage of Site" type="text"><label>%</label>
-                        </span>
+                        <div class="input-group mb-1 max-width-mini">
+                            <input type="text" class="form-control" placeholder="Percentage of Site">
+                            <div class="input-group-append">
+                              <span class="input-group-text" id="basic-addon2">%</span>
+                            </div>
+                          </div>
                     </div>
-                    <div>
+                    <div class="d-flex align-items-center justify-content-between chk-item">
                         <span class="mb-1">
                             <mat-checkbox>Bluffs & Ridge Lines </mat-checkbox>
                         </span>
-                        <span class="mb-1">
-                            <input placeholder="Percentage of Site" type="text"><label>%</label>
-                        </span>
+                        <div class="input-group mb-1 max-width-mini">
+                            <input type="text" class="form-control" placeholder="Percentage of Site">
+                            <div class="input-group-append">
+                              <span class="input-group-text" id="basic-addon2">%</span>
+                            </div>
+                          </div>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                    <mat-checkbox><strong>Historic & Archaeologic Features</strong> (specify and cite sources)
+                    <mat-checkbox class="mb-2">
+                        <strong>Historic & Archaeologic Features</strong> (specify and cite sources)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>
 
 
                 <div class="form-group">
-                    <mat-checkbox><strong>Specimen Trees/Mature Forests</strong> (specify and cite sources)
+                    <mat-checkbox class="mb-2">
+                        <strong>Specimen Trees/Mature Forests</strong> (specify and cite sources)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <mat-checkbox><strong>Unique or Exceptional Ecosystems</strong> (specify and cite sources)
+                    <mat-checkbox class="mb-2">
+                        <strong>Unique or Exceptional Ecosystems</strong> (specify and cite sources)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>
@@ -291,47 +302,37 @@
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
 
-                <div class="form-group square">
-                    <div>
-                        <span class="mb-1">
-                            <mat-checkbox>Aquifer Recharge Area/Aquifer </mat-checkbox>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="mb-1">
-                            <mat-checkbox>Headwaters of FW1 Streams </mat-checkbox>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="mb-1">
-                            <mat-checkbox>Headwaters of FW2 Streams (specify)</mat-checkbox>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="mb-1">
-                            <mat-checkbox>Stream Corridors for FW1 Streams </mat-checkbox>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="mb-1">
-                            <mat-checkbox>Stream Corridors for FW2 Streams </mat-checkbox>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="mb-1">
-                            <mat-checkbox>Lake Shores </mat-checkbox>
-                        </span>
-                    </div>
-                </div>
+                    <div class="form-group card card-body chk-list">
+                            <div class="chk-item mb-1">  
+                                    <mat-checkbox>Aquifer Recharge Area/Aquifer </mat-checkbox> 
+                            </div>
+                            <div class="chk-item mb-1"> 
+                                    <mat-checkbox>Headwaters of FW1 Streams </mat-checkbox> 
+                            </div>
+                            <div class="chk-item mb-1"> 
+                                    <mat-checkbox>Headwaters of FW2 Streams (specify)</mat-checkbox> 
+                            </div>
+                            <div class="chk-item mb-1"> 
+                                    <mat-checkbox>Stream Corridors for FW1 Streams </mat-checkbox> 
+                            </div>
+                            <div class="chk-item mb-1"> 
+                                    <mat-checkbox>Stream Corridors for FW2 Streams </mat-checkbox>
+                            </div>
+                            <div class="chk-item mb-1"> 
+                                    <mat-checkbox>Lake Shores </mat-checkbox> 
+                            </div>
+                        </div>
 
                 <div class="form-group">
-                    <mat-checkbox><strong>Endangered/Threatened Wildlife Habitat</strong> (specify and cite sources)
+                    <mat-checkbox class="mb-2">
+                        <strong>Endangered/Threatened Wildlife Habitat</strong> (specify and cite sources)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <mat-checkbox><strong>Endangered/Threatened Vegetation</strong> (specify and cite sources)
+                    <mat-checkbox class="mb-2">
+                        <strong>Endangered/Threatened Vegetation</strong> (specify and cite sources)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>
@@ -344,39 +345,34 @@
 
         <div class="row">
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
+            <div class="col-lg-12">
                 <div class="form-group">
                     <div>
                         <mat-label><strong class="font-weight-500">Special Hazards:</strong></mat-label>
                     </div>
-                    <div>
+                    <div class="text-muted small">
                         (Check all appropriate boxes)
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
-            </div>
-
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
-
                 <div class="form-group">
-                    <mat-checkbox><strong>Mine Holes</strong> (Specify and give current status)
-                    </mat-checkbox>
-                    <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
-                </div>
-
-
-                <div class="form-group">
-                    <mat-checkbox><strong>Sink Holes</strong> (Specify and give current status)
+                    <mat-checkbox class="mb-2"><strong>Mine Holes</strong> (Specify and give current status)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <p class="text-muted">
+                    <mat-checkbox class="mb-2"><strong>Sink Holes</strong> (Specify and give current status)
+                    </mat-checkbox>
+                    <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
                         Upload a copy of Existing Property Survey.
-                    </p>
+                    </label>
                     <div class="choose-file">
                         <button mat-flat-button color="primary" (click)="fileInput.click()">Choose File</button>
                         <input multiple hidden (change)="onFileSelected()" #fileInput type="file" id="file">
@@ -388,13 +384,13 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5">
 
                 <div class="form-group">
-                    <mat-checkbox><strong>Hazardous Substance Contamination </strong> (Specify and give current status)
+                    <mat-checkbox class="mb-2"><strong>Hazardous Substance Contamination </strong> (Specify and give current status)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <mat-checkbox><strong>Abandoned Landfills </strong> (Specify and give current status)
+                    <mat-checkbox class="mb-2"><strong>Abandoned Landfills </strong> (Specify and give current status)
                     </mat-checkbox>
                     <textarea rows="4" placeholder="Please enter here" class="form-control"></textarea>
                 </div>

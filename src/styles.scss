@@ -115,8 +115,10 @@
 // @import "./sass/components/forms";
 
 
-
+@import "~bootstrap/scss/variables";
 @import "mc-variables";
+@import "~bootstrap/scss/bootstrap";
+
 @import "material";
 @import "mcbootstrap";
 @import "custom";
@@ -157,6 +159,9 @@ body,
 
 .font-weight-500 {
     font-weight: 500;
+}
+.font-weight-600 {
+    font-weight: 600;
 }
 //body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

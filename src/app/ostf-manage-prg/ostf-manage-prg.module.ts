@@ -12,10 +12,13 @@ import { OstfManagePrgSchedulingComponent } from './Finance/ostf-manage-prg-sche
 import { OstfManagePrgParcelsComponent } from './Finance/ostf-manage-prg-parcels/ostf-manage-prg-parcels.component';
 import { OstfManagePrgEmailTemplatesComponent, OstfManagePrgEmailTemplateDialog } from './Templates/ostf-manage-prg-email-templates/ostf-manage-prg-email-templates.component';
 import { OstfManagePrgHeaderComponent } from './Header/ostf-manage-prg-header/ostf-manage-prg-header.component';
+import { OstfManagePrgUserMgtComponent } from './users-mgt/ostf-manage-prg-user-mgt/ostf-manage-prg-user-mgt.component';
+import { OstfManagePrgCountyUsersComponent } from './users-mgt/ostf-manage-prg-user-mgt/ostf-manage-prg-county-users/ostf-manage-prg-county-users.component';
+import { OstfManagePrgAgencyUsersComponent } from './users-mgt/ostf-manage-prg-user-mgt/ostf-manage-prg-agency-users/ostf-manage-prg-agency-users.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [OstfManagePrgDashboardComponent, OstfManagePrgFinanceComponent, OstfManagePrgEmailTemplatesComponent, OstfManagePrgHeaderComponent, OstfManagePrgEmailTemplateDialog, OstfManagePrgSchedulingComponent, OstfManagePrgParcelsComponent],
+  declarations: [OstfManagePrgDashboardComponent, OstfManagePrgFinanceComponent, OstfManagePrgEmailTemplatesComponent, OstfManagePrgHeaderComponent, OstfManagePrgEmailTemplateDialog, OstfManagePrgSchedulingComponent, OstfManagePrgParcelsComponent, OstfManagePrgUserMgtComponent, OstfManagePrgCountyUsersComponent, OstfManagePrgAgencyUsersComponent],
   imports: [
     CustomMaterialModule,
     CommonModule,

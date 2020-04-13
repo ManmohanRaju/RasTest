@@ -1,199 +1,166 @@
 <div class="mc-mat-tab-content">
   <form class="p-4">
+  
     <h6>Infrastructure Issues</h6>
-    <div class="table-box">
-    <div class="row">
-      <div class="form-inline">
-        <label>Is the site currently served by the public water?</label>
-        <div class="form-group mat-chk-group">
-          <span class="mr-4 mb-1">
-            <mat-checkbox>Yes </mat-checkbox>
-          </span>
-          <span class="mb-1 mr-4">
-            <mat-checkbox>No </mat-checkbox>
-          </span>
+   
+        <div class="form-group card card-body chk-list col-lg-6 col-md-7 col-sm-12">
+            <div class="d-flex align-items-center justify-content-between chk-item mb-1">
+                <label>Is the site currently served by the public water?</label>
+                <div class="chk-group">
+                    <span class="mr-4 mb-1">
+                      <mat-checkbox>Yes </mat-checkbox>
+                    </span>
+                    <span class="mb-1 mr-4">
+                      <mat-checkbox>No </mat-checkbox>
+                    </span>
+                  </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between chk-item mb-1">
+                <label>Is the site currently served by the public water?</label>
+                <div class="chk-group">
+                    <span class="mr-4 mb-1">
+                      <mat-checkbox>Yes </mat-checkbox>
+                    </span>
+                    <span class="mb-1 mr-4">
+                      <mat-checkbox>No </mat-checkbox>
+                    </span>
+                  </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between chk-item mb-1">
+                <label>Are there plans to extend sewer or water to the site? </label>
+                <div class="chk-group">
+                    <span class="mr-4 mb-1">
+                      <mat-checkbox>Yes </mat-checkbox>
+                    </span>
+                    <span class="mb-1 mr-4">
+                      <mat-checkbox>No </mat-checkbox>
+                    </span>
+                  </div>
+            </div>
+            
+            <div class="d-flex align-items-center justify-content-between chk-item mt-2">
+                <label>The nearest water hookup is</label>
+                <div class="mb-1">
+                    <mat-form-field appearance="outline" class="mc-select-mini">
+                        <mat-select placeholder="Select" name="recreation">
+                            <mat-option value="One">One</mat-option>
+                            <mat-option value="Two">Two</mat-option>
+                            <mat-option value="Three">Three</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between chk-item">
+                <label>The nearest sewer hookup is </label>
+                <div class="mb-1">
+                    <mat-form-field appearance="outline" class="mc-select-mini">
+                        <mat-select placeholder="Select" name="recreation">
+                            <mat-option value="One">One</mat-option>
+                            <mat-option value="Two">Two</mat-option>
+                            <mat-option value="Three">Three</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  </div>
+            </div>
         </div>
-      </div>
-     
+    
+  
+ 
+<div class="table-box mt-4 pt-2">     
+<h6>Potential for development of Non-open Space uses on the site </h6>
+
+<div class="card card-body upload-chk-list">
+
+    <div class="d-flex align-items-center">
+        <div class="flex-item"><mat-checkbox>  Conceptual Plan </mat-checkbox> </div>
+        <div class="flex-item">
+            <label for="fileUpload" class="m-0"> 
+                <a mat-button class="btn-upload" color="primary"> 
+                  <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                  <span class="font-sm">Upload </span>    
+                </a>
+            <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+          </label>
+        </div>
+        <div class="flex-item flex-grow-1">
+          <div class="font-xs">No files uploaded yet!</div>
+        </div>
     </div>
-    <div class="row">
-      <div class="form-inline">
-        <label>Is the site currently served by the public water?</label>
-        <div class="form-group mat-chk-group">
-          <span class="mr-4 mb-1">
-            <mat-checkbox>Yes </mat-checkbox>
-          </span>
-          <span class="mb-1 mr-4">
-            <mat-checkbox>No </mat-checkbox>
-          </span>
+    <div class="d-flex align-items-center">
+        <div class="flex-item"><mat-checkbox>  Preliminary Subdivision  </mat-checkbox> </div>
+        <div class="flex-item">
+            <label for="fileUpload" class="m-0"> 
+                <a mat-button class="btn-upload" color="primary"> 
+                  <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                  <span class="font-sm">Upload </span>    
+                </a>
+            <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+          </label>
         </div>
-      </div>
-     
+        <div class="flex-item flex-grow-1">
+          <div class="font-xs">No files uploaded yet!</div>
+        </div>
     </div>
-    <div class="row">
-      <div class="form-inline">
-        <label>Are there plans to extend sewer or water to the site? </label>
-        <div class="form-group mat-chk-group">
-          <span class="mr-4 mb-1">
-            <mat-checkbox>Yes </mat-checkbox>
-          </span>
-          <span class="mb-1 mr-4">
-            <mat-checkbox>No </mat-checkbox>
-          </span>
+    <div class="d-flex align-items-center">
+        <div class="flex-item"><mat-checkbox>  Final Subdivision     </mat-checkbox> </div>
+        <div class="flex-item">
+            <label for="fileUpload" class="m-0"> 
+                <a mat-button class="btn-upload" color="primary"> 
+                  <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                  <span class="font-sm">Upload </span>    
+                </a>
+            <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+          </label>
         </div>
-      </div>
-     
+        <div class="flex-item flex-grow-1">
+          <div class="font-xs">No files uploaded yet!</div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
-        <div class="form-inline">
-          <label>The nearest water hookup is</label>
-          <mat-form-field appearance="outline">
-            <mat-select placeholder="Select" name="recreation">
-                <mat-option value="One">One</mat-option>
-                <mat-option value="Two">Two</mat-option>
-                <mat-option value="Three">Three</mat-option>
-            </mat-select>
-          </mat-form-field>
+    <div class="d-flex align-items-center">
+        <div class="flex-item"><mat-checkbox>  Final Site Plan   </mat-checkbox> </div>
+        <div class="flex-item">
+            <label for="fileUpload" class="m-0"> 
+                <a mat-button class="btn-upload" color="primary"> 
+                  <i class="flaticon-upload-1 mr-2 i-bold font-md"></i> 
+                  <span class="font-sm">Upload </span>    
+                </a>
+            <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)">
+          </label>
         </div>
-</div>
+        <div class="flex-item flex-grow-1">
+          <div class="font-xs">No files uploaded yet!</div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
-    <div class="form-inline">
-      <label>The nearest sewer hookup is</label>
-      <mat-form-field appearance="outline">
-        <mat-select placeholder="Select" name="recreation">
-            <mat-option value="One">One</mat-option>
-            <mat-option value="Two">Two</mat-option>
-            <mat-option value="Three">Three</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-</div>
-</div>
-<h6>Potential for development of Non-open Space uses on the site </h6>
-<div class="form-group mat-chk-group">
-  <span class="mr-4 mb-1">
-    <mat-checkbox color="primary"> Conceptual Plan </mat-checkbox>
-  </span>
-  <span>
-    <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-  </span>
-  <span>
-    <mat-form-field class="example-chip-list">
-      <mat-chip-list #chipList aria-label="Fruit selection">
-        <mat-chip
-          *ngFor="let file of currentInput;let i=index;"
-          [selectable]="selectable"
-          [removable]="removable"
-          (removed)="remove(i)">
-          <mat-icon>upload</mat-icon>{{file.name}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        </mat-chip-list>
-        </mat-form-field>
-  </span>
-</div>
-<div class="form-group mat-chk-group">
-  <span class="mr-4 mb-1">
-    <mat-checkbox color="primary">Preliminary Subdivision </mat-checkbox>
-  </span>
-  <span>
-    <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-  </span>
-  <span>
-    <mat-form-field class="example-chip-list">
-      <mat-chip-list #chipList aria-label="Fruit selection">
-        <mat-chip
-          *ngFor="let file of currentInput;let i=index;"
-          [selectable]="selectable"
-          [removable]="removable"
-          (removed)="remove(i)">
-          <mat-icon>upload</mat-icon>{{file.name}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        </mat-chip-list>
-        </mat-form-field>
-  </span>
-</div>
-<div class="form-group mat-chk-group">
-  <span class="mr-4 mb-1">
-    <mat-checkbox color="primary">Final Subdivision</mat-checkbox>
-  </span>
-  <span>
-    <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-  </span>
-  <span>
-    <mat-form-field class="example-chip-list">
-      <mat-chip-list #chipList aria-label="Fruit selection">
-        <mat-chip
-          *ngFor="let file of currentInput;let i=index;"
-          [selectable]="selectable"
-          [removable]="removable"
-          (removed)="remove(i)">
-          <mat-icon>upload</mat-icon>{{file.name}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        </mat-chip-list>
-        </mat-form-field>
-  </span>
-</div>
-<div class="form-group mat-chk-group">
-  <span class="mr-4 mb-1">
-    <mat-checkbox color="primary">Preliminary Site Plan</mat-checkbox>
-  </span>
-  <span>
-    <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-  </span>
-  <span>
-    <mat-form-field class="example-chip-list">
-      <mat-chip-list #chipList aria-label="Fruit selection">
-        <mat-chip
-          *ngFor="let file of currentInput;let i=index;"
-          [selectable]="selectable"
-          [removable]="removable"
-          (removed)="remove(i)">
-          <mat-icon>upload</mat-icon>{{file.name}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        </mat-chip-list>
-        </mat-form-field>
-  </span>
-</div>
-<div class="form-group mat-chk-group">
-  <span class="mr-4 mb-1">
-    <mat-checkbox color="primary">Final Site Plan</mat-checkbox>
-  </span>
-  <span>
-    <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-    <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-  </span>
-  <span>
-    <mat-form-field class="example-chip-list">
-      <mat-chip-list #chipList aria-label="Fruit selection">
-        <mat-chip
-          *ngFor="let file of currentInput;let i=index;"
-          [selectable]="selectable"
-          [removable]="removable"
-          (removed)="remove(i)">
-          <mat-icon>upload</mat-icon>{{file.name}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        </mat-chip-list>
-        </mat-form-field>
-  </span>
-</div>
-<div class="yes-group">
-  <label>
-    <strong>
-      Load would principally serve
-    </strong>(check one only)</label>
+ 
+ 
+  <!-- <div class="form-group mat-chk-group">
+    <span class="mr-4 mb-1">
+      <mat-checkbox color="primary">Final Site Plan</mat-checkbox>
+    </span>
+    <span>
+      <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
+      <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
+    </span>
+    <span>
+      <mat-form-field class="example-chip-list">
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip
+            *ngFor="let file of currentInput;let i=index;"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(i)">
+            <mat-icon>upload</mat-icon>{{file.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          </mat-chip-list>
+          </mat-form-field>
+    </span>
+  </div> -->
+
+<div class="yes-group mb-5 mt-4">
+  <h6 class="mb-2"> Load would principally serve <span class="font-sm"> (check one only) </span></h6>
   <div class="form-group mat-chk-group">
     <span class="mr-4 mb-1">
       <mat-checkbox color="primary"> Neighborhood </mat-checkbox>
@@ -212,7 +179,8 @@
     </span>
   </div>
 </div>
-<strong>Consistency with other plans</strong>
+
+<h6 class="mb-2"> Consistency with other plans  </h6>
 <div class="row">
   <div class="form-group col-lg-5 col-md-5 col-sm-6 col-12">
     <label><mat-checkbox color="primary"> Municipal Master Plan </mat-checkbox></label>

@@ -35,8 +35,8 @@ body {
     @include angular-material-typography($custom-typography);
 }
 
-$my-app-primary: mat-palette($mat-blue-grey);
-$my-app-accent:  mat-palette($mat-yellow, A800);
+$my-app-primary: mat-palette($mat-indigo,700, 300, 900);
+$my-app-accent:  mat-palette($mat-light-blue, A700);
 $my-app-warn:    mat-palette($mat-pink);
 
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
@@ -107,7 +107,7 @@ mat-sidenav-content.mat-drawer-content.mat-sidenav-content.router-content{
     justify-content: center;
 }
 .mat-list-base .mat-list-item {
-    color: #AFAFC4;
+    color: #777777;
 }
 .mat-list-option:hover, .mat-list-option:focus, .mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item:focus, .mat-action-list .mat-list-item:hover, .mat-action-list .mat-list-item:focus {
     color: $blue;
@@ -153,17 +153,18 @@ h1, h2, h3, .h1, .h2, .h3{
         height: 50px;
     }
     .mat-header-cell {
-        color: #606372;
+        color: #404040;
         font-weight: $font-weight-500;
         font-size: 13px;
         padding-bottom: 10px;
         padding-top: 10px;
     }
     .mat-cell, .mat-footer-cell {
-        color: #74788D;
+        color: #454545;
         font-size: 12px;
         padding-bottom: 10px;
         padding-top: 10px;
+        font-weight: 400;
     }
     .mc-projectname {
         color: $blue;
@@ -179,16 +180,22 @@ h1, h2, h3, .h1, .h2, .h3{
         border-bottom-color: #EAEDF5;
     }
 }
+tr.mat-header-row th {
+    background: #ecf8fe;
+}
 .mat-tab-nav-bar {
     border-bottom: 1px solid #ebedf2;
     .mat-tab-links {
         .mat-tab-link {
-            min-width: 100px;
+            min-width: 50px;
             font-weight: 500;
             color: $gray-900;
             margin-top: 4px;
             border-bottom: 3px solid transparent;
             opacity: 1;
+            padding: 0 10px;
+            margin-left: 4px;
+            margin-right: 4px;
             &:hover, &:focus, &.active {
                 color: $blue;
                 border-bottom: 3px solid $blue;
@@ -231,4 +238,99 @@ h1, h2, h3, .h1, .h2, .h3{
     // width:460px;
 }
 
+body .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: .35em 0 .8em 0 !important;
+}
+.mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+    transform: translateY(0) !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0em 0 !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-prefix, .mat-form-field-appearance-outline .mat-form-field-suffix {
+    top: .35em !important;
+}
+body .mat-form-field-wrapper {
+    padding-bottom: .34375em !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end, .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline{
+    color: rgba(0, 0, 0, 0.25) !important;
+}
+form-field-outline {
+    color: rgba(0, 0, 0, 0.25) !important;
+}
+button:focus{
+    outline:0 !important;
+}
+.mat-menu-content{
+    .mat-menu-item{
+        line-height: 38px;
+        height: 38px;
+    }
+}
+.mc-table-action{
+    width: 150px;
+}
+body {
+   .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+        padding-bottom: 1.25em !important;
+    }
+    .mc-select-mini .mat-form-field-infix{
+        padding: 0.15em 0 0.8em 0 !important
+    }
+}
+.mc-select-mini{
+    .mat-form-field-wrapper {
+        font-size: 12px;
+    }
+    .mat-select-arrow-wrapper {
+        transform: translateY(0px) !important;
+    }
+}
+.mat-form-field{
+    .mat-icon-button{
+        background-color: transparent !important;
+    }
+    .mat-form-field-suffix{
+        top: .40em;
+    }
+}
+body .mat-form-field-appearance-outline .mat-form-field-label {
+    top: 1.41375em;
+}
+.mc-accordion{
+    .mat-expansion-panel{
+        border: 1px solid #d6dee2;
+        box-shadow: 0 0 0 0 #ccc;
+        border-radius: 5px !important;
+        margin: 10px 0;
+    }
+    .mat-expansion-panel-body{
+        border-top: 1px solid #EAEDF5;
+        padding:0 ;
+    }
+    .mat-expanded.mat-expansion-panel-spacing {
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+        border-color: transparent;
+        margin-bottom: 24px;
+    }
 
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: rgba(33, 185, 255, 0.5);
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #21B9FF;
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
+    background-color: rgba(114, 95, 238, .5);
+}
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
+    background-color: #725FEE;
+}

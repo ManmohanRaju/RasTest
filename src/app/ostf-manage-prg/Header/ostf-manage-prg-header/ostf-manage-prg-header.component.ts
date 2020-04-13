@@ -1,7 +1,8 @@
 import { Router,NavigationEnd,ActivatedRoute,Event,PRIMARY_OUTLET,Params } from '@angular/router';
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import {Location} from '@angular/common';
+
 
 
 
@@ -20,6 +21,7 @@ interface IBreadcrumb {
 
 export class OstfManagePrgHeaderComponent implements OnInit {
 @Input() page:string;
+@Output() send=new EventEmitter();
 value:any;
 //\
   constructor(private router:Router,private activatedRoute:ActivatedRoute,private _location: Location) {}
@@ -31,6 +33,6 @@ backClicked() {
   this._location.back();
 }
 doFilter(e){
-
+  this.send.emit(e);
 }
 }

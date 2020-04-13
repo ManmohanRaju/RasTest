@@ -1,0 +1,111 @@
+.login-aside {
+    flex: 0 0 auto;
+    width: 605px;
+    padding: 3rem 3.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+}
+.mc-login-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: .5rem;
+}
+.mc-login-subtitle {
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin: 2.5rem 0 3.5rem;
+    color: rgba(255,255,255,.7);
+}
+.mc-form{
+    margin: 2rem auto;
+}
+.login-form{
+    width: 100%;
+    max-width: 405px;
+    margin: auto;
+    .mat-form-field {
+        width: 100%;
+    }
+}
+.full-width{
+    max-width: 100%;
+    width: 100%;
+}
+.mc-login-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+ .login-btn{
+     padding: .4rem 2rem;
+ }
+
+ .mc-login-divider{
+    font-weight: 400;
+    color: #b5b2c3;
+    font-size: 1rem;
+}
+ 
+.mc-divider,.mc-login-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mc-divider{
+    margin: 1rem 0 2rem;
+}
+.mc-divider>span:first-child, .mc-divider>span:last-child {
+    width: 100%;
+    height: 1px;
+    flex: 1;
+    background: #ebecf1;
+    display: inline-block;
+}
+.mc-divider>span:not(:first-child):not(:last-child) {
+    padding: 0 2rem;
+}
+.mc-login-options>a {
+    text-decoration: none;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.mc-login-options>a:not(:last-child) {
+    margin: 0 1rem 0 0;
+}
+.mc-login-options{
+    .mc-btn{
+        font-size: .9rem;
+    }
+    i {
+        margin-right: .5rem;
+    }
+}
+.login-copyright {
+    color: rgba(255,255,255,.4);
+}
+
+.mc-grid-ver {
+    flex: 1 0 auto;
+    flex-direction: row;
+    display: flex;
+}
+.mc-grid-item-middle {
+    align-self: center;
+}
+.mc-logo {
+    img{
+        max-width: 100%;
+        width: 100px;
+        box-shadow: 0 2px 20px rgba(0,0,0,.25);
+        border-radius: 100%;
+    }
+}
+
+
+
+

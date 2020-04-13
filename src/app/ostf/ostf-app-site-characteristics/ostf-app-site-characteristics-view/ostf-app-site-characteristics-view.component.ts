@@ -87,5 +87,10 @@ export class OstfAppSiteCharacteristicsViewComponent implements OnInit {
     this.structureArr.splice(i, 1);
     this.dataSource = new MatTableDataSource(this.structureArr);
   }
+  openModal(e,e1,e2){
 
+  }
+  closeModal(e){
+
+  }
 }
