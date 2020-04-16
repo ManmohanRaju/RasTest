@@ -1,9 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject, Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CustomMaterialModule } from './../../../custom-material/custom-material.module';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+
+export interface DialogData {
+  title: string,
+  content: string
+}
 
 interface ProjectId {
   value: string;
@@ -61,7 +65,7 @@ export class OstfManagePrgParcelsComponent implements OnInit {
     { value: 'false', viewValue: 'false' }
   ];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -96,5 +100,37 @@ export class OstfManagePrgParcelsComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  openDialog(data): void {
+    const dialogRef = this.dialog.open(OstfManagePrgParcelsDialog, {
+      width: 'auto',
+      data: { title: data.title, content: data.content }
+    });
+    console.log(data);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
+
+}
+
+// popup dialog component
+@Component({
+  selector: 'ostf-manage-prg-parcels-dialog',
+  templateUrl: 'ostf-manage-prg-parcels-dialog.html',
+})
+export class OstfManagePrgParcelsDialog {
+
+  favoriteSeason: String;
+  seasons: String[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+
+  constructor(
+    public dialogRef: MatDialogRef<OstfManagePrgParcelsDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 
 }

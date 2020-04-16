@@ -9,7 +9,7 @@ import { OstfManagePrgRoutingModule } from './ostf-manage-prg-routing.module';
 import { OstfManagePrgDashboardComponent } from './Dashboard/ostf-manage-prg-dashboard/ostf-manage-prg-dashboard.component';
 import { OstfManagePrgFinanceComponent } from './Finance/ostf-manage-prg-finance/ostf-manage-prg-finance.component';
 import { OstfManagePrgSchedulingComponent } from './Finance/ostf-manage-prg-scheduling/ostf-manage-prg-scheduling.component';
-import { OstfManagePrgParcelsComponent } from './Finance/ostf-manage-prg-parcels/ostf-manage-prg-parcels.component';
+import { OstfManagePrgParcelsComponent, OstfManagePrgParcelsDialog } from './Finance/ostf-manage-prg-parcels/ostf-manage-prg-parcels.component';
 import { OstfManagePrgEmailTemplatesComponent, OstfManagePrgEmailTemplateDialog } from './Templates/ostf-manage-prg-email-templates/ostf-manage-prg-email-templates.component';
 import { OstfManagePrgHeaderComponent } from './Header/ostf-manage-prg-header/ostf-manage-prg-header.component';
 import { OstfManagePrgUserMgtComponent } from './users-mgt/ostf-manage-prg-user-mgt/ostf-manage-prg-user-mgt.component';
@@ -18,7 +18,7 @@ import { OstfManagePrgAgencyUsersComponent } from './users-mgt/ostf-manage-prg-u
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [OstfManagePrgDashboardComponent, OstfManagePrgFinanceComponent, OstfManagePrgEmailTemplatesComponent, OstfManagePrgHeaderComponent, OstfManagePrgEmailTemplateDialog, OstfManagePrgSchedulingComponent, OstfManagePrgParcelsComponent, OstfManagePrgUserMgtComponent, OstfManagePrgCountyUsersComponent, OstfManagePrgAgencyUsersComponent],
+  declarations: [OstfManagePrgDashboardComponent, OstfManagePrgFinanceComponent, OstfManagePrgEmailTemplatesComponent, OstfManagePrgHeaderComponent, OstfManagePrgEmailTemplateDialog, OstfManagePrgSchedulingComponent, OstfManagePrgParcelsComponent, OstfManagePrgParcelsDialog, OstfManagePrgUserMgtComponent, OstfManagePrgCountyUsersComponent, OstfManagePrgAgencyUsersComponent],
   imports: [
     CustomMaterialModule,
     CommonModule,
@@ -26,6 +26,6 @@ import { OstfManagePrgAgencyUsersComponent } from './users-mgt/ostf-manage-prg-u
     FormsModule,
     CKEditorModule
   ],
-  entryComponents: [OstfManagePrgEmailTemplatesComponent, OstfManagePrgEmailTemplateDialog],
+  entryComponents: [OstfManagePrgEmailTemplatesComponent, OstfManagePrgEmailTemplateDialog, OstfManagePrgParcelsComponent, OstfManagePrgParcelsDialog],
 })
 export class OstfManagePrgModule { }

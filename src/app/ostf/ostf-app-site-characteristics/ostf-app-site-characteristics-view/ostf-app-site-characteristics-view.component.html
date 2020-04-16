@@ -48,7 +48,7 @@
                     <b>List all structures on the site</b>
                 </div>
                 <div class="titile-actions"> 
-                    <button mat-button color="primary" (click)="openModal('custom-modal-1', 'add', null)">
+                    <button mat-button color="primary" (click)="onCreate()">
                         + ADD
                     </button>
                 </div>
@@ -121,7 +121,7 @@
                             </button>
                             <mat-menu #menu="matMenu">
                                 <button mat-menu-item type="button">
-                                    <a (click)="openModal('custom-modal-1', 'edit', i)">
+                                    <a (click)="openDialog(element)">
                                         <mat-icon>edit</mat-icon>
                                     </a>
                                 </button>
@@ -138,77 +138,6 @@
             </div>
         </div>
     </form>
-
-    <jw-modal id="custom-modal-1">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        (click)="closeModal('custom-modal-1');">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-center-container">
-                        <div class="form-group">
-                            <label>Structures</label>
-                            <mat-form-field appearance="outline">
-                                <input matInput name="structures" [(ngModel)]="listOfStructuresModel.structures" />
-                            </mat-form-field>
-                        </div>
-                        <div class="form-group">
-                            <label>Sq Foot</label>
-                            <mat-form-field appearance="outline">
-                                <input matInput name="sqFoot" [(ngModel)]="listOfStructuresModel.sqFoot" />
-                            </mat-form-field>
-                        </div>
-                        <div class="form-group">
-                            <label>Proposed Use</label>
-                            <mat-form-field appearance="outline">
-                                <input matInput name="proposedUse" [(ngModel)]="listOfStructuresModel.proposedUse" />
-                            </mat-form-field>
-                        </div>
-                        <div class="form-group">
-                            <mat-checkbox class="form-control" [(ngModel)]="listOfStructuresModel.tobedemolished">
-                                Section
-                            </mat-checkbox>
-                        </div>
-                        <div class="form-group">
-                            <label>Cost Of Demolition </label>
-                            <mat-form-field appearance="outline">
-                                <input matInput name="costOfDemolition"
-                                    [(ngModel)]="listOfStructuresModel.costOfDemolition" />
-                            </mat-form-field>
-                        </div>
-                        <div class="form-group">
-                            <mat-checkbox class="form-control" [(ngModel)]="listOfStructuresModel.demolitioncomplete">
-                                Demolition Complete
-                            </mat-checkbox>
-                        </div>
-                        <div class="form-group">
-                            <label>Reimbursement Cost</label>
-                            <mat-form-field appearance="outline">
-                                <input matInput name="reimbursementCost"
-                                    [(ngModel)]="listOfStructuresModel.reimbursementCost" />
-                            </mat-form-field>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary"
-                                (click)="closeModal('custom-modal-1');">Close</button>
-                            <button type="button" class="btn btn-primary" *ngIf="add==true"
-                                (click)="addStructure()">Add</button>
-                            <button type="button" class="btn btn-primary" *ngIf="edit_id==true"
-                                (click)="update()">Update</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </jw-modal>
 
     <form class="p-4">
 
