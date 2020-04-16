@@ -1,3 +1,6 @@
+import { OstfManagePrgSchedulingComponent } from './calendaring/ostf-manage-prg-scheduling/ostf-manage-prg-scheduling.component';
+import { OstfManagePrgFundingDetailsComponent } from './calendaring/ostf-manage-prg-funding-details/ostf-manage-prg-funding-details.component';
+import { OstfManagePrgAgencyUsersComponent } from './users-mgt/ostf-manage-prg-user-mgt/ostf-manage-prg-agency-users/ostf-manage-prg-agency-users.component';
 import { OstfManagePrgCountyUsersComponent } from './users-mgt/ostf-manage-prg-user-mgt/ostf-manage-prg-county-users/ostf-manage-prg-county-users.component';
 import { OstfManagePrgUserMgtComponent } from './users-mgt/ostf-manage-prg-user-mgt/ostf-manage-prg-user-mgt.component';
 import { OstfManagePrgEmailTemplatesComponent } from './Templates/ostf-manage-prg-email-templates/ostf-manage-prg-email-templates.component';
@@ -6,7 +9,6 @@ import { OstfManagePrgFinanceComponent } from './Finance/ostf-manage-prg-finance
 import { OstfManagePrgDashboardComponent } from './Dashboard/ostf-manage-prg-dashboard/ostf-manage-prg-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { OstfManagePrgSchedulingComponent } from './Finance/ostf-manage-prg-scheduling/ostf-manage-prg-scheduling.component';
 import { OstfManagePrgParcelsComponent } from './Finance/ostf-manage-prg-parcels/ostf-manage-prg-parcels.component';
 
 const routes: Routes = [
@@ -46,6 +48,14 @@ const routes: Routes = [
   {
     path:'countyUsers',
     component:OstfManagePrgCountyUsersComponent
+  },
+  {
+    path:'agencyUsers',
+    component:OstfManagePrgAgencyUsersComponent
+  },
+  {
+    path:'funding',
+    component:OstfManagePrgFundingDetailsComponent
   }
 ];
 

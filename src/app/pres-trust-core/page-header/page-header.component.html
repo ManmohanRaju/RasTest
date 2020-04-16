@@ -21,7 +21,7 @@
     </mat-toolbar-row>
 </mat-toolbar> -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white top-header logo-pl">
+<nav *ngIf="(router.url)!== '/login'" class="navbar navbar-expand-lg navbar-light bg-white top-header logo-pl">
     <a class="navbar-brand logo-brand mat-primary" href="#"><img src="../../../assets/morris-county-seal.png" alt="mc"></a>
     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

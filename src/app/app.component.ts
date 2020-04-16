@@ -40,6 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
         switch (activeRoot.snapshot.firstChild.url.toString()) {
           case 'login':
             this.srvcSideNav.close();
+            break;
           default:
             this.sideNav.open();
         }
