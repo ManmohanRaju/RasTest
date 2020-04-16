@@ -1,4 +1,35 @@
-<app-ostf-manage-prg-header [page]="page" (send)="getData($event)"></app-ostf-manage-prg-header>
+<div>
+  <!-- breadcrumb -->
+<a class="back-link" (click)="backClicked()"><span><</span> Back</a>
+
+  <nav aria-label="breadcrumb" class="row">
+      <ol class="breadcrumb m-0 bg-transparent">
+        <li class="breadcrumb-item"><a routerLink="/programManager">Program Manager</a></li>
+        <li class="breadcrumb-item"><a routerLink="/programManager">User Management </a></li>
+        <li class="breadcrumb-item active"> {{page}}</li>
+      </ol>
+    </nav>
+    <div class="mc-page-header pb-2 d-flex justify-content-between align-items-center">
+      <div>
+          <h2 class="mb-0">{{page}}</h2>
+         
+      </div>
+      <div class="" *ngIf="page=='County Users'">
+          <div class="searchbox d-inline-block mr-2">
+              <input (keyup)="doFilter($event.target.value)" class="form-control py-2" type="search" placeholder="Search">
+              <i class="flaticon2-search-1"></i>
+          </div>
+
+          <button mat-raised-button color="primary"  (click)="openDialog('Add',{})">
+              <i class="flaticon2-add-1 mr-1"></i> Add User
+          </button>
+         
+      </div>
+  </div>
+
+<!-- pagetitle -->
+
+</div>
 <table  mat-table [dataSource]="dataSource" class="mc-table">
     <!-- Program Column -->
     <ng-container matColumnDef="Full Name">
@@ -18,7 +49,7 @@
 
       <ng-container matColumnDef="Program">
         <th mat-header-cell *matHeaderCellDef>Program</th>
-        <td mat-cell *matCellDef="let element"> {{element.program}}] </td>
+        <td mat-cell *matCellDef="let element"> {{element.program}} </td>
       </ng-container>
 
       <ng-container matColumnDef="Role">
@@ -29,20 +60,20 @@
     <!-- ProjectTitle Column -->
     <ng-container matColumnDef="Actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element;let i=index;">
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/ostf/project/projectview/1/project/view/1">
+          <button mat-menu-item>
             <!-- <mat-icon>edit</mat-icon> -->
             <span>Send Invite</span>
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="editData('Edit',element,i)">
             <!-- <mat-icon>visibility</mat-icon> -->
             <span>Edit</span>
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="delete(i)">
             <!-- <mat-icon>delete</mat-icon> -->
             <span>Remove Access</span>
           </button>

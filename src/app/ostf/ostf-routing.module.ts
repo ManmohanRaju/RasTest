@@ -55,12 +55,6 @@ const ostfRoutes: Routes = [
         path: 'adminclosing', loadChildren: () => import('./ostf-app-admin-closing/ostf-app-admin-closing.module').then(m => m.OstfAppAdminClosingModule)
       },
       {
-        path: 'finance', loadChildren: () => import('./ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)
-      },
-      {
-        path: 'programManager', loadChildren: () => import('./ostf-manage-program/ostf-manage-program.module').then(m => m.OstfManageProgramModule)
-      },
-      {
         path: 'sitecharacteristics', loadChildren: () => import('./ostf-app-site-characteristics/ostf-app-site-characteristics.module').then(m => m.OstfAppSiteCharacteristicsModule)
       }
     ]
