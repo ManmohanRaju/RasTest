@@ -6,6 +6,7 @@ import { OstfAppOverviewRoutingModule } from './ostf-app-overview-routing.module
 
 import { OstfAppOverviewViewComponent } from './ostf-app-overview-view/ostf-app-overview-view.component';
 import { OstfAppOverviewEditComponent } from './ostf-app-overview-edit/ostf-app-overview-edit.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { OstfAppOverviewEditComponent } from './ostf-app-overview-edit/ostf-app-
   imports: [
     CommonModule,
     CustomMaterialModule,
-    OstfAppOverviewRoutingModule
+    OstfAppOverviewRoutingModule,
+    SharedModule
   ]
 })
 export class OstfAppOverviewModule { }

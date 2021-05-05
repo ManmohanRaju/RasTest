@@ -60,7 +60,6 @@ export class SideNavItemsComponent implements OnInit, OnDestroy {
   }
 
   buildRouterLinks(link) {
-    console.log(link.toString());
     let url = "";
     url = link.routerLink.toString();
     return url;

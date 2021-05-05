@@ -6,6 +6,7 @@ import { OstfAppSignatureRoutingModule } from './ostf-app-signature-routing.modu
 import { OstfAppSignatureViewComponent } from './ostf-app-signature-view/ostf-app-signature-view.component';
 import { OstfAppSignatureEditComponent } from './ostf-app-signature-edit/ostf-app-signature-edit.component';
 import { SignaturePadModule } from '@ng-plus/signature-pad';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SignaturePadModule } from '@ng-plus/signature-pad';
     CommonModule,
     OstfAppSignatureRoutingModule,
     CustomMaterialModule,
-    SignaturePadModule
+    SignaturePadModule,
+    SharedModule
   ]
 })
 export class OstfAppSignatureModule { }

@@ -1,1 +1,153 @@
-<p>ostf-app-project-edit works!</p>
+<div class="mc-mat-tab-content p-3" id="scrollId">
+    <form [formGroup]="editProjectForm">
+      <div class="form-center-container">
+        <div class="form-group">
+          <label>Project Title</label>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="projectTitle" />
+            <mat-error *ngIf="errorHandling('projectTitle', 'required')">
+              Required
+            </mat-error>
+            <mat-error *ngIf="errorHandling('projectTitle', 'maxlength')">
+              Length must be 8 to 128 characters.
+            </mat-error>
+            <mat-error *ngIf="errorHandling('projectTitle', 'minlength')">
+              Length must be 8 to 128 characters.
+            </mat-error>
+          </mat-form-field>
+  
+        </div>
+        <div class="form-group">
+          <label>Agency Name</label>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="agencyId" />
+            <mat-error *ngIf="errorHandling('agencyId', 'required')">
+              Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group mat-radio-group">
+          <mat-radio-group formControlName="agencyType">
+            <mat-radio-button value="municipality">Municipality</mat-radio-button>
+            <mat-radio-button value="nonprofit">Charitable Conservancy</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="form-group">
+          <label>Agency Address </label>
+          <mat-form-field appearance="outline">
+            <textarea matInput formControlName="siteAddress"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <hr class="my-5">
+  
+      <div class="form-center-container">
+        <div *ngIf="selectedOptionAgencyType == 'municipality' ">
+          <div class="yes-group">
+            <p class="text-dark">
+              <strong>
+                Does your Municipality share any active recreational facilities with
+                another municipality?
+              </strong>
+            </p>
+            <div class="form-group mat-radio-group">
+              <mat-radio-group formControlName="sharedFacilities">
+                <mat-radio-button value="true">Yes</mat-radio-button>
+                <mat-radio-button value="false">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+  
+          <div class="form-group" *ngIf="selectedOptionSharedFacilitites == 'true'">
+            <label>If yes, which town(s) and how? </label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here"
+                        formControlName="sharedFacilitiesTownsDesc" required></textarea>
+              <mat-error *ngIf="errorHandling('sharedFacilitiesTownsDesc', 'required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="errorHandling('sharedFacilitiesTownsDesc', 'maxlength')">
+                Maximum length must be 2000 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="form-group">
+            <label><b>If acquired, how will the lands be managed? </b></label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="landsManagedDesc"></textarea>
+              <mat-error *ngIf="errorHandling('landsManagedDesc', 'required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="errorHandling('landsManagedDesc', 'maxlength')">
+                Maximum length must be 2000 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <div *ngIf="selectedOptionAgencyType == 'nonprofit' ">
+           
+            <div class="py-2 mb-3">
+              <div><strong> Current proof of qualification as a charitable conservancy* </strong> </div>
+              <small class="text-muted">
+                <em>
+                  * A qualified charitable conservancy is a corporation or trust whose purposes include the acquisition
+                  and preservation of land or water areas or of a particular land or water area, or either thereof, in a
+                  natural, scenic or open condition, no part of the net earnings of which inures to the benefit of any
+                  private shareholder or individual, and which has received tax exemption under section 501 of the 1954
+                  Internal Revenue Code.
+                </em>
+              </small>
+            </div>
+            <div class="form-group">
+              <label>How will the charitable conservancy maintain the property? (Please explain) </label>
+              <mat-form-field appearance="outline">
+                <textarea matInput rows="4" placeholder="Please Enter Here"
+                          formControlName="maintainPropertyDesc"></textarea>
+                <mat-error *ngIf="errorHandling('maintainPropertyDesc', 'required')">
+                  Required
+                </mat-error>
+                <mat-error *ngIf="errorHandling('maintainPropertyDesc', 'maxlength')">
+                  Maximum length must be 2000 characters.
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label>What would happen to land(s) if the conservancy no longer existed? (Please explain) </label>
+              <mat-form-field appearance="outline">
+                <textarea matInput rows="4" placeholder="Please Enter Here"
+                          formControlName="conservancyNotExistedDesc"></textarea>
+                <mat-error *ngIf="errorHandling('conservancyNotExistedDesc', 'required')">
+                  Required
+                </mat-error>
+                <mat-error *ngIf="errorHandling('conservancyNotExistedDesc', 'maxlength')">
+                  Maximum length must be 2000 characters.
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label>What land(s) do you currently own?</label>
+              <mat-form-field appearance="outline">
+                <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="currentLandsDesc"></textarea>
+                <mat-error *ngIf="errorHandling('currentLandsDesc', 'required')">
+                  Required
+                </mat-error>
+                <mat-error *ngIf="errorHandling('currentLandsDesc', 'maxlength')">
+                  Maximum length must be 2000 characters.
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fabicon">
+        <button mat-flat-button color="accent" aria-label="icon" (click)="onSubmit()">
+          <mat-icon>save</mat-icon>
+          <span class="font-weight-500">Save Changes</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  

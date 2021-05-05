@@ -4,13 +4,13 @@
     <div class="mc-login-row d-flex h-100">
         <div class="bg-primary login-aside p-5 d-flex flex-column" style="background-image: url(https://keenthemes.com/metronic/preview/angular/demo6/assets/media/bg/bg-4.jpg);">
             <div class="mc-logo-item mb-4">
-                <a class="mc-logo" href="javascript:;"><img alt="" src="assets/bg-1.jpg"></a>
+                <a class="mc-logo" href="javascript:;"><img alt="" src="assets/images/demo-logo.jpg"></a>
             </div>
     
     
             <div class="mc-grid-item mc-grid-ver">
                     <div class="mc-grid-item mc-grid-item-middle">
-                       <h3 class="mc-login-title">Welcome to Morris County!</h3>
+                       <h3 class="mc-login-title">Welcome to RAS County!</h3>
                        <h4 class="mc-login-subtitle">
                             Morris County is nestled amid rolling hills, broad valleys and glittering lakes approximately 
                             30 miles northwest of New York City. It is New Jersey’s seventh largest county.       
@@ -41,17 +41,25 @@
                                                 <strong>admin@demo.com</strong> and password
                                                 <strong>demo</strong> to continue.</div>
                                             </div> -->
-                                            <form class="mc-form">
+                                            <form class="mc-form" [formGroup]="loginForm">
                                                     <mat-form-field class="full-width">
-                                                      <input matInput placeholder="Username" value="Sushi">
+                                                      <input matInput placeholder="Username" formControlName="userName">
+                                                      <mat-error *ngIf="errorHandling('userName', 'required')">
+                                                        User Name is required
+                                                      </mat-error>
                                                     </mat-form-field>
+                                                    
                                                     <mat-form-field class="full-width">
-                                                            <input matInput placeholder="password" value="password">
+                                                            <input matInput type="password" formControlName="password">
+                                                            <mat-error *ngIf="errorHandling('password', 'required')">
+                                                                User Name is required
+                                                              </mat-error>
                                                           </mat-form-field>
+                                                         
                                                           
                                                   </form>
                                                   <div class="mc-login-actions">
-                                                        <a class="mc-link mc-link-forgot" href="#" routerlink="/auth/forgot-password"> Forgot Password </a>
+                                                        <a class="mc-link mc-link-forgot" href="#"> Forgot Password </a>
                                                        
                                                         
                                                         <!-- <button mat-flat-button class="login-btn btn btn-primary" routerLink="">Sign In</button> -->
@@ -81,8 +89,3 @@
     </div>
 
 
-
-
-<!-- <div style="text-align: center;">
-    <button mat-raised-button color="primary"  type="submit" (click)="loginUser()">Login</button>
-</div> -->

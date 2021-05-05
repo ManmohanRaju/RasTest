@@ -8,13 +8,13 @@ import { OstfAppProjectViewComponent } from '../ostf-app-project/ostf-app-projec
 
 const routes: Routes = [
   {
-    path:'', component: OstfAppProjectViewComponent
-  },
-  {
     path:'projedit/:id', component: OstfAppProjectEditComponent
   },
   {
-    path:'projectview/:id', component: OstfAppProjectViewComponent
+    path:'projedit', component: OstfAppProjectEditComponent
+  },
+  {
+    path:'projview', component: OstfAppProjectViewComponent
   }
 ];
 

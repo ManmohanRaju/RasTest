@@ -1,0 +1,62 @@
+<div class="mc-mat-tab-content p-3">
+  <form [formGroup]="createAppForm">
+    <div class="form-center-container">
+      <div class="form-group">
+        <label>Project Title</label>
+        <!-- <input type="text" class="form-control"> -->
+        <!-- <mat-label>Project Title </mat-label> -->
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="applicationTitle" />
+          <mat-error *ngIf="errorHandling('applicationTitle', 'required')">
+            You must provide a title
+          </mat-error>
+          <mat-error *ngIf="errorHandling('applicationTitle', 'maxlength')">
+            Title length must be 8 to 128 characters.
+          </mat-error>
+          <mat-error *ngIf="errorHandling('applicationTitle', 'minlength')">
+            Title length must be 8 to 128 characters.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label>Agency Name</label>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="agencyId" />
+          <mat-error *ngIf="errorHandling('agencyId', 'required')">
+            <strong>Agency </strong>must be selected.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group mat-radio-group">
+        <mat-radio-group formControlName="agencyType">
+          <mat-radio-button value="municipality">Municipality</mat-radio-button>
+          <mat-radio-button value="nonprofit">Charitable Conservancy</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="form-group">
+        <label>Site Address </label>
+        <mat-form-field appearance="outline">
+          <textarea matInput formControlName="agencyAddress"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="yes-group">
+        <p class="text-muted">
+          Is the site designated for compliance with a Mount Laurel court settlement or
+          identified in a complaint for declaratory judgement for affordable housing,
+          or designated in an adopted masterplan or going ordinance for affordable housing?
+        </p>
+        <div class="form-group mat-chk-group">
+          <span class="mr-4 mb-1" *ngFor="let item of ['Yes','No'];  let i = index">
+            <mat-checkbox [checked]="selected == i" (change)="change(i)">{{item}}</mat-checkbox>
+          </span>
+        </div>
+        <!-- <button *ngIf="selected==0">CREATE APPLICATION</button> -->
+      </div>
+    </div>
+    <div class="step-footer d-flex justify-content-end">
+      <button type="button" *ngIf="selected==1" mat-flat-button color="primary" (click)="createApplication()">
+        Continue
+      </button>
+    </div>
+  </form>
+</div>

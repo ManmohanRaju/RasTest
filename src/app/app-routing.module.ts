@@ -1,3 +1,4 @@
+import { FileUploadComponent } from './pres-trust-core/fileupload/pretrust-fileupload.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pres-trust-core/login/login.component';
@@ -24,12 +25,12 @@ const appRoutes: Routes = [
     component: ApplicationsComponent
   },
   {
-    path: 'ostf',
-    loadChildren: () => import('./ostf/ostf.module').then(m => m.OstfModule)
+    path: 'file',
+    component: FileUploadComponent
   },
   {
-    path: 'programManager',
-    loadChildren: () => import('./ostf-manage-prg/ostf-manage-prg.module').then(m => m.OstfManagePrgModule)
+    path: 'ostf',
+    loadChildren: () => import('./ostf/ostf.module').then(m => m.OstfModule)
   },
   {
     path: 'page-not-found',

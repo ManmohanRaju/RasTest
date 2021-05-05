@@ -1,0 +1,89 @@
+<h2 mat-dialog-title>Upload <small class="font-13"> {{data.category}} </small> </h2>
+
+<mat-dialog-content>
+
+  <div class="form-center-container">
+  
+    <div class="choose-file-bg mb-3">
+      <div class="choose-file p-3"> 
+          <label class="btn btn-outline-primary m-0" for="cfile">Choose File</label>
+          <input multiple hidden id="cfile" type="file" (change)="onFileSelected($event.target.files)">
+      </div>
+  </div>
+
+
+
+  <div class="media align-items-start mb-2">
+    <ng-container *ngIf="data.asset.name">
+      <img [(src)]="filetype" class="mr-3 referthumb-icon mt-2" alt="icon file" width="45" height="auto">
+    </ng-container>
+    
+    <div class="media-body">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group mb-1">
+            <label class="m-0">Title</label>
+            <mat-form-field appearance="outline">
+              <input matInput name="filenamealias" [(ngModel)]="data.title" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mb-1">
+            <label class="m-0">Description</label>
+            <mat-form-field appearance="outline">
+              <textarea matInput name="description" [(ngModel)]="data.description" rows="2"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+    
+    
+
+    <div class="d-flex justify-content-end my-2">
+
+      <button type="button" color="primary" class="font-weight-600 px-4" mat-flat-button (click)="onAddFile()">+ Add</button>
+
+    </div>
+
+  </div>
+
+  <mat-progress-bar *ngIf="showProgress" style="height:10px;" color="accent" mode="determinate" [value]="progress" class="my-3"></mat-progress-bar>
+
+  <div *ngIf="pretrustDocs.length > 0">
+    <hr>
+  </div>
+  <div class="uploaded-list" *ngFor="let fileDoc of pretrustDocs;let i=index;">
+    <div class="card file-item p-0 radius-7">
+      <div class="media align-items-start choose-file-bg radius-7">
+        <img [src]="fileDoc.fileName|fileIcon" class="align-self-start mr-3 thumb-icon" alt="icon file">
+        <div class="media-body pr-3">
+          <div class="up-filename"> {{fileDoc.fileName}} </div>
+          <h6 class="up-filename"> {{fileDoc.title}} </h6>
+          <p class="font-sm up-dec m-0">
+            {{fileDoc.description}}
+          </p>
+        </div>
+        <span class="ng-clear-wrapper" (click)="onRemoveDoc(fileDoc)"><i class="flaticon2-cross"></i></span>
+      </div>
+    </div>
+  </div>
+
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  
+  <div class="step-footer d-flex justify-content-end w-100">
+    <button  type="button"  mat-flat-button class="mat-light mr-2" (click)="onCancel()"> Cancel </button>
+    <button  type="button"  mat-flat-button color="accent" class="mr-2" (click)="onSave()">
+      <i class="la la-upload mr-1"></i> Upload
+    </button>
+    
+</div>
+</mat-dialog-actions>

@@ -1,0 +1,33 @@
+
+
+<mat-card-title-group class="">
+
+  <mat-card-title class="card-container-left">    <img class="application-img" src ="/assets/images/map-property.jpg" alt = "User Profile">
+  </mat-card-title>
+  <mat-card-title class="card-container-right ml-3 pt-1 mb-0"> 
+    <mat-card-subtitle class="mb-2 app-username-small">Application Name</mat-card-subtitle>
+    <mat-card-title><h3 class="app-username-title">DiVinci Property</h3></mat-card-title>
+    <mat-card-subtitle class="app-date pt-1"><span>Start Date <span class="btn btn-sm btn-label-brand ml-1">05 Dec 2019</span></span>  <span class="ml-4">Due Date <span class="btn btn-sm btn-label-brand ml-1">25 Dec 2019</span></span></mat-card-subtitle>
+
+  </mat-card-title>
+  
+</mat-card-title-group>
+<div class="statistics-tabs mt-3 app-userdetails-footer" fxLayout="row wrap" fxLayoutAlign="space-evenly stretch" fxLayoutGap="20px">
+  <mat-card fxFlex="0 1 calc(20% - 20px)" *ngFor="let card of tests; let i = index" class="product header-cards mb-2" fxLayout="column">
+        <mat-card-header class="card-container mt-1 mb-2 pt-2">
+              <mat-card-title class="card-container-left mb-0" >
+                <!-- <mat-icon class="card-icon" aria-hidden="false" aria-label="Example home icon">{{card.icon}}</mat-icon> -->
+              <img [src]="card.svg"/>
+              </mat-card-title>
+                <mat-card-title class="card-container-right icon-title mb-0">
+                  {{card.title}}
+                  <mat-card-subtitle class="icon-sub-title mb-0">
+                    <a href="#">{{card.subTitle}}</a>
+                  </mat-card-subtitle>
+              </mat-card-title>
+            </mat-card-header>
+    </mat-card>
+</div>
+
+
+ 

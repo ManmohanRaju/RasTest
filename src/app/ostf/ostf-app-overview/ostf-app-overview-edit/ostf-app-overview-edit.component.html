@@ -1,1 +1,240 @@
-<p>ostf-app-overview-edit works!</p>
+<div class="mc-mat-tab-content">
+    <form class="p-4" [formGroup]="editOverviewForm">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
+          <div class="form-group">
+            <label>Recreation Type</label>
+            <mat-form-field appearance="outline">
+              <mat-select placeholder="Select" formControlName="recreationType">
+                <mat-option [value]="OstfAppRecreationTypeEnum.PRIMARILY_PASSIVE_RECREATION">Primarily Passive Recreation</mat-option>
+                <mat-option [value]="OstfAppRecreationTypeEnum.PRIMARILY_ACTIVE_RECREATION">Primarily Active Recreation</mat-option>
+                <mat-option [value]="OstfAppRecreationTypeEnum.BOTH">Both</mat-option>
+              </mat-select>
+              <mat-error *ngIf="errorHandling('recreationType', 'required')">
+                Required
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="yes-group">
+            <p class="text-muted">
+              Are you submitting more than one application?
+            </p>
+            <div class="form-group mat-radio-group">
+              <mat-radio-group formControlName="priorityApplication">
+                <mat-radio-button value="true">Yes</mat-radio-button>
+                <mat-radio-button value="false">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="selectedPriorityApplicationType=='true'">
+            <label>Please assign priority for this application</label>
+            <mat-form-field appearance="outline">
+              <mat-select placeholder="Select" formControlName="priorityLevel">
+                <mat-option [value]="OstfAppPriorityLevelEnum.P1">Priority 1</mat-option>
+                <mat-option [value]="OstfAppPriorityLevelEnum.P2">Priority 2</mat-option>
+                <mat-option [value]="OstfAppPriorityLevelEnum.P3">Priority 3</mat-option>
+                <mat-option [value]="OstfAppPriorityLevelEnum.P4">Priority 4</mat-option>
+              </mat-select>
+              <mat-error *ngIf="errorHandling('priorityLevel', 'required')">
+                Required
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="yes-group">
+            <p class="text-muted">
+              Have you made an application for this project to the Morris County
+              Open Space Trust Fund before?
+            </p>
+            <div class="form-group mat-chk-group d-flex align-items-center">
+              <span class="mr-4 mb-1">
+                <div class="form-group mat-radio-group">
+                  <mat-radio-group formControlName="priorApplication">
+                    <mat-radio-button value="true">Yes</mat-radio-button>
+                    <mat-radio-button value="false">No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </span>
+              <span class="mb-1" *ngIf="selectedPriorApplicationType =='true'">
+                <mat-form-field appearance="outline">
+                  <input matInput mask="0000" placeholder="Year?" formControlName="priorApplicationYear" maxlength="4" />
+                  <mat-error *ngIf="errorHandling('priorApplicationYear', 'required')">
+                    Required
+                  </mat-error>
+                  <mat-error *ngIf="errorHandling('priorApplicationYear', 'maxlength')">
+                    Maximum length must be 4 numbers.
+                  </mat-error>
+                </mat-form-field>
+              </span>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5" *ngIf="selectedOptionRecreationType == 'PRIMARILY_ACTIVE_RECREATION'|| selectedOptionRecreationType == 'BOTH'">
+          <div class="form-group">
+            <label class="mb-1"><strong class="font-weight-500">Recreation Facilities Need Assessment</strong></label>
+            <p class="text-muted mb-2">
+              In order for the Committee to have a better understanding of the underlying need for
+              additional active recreational facilities in your municipality, please provide the following
+              Information.
+            </p>
+            <label>Conceptually speaking, what type of recreational facilities are proposed for this site?</label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="recreationalFacilities"></textarea>
+              <mat-error *ngIf="errorHandling('recreationalFacilities', 'required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="errorHandling('recreationalFacilities', 'maxlength')">
+                Maximum length must be 2000 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label>
+              Explain what factors are contributing to the need for additional active recreational facilities
+              In your municipality
+            </label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="activeFacilities"></textarea>
+              <mat-error *ngIf="errorHandling('activeFacilities', 'required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="errorHandling('activeFacilities', 'maxlength')">
+                Maximum length must be 2000 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-lg-5">
+          <div class="form-group">
+            <label>Acquisition Type</label>
+            <mat-form-field appearance="outline">
+              <mat-select placeholder="Select" formControlName="acquisitionType">
+                <mat-option [value]="OstfAppAcquisitionTypeEnum.FEE_SIMPLE">Acquisition in fee simple</mat-option>
+                <mat-option [value]="OstfAppAcquisitionTypeEnum.LESS_THAN_FEE_SIMPLE">Acquisition in less than fee simple</mat-option>
+                <mat-option [value]="OstfAppAcquisitionTypeEnum.FEE_SIMPLE_AND_LESS_THAN_FEE_SIMPLE">Both</mat-option>
+              </mat-select>
+              <mat-error *ngIf="errorHandling('acquisitionType', 'required')">
+                Required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div *ngIf="selectedOptionAquisitionType == 'LESS_THAN_FEE_SIMPLE' || selectedOptionAquisitionType == 'FEE_SIMPLE_AND_LESS_THAN_FEE_SIMPLE'">
+            <div class="row mt-1 mb-1">
+              <div class="col-lg-12 pr-lg-5">
+  
+  
+                <!-- <pretrust-fileupload [title]="'Upload a copy of your easement/ deed language with your application and said language shall be supplied to your appraiser'" [fileDocuments]="docsEasementDeedsLang"
+                                     [docType]="Doctype.EASEMENT_DEED_LANGUAGE" [applicationId]="applicationProfile.id">
+  
+                </pretrust-fileupload>
+                <mat-error *ngIf="docsEasementDeedsLang.length == 0 && overViewDetails.id > 0">
+                  *Mandatory Upload
+                </mat-error> -->
+              </div>
+            </div>
+            <div class="form-inline">
+              <label class="mr-3">Has the value of the easement been determined ?</label>
+              <mat-radio-group formControlName="easementValue">
+                <mat-radio-button value="true">Yes</mat-radio-button>
+                <mat-radio-button value="false">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="form-group" *ngIf="selectedEasementValueType == 'true'">
+              <label>Please explain below:</label>
+              <mat-form-field appearance="outline">
+                <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="easementValueDetermined"></textarea>
+                <mat-error *ngIf="errorHandling('easementValueDetermined', 'required')">
+                  Required
+                </mat-error>
+                <mat-error *ngIf="errorHandling('easementValueDetermined', 'maxlength')">
+                  Maximum length must be 2000 characters.
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+  
+            <div class="form-group">
+              <label>How and who will monitor owner’s compliance with the terms of the easement?</label>
+              <mat-form-field appearance="outline">
+                <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="easementCompliance"></textarea>
+                <mat-error *ngIf="errorHandling('easementCompliance', 'required')">
+                  Required
+                </mat-error>
+                <mat-error *ngIf="errorHandling('easementCompliance', 'maxlength')">
+                  Maximum length must be 2000 characters.
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-lg-5" *ngIf="selectedOptionAquisitionType == 'LESS_THAN_FEE_SIMPLE' || selectedOptionAquisitionType == 'FEE_SIMPLE_AND_LESS_THAN_FEE_SIMPLE'">
+          <div class="form-group">
+            <label>Specify type of easement summarize and deed restrictions placed on land </label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="easements" maxlength="200"></textarea>
+              <mat-error *ngIf="errorHandling('easements', 'required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="errorHandling('easements', 'maxlength')">
+                Maximum length must be 200 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="form-inline">
+            <label class="mr-3">Will the public have access ?</label>
+            <mat-radio-group formControlName="publicAccess">
+              <mat-radio-button value="true">Yes</mat-radio-button>
+              <mat-radio-button value="false">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+  
+          <div class="form-group" *ngIf="selectedPublicAccessType == 'true'">
+            <label>Please explain below:</label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="accessExplained"></textarea>
+              <mat-error *ngIf="errorHandling('accessExplained', 'required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="errorHandling('accessExplained', 'maxlength')">
+                Maximum length must be 2000 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="form-group">
+            <label>What is planned for the residual of the property?</label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="residualProperty"></textarea>
+              <mat-error *ngIf="errorHandling('residualProperty', 'required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="errorHandling('residualProperty', 'maxlength')">
+                Maximum length must be 2000 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+  
+      </div>
+      <div class="fabicon">
+        <button type="submit" mat-flat-button color="accent" aria-label="icon" (click)="onSubmit()">
+          <mat-icon>save</mat-icon>
+          <span class="font-weight-500">Save Changes</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  
+  
+  
+  
+  

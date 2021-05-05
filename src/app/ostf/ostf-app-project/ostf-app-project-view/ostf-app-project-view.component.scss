@@ -31,3 +31,15 @@
     display: flex;
     flex-direction: column;
   }
+  .text-break{
+    max-width: 300px;
+    word-wrap: break-word;
+    // margin-bottom: 0px;
+  }
+  .text-highlight{
+    color: royalblue;
+    margin-top: 2px;
+  }
+  tr{
+  border-bottom: 1px solid;
+  }

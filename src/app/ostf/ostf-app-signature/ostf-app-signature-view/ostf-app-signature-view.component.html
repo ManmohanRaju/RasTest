@@ -1,104 +1,37 @@
 <div class="mc-mat-tab-content">
-  <form class="p-4">
- 
+  <form class="p-4" [formGroup]="viewSignatureForm">
+    <div class="mb-5">
+      <div class="form-inline">
+        <div>
+          I,
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="chief executive officer" formControlName="designation" readonly />
+
+          </mat-form-field>
+          , hereby certify to the best of my knowledge that this application is a true and accurate portrayal of the site proposed for acquisition under the 
+          <a class="a-highlight">Morris County Open Space Trust Fund.</a>
+        </div>
+      </div>
+    </div>
     <div class="form-center-container mt-2">
-      <div class="mb-5">
-          <div class="form-inline">
-            <div>
-              I,
-              <input type="text" class="form-control mx-2 mb-1" placeholder="chief executive officer">
-              ,here by certify to the best of my knowledge that this application is a  true and accurate portrayal of the site Proposed for acquicition under the
-               <a href="#">Morris County Open Space Trust Fund</a>  
-            </div>
-            </div>
-      </div>
-      <div class="form-group">
-        <label>Signature</label>
-        <ng-signature-pad
-        format="base64"
-        (done)="showImage($event)" class="signature-pad">
-      </ng-signature-pad>
-        <!-- <input type="text" class="form-control"> -->
-      </div>
       <div class="form-group">
         <label>Title</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <input matInput formControlName="title" readonly/>
         </mat-form-field>
       </div>
       <div class="form-group">
         <label>Date</label>
-        <!-- <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker> -->
         <mat-form-field appearance="outline">
-          <!-- <mat-label>Choose a date</mat-label> -->
-          <input matInput [matDatepicker]="picker1">
-          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
+          <input matInput [matDatepicker]="picker1" formControlName="signatureOn" readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker1" disabled></mat-datepicker-toggle>
+          <mat-datepicker #picker1 disabled></mat-datepicker>
         </mat-form-field>
       </div>
       <div class="form-group">
-          <label class="mb-1"><strong class="font-weight-500">NOTE</strong></label>
-  <p class="text-muted mb-2">Certification must be signed by the Mayor(Muncipal Applicants) or executive Director/President(Non-profit applicants ) </p>
-        </div>
-    </div>
-    <div class="step-footer d-flex justify-content-end px-4">
-      <button mat-flat-button class="mat-light mr-2">Back</button>
-      <button mat-flat-button color="accent" class="mr-2">Submit Application</button>
-    </div>
-      </form>
+        <label class="mb-1"><strong class="font-weight-500">NOTE</strong></label>
+        <p class="text-muted mb-2">Certification must be signed by the Mayor (Municipal Applicants) or Executive Director/President (Non-profit applicants ) </p>
       </div>
-<!-- <mat-card>
-  <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">    
-    I,<input type="text" class="form-control" placeholder="chief executive officer">
-  </div>
-  ,here by certify to the best of my knowledge that this application is a  true and accurate portrayal of the site Proposed for acquicition under the Morris County Open Space Trust Fund
-
-</mat-card>
-<mat-card-content>
-    <form>
-        <table class="example-full-width" align="center">
-            <tr>
-                <td>
-                  <mat-label>Signature </mat-label>
-                </td>
-              </tr>
-<tr>
-    <td>
-        <ng-signature-pad
-  format="base64"
-  (done)="showImage($event)" class="signature-pad">
-</ng-signature-pad>
-    </td>
-</tr>
-<tr>
-    <td>
-      <mat-label>Title </mat-label>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <mat-form-field appearance="outline">
-        <input matInput placeholder="Title" width="800px" />
-      </mat-form-field>
-    </td>
-  </tr>
-  <tr>
-      <td>
-        <mat-form-field>
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-      </td>
-  </tr>
-  <p>NOTE:Certification must be signed by the Mayor(Muncipal Applicants) or executive Director/President(Non-profit applicants )</p>
-  <mat-card-actions align="right">
-    <button mat-raised-button color="primary">Back</button>
-    <button mat-raised-button color="primary">Submit Application</button>
-  </mat-card-actions> 
-</table>
-    </form>
-</mat-card-content> -->
+    </div>
+  </form>
+</div>

@@ -1,1 +1,53 @@
-<p>ostf-app-signature-edit works!</p>
+<div class="mc-mat-tab-content">
+    <form class="p-4" [formGroup]="editSignatureForm">
+      <div class="mb-5">
+        <div class="form-inline">
+          <div>
+            I,
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="chief executive officer" formControlName="designation" />
+              <mat-error *ngIf="errorHandling('designation', 'required')">
+                Required
+              </mat-error>
+            </mat-form-field>
+            , hereby certify to the best of my knowledge that this application is a true and accurate portrayal of the site proposed for acquisition under the
+            <a class="a-highlight">Morris County Open Space Trust Fund.</a>
+          </div>
+        </div>
+      </div>
+      <div class="form-center-container mt-2">
+        <div class="form-group">
+          <label>Title</label>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="title" />
+            <mat-error *ngIf="errorHandling('title', 'required')">
+              Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <mat-form-field appearance="outline">
+            <input matInput [matDatepicker]="picker1" formControlName="signatureOn">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error *ngIf="errorHandling('signatureOn', 'required')">
+              Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <label class="mb-1"><strong class="font-weight-500">NOTE</strong></label>
+          <p class="text-muted mb-2">Certification must be signed by the Mayor (Municipal Applicants) or Executive Director/President (Non-profit applicants ) </p>
+        </div>
+      </div>
+  
+      <div class="fabicon">
+        <button  type="submit" mat-flat-button color="accent" aria-label="icon" (click)="onSubmit()">
+          <mat-icon>save</mat-icon>
+          <span class="font-weight-500">Save Changes</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  

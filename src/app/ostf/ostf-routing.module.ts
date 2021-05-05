@@ -1,8 +1,14 @@
+import { OstfCreateApplicationComponent } from './ostf-create-app/ostf-create-app.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OstfAppComponent } from './ostf-app/ostf-app.component';
 
+
 const ostfRoutes: Routes = [
+  {
+path:'createapplication',
+component:OstfCreateApplicationComponent
+  },
   {
     path: '', component: OstfAppComponent,
     children: [
@@ -12,51 +18,17 @@ const ostfRoutes: Routes = [
       {
         path: 'project', loadChildren: () => import('./ostf-app-project/ostf-app-project.module').then(m => m.OstfAppProjectModule),
       },
-      {
-        path: 'role', loadChildren: () => import('./ostf-app-role/ostf-app-role.module').then(m => m.OstfAppRoleModule),
-      },
+     
       {
         path: 'overview', loadChildren: () => import('./ostf-app-overview/ostf-app-overview.module').then(m => m.OstfAppOverviewModule),
-      },
-      {
-        path: 'location', loadChildren: () => import('./ostf-app-location/ostf-app-location.module').then(m => m.OstfAppLocationModule)
-      },
-      {
-        path: 'projectNarrative', loadChildren: () => import('./ostf-app-projectNarrative/ostf-app-project-narrative.module').then(m => m.OstfAppProjectNarrativeModule),
       },
       {
         path: 'signature', loadChildren: () => import('./ostf-app-signature/ostf-app-signature.module').then(m => m.OstfAppSignatureModule)
       },
       {
-        path: 'planning', loadChildren: () => import('./ostf-app-plan-mgt/ostf-app-plan-mgt.module').then(m => m.OstfAppPlanMgtModule)
+        path: 'prjnarrative', loadChildren: () => import('./ostf-app-project-narrative/ostf-app-project-narrative.module').then(m => m.OstfAppProjectNarrativeModule)
       },
-      {
-        path: 'otherDocs', loadChildren: () => import('./ostf-app-other-docs/ostf-app-other-docs.module').then(m => m.OstfAppOtherDocsModule)
-      },
-      {
-        path: 'checklist', loadChildren: () => import('./ostf-app-admin-doc-checklist/ostf-app-admin-doc-checklist.module').then(m => m.OstfAppAdminDocChecklistModule)
-      },
-      {
-        path: 'pending', loadChildren: () => import('./ostf-app-pending/ostf-app-pending.module').then(m => m.OstfAppPendingModule)
-      },
-      {
-        path: 'preserved', loadChildren: () => import('./ostf-app-preserved/ostf-app-preserved.module').then(m => m.OstfAppPreservedModule)
-      },
-      {
-        path: 'staffInfo', loadChildren: () => import('./ostf-app-staff-info/ostf-app-staff-info.module').then(m => m.OstfAppStaffInfoModule)
-      },
-      {
-        path: 'survey', loadChildren: () => import('./ostf-app-appr-survey/ostf-app-appr-survey.module').then(m => m.OstfAppApprSurveyModule)
-      },
-      {
-        path: 'adminpending', loadChildren: () => import('./ostf-app-admin-pending/ostf-app-admin-pending.module').then(m => m.OstfAppAdminPendingModule)
-      },
-      {
-        path: 'adminclosing', loadChildren: () => import('./ostf-app-admin-closing/ostf-app-admin-closing.module').then(m => m.OstfAppAdminClosingModule)
-      },
-      {
-        path: 'sitecharacteristics', loadChildren: () => import('./ostf-app-site-characteristics/ostf-app-site-characteristics.module').then(m => m.OstfAppSiteCharacteristicsModule)
-      }
+      
     ]
   },
 

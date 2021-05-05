@@ -1,17 +1,17 @@
-$blue:    #21B9FF;
-$red:     #fd28eb;
-$yellow:  #FBCE44;
-$green:   #1dc9b7; //00CEB8
-$cyan:    #3368FC;
-$light:   #EAEFFE;
-$dark:    #282a3c;
+$blue: #21B9FF;
+$red: #fd28eb;
+$yellow: #FBCE44;
+$green: #1dc9b7; //00CEB8
+$cyan: #3368FC;
+$light: #EAEFFE;
+$dark: #282a3c;
 
 $gray-900: #1e2327;
 $gray-200: #e9ecef;
 
 $body-color: $gray-900;
 
-$font-family-sans-serif:      Poppins,Roboto,sans-serif;
+$font-family-sans-serif: Poppins,Roboto,sans-serif;
 
 $font-size-base: 0.875rem;
 $font-size-12: 12px;
@@ -24,7 +24,7 @@ $font-weight-600: 600;
 
 $border-color: #ebedf2;
 
- 
+
 // Custom btn colors
 
 $mc-bg-primary: rgba($blue, 0.10);
@@ -34,19 +34,10 @@ $mc-bg-warning: rgba($yellow, 0.10);
 $mc-bg-danger: rgba($red, 0.10);
 
 
-$gray-light:#F6F6F9;
+$gray-light: #F6F6F9;
 
 
 // Your variable overrides
 $body-color: #111;
 
-$theme-colors: (
-  primary: $blue,
-  info: $cyan,
-  success: $green,
-  warning: $yellow,
-  danger: $red,
-  secondary: $gray-200,
-  dark: $dark, 
-  light: $light
-);
+$theme-colors: ( primary: $blue, info: $cyan, success: $green, warning: $yellow, danger: $red, secondary: $gray-200, dark: $dark, light: $light );

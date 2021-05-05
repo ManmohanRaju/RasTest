@@ -1,360 +1,103 @@
 <div class="mc-mat-tab-content p-3">
-  <form>
+  <form [formGroup]="viewProjectForm">
     <div class="form-center-container">
       <div class="form-group">
         <label>Project Title</label>
-        <!-- <input type="text" class="form-control"> -->
-        <!-- <mat-label>Project Title </mat-label> -->
         <mat-form-field appearance="outline">
-          <input matInput />
+          <input matInput formControlName="projectTitle" readonly/>
         </mat-form-field>
       </div>
       <div class="form-group">
         <label>Agency Name</label>
         <mat-form-field appearance="outline">
-          <input matInput />
+          <input matInput formControlName="agencyId" readonly/>
+         
         </mat-form-field>
       </div>
-      <div class="form-group mat-chk-group">
-        <span class="mr-5 mb-2">
-          <mat-checkbox [checked]>Municipality </mat-checkbox>
-        </span>
-        <span class="mr-3 mb-2">
-          <mat-checkbox>Charitable Trust </mat-checkbox>
-        </span>
+      <div class="form-group mat-radio-group">
+        <mat-radio-group formControlName="agencyType">
+          <mat-radio-button value="municipality" disabled>Municipality</mat-radio-button>
+          <mat-radio-button value="nonprofit" disabled>Charitable Conservancy</mat-radio-button>
+        </mat-radio-group>
       </div>
       <div class="form-group">
-        <label>Site Address </label>
+        <label>Agency Address </label>
         <mat-form-field appearance="outline">
-          <textarea matInput></textarea>
+          <textarea matInput formControlName="siteAddress" readonly></textarea>
         </mat-form-field>
       </div>
-      <div class="yes-group">
-        <p class="text-muted">
-          Is the site designated for compliance with a Mount Laurel court settlement or
-          identified in a complaint for declaratory judgement for affordable housing,
-          or designated in an adopted masterplan or going ordinance for affordable housing?
-        </p>
-        <div class="form-group mat-chk-group">
-          <span class="mr-4 mb-1">
-            <mat-checkbox>Yes </mat-checkbox>
-          </span>
-          <span class="mb-1">
-            <mat-checkbox>No </mat-checkbox>
-          </span>
-        </div>
-      </div>
     </div>
-
-
-
-
 
     <hr class="my-5">
 
     <div class="form-center-container">
+      <div *ngIf="selectedOptionAgencyType == 'municipality' ">
+        <div class="yes-group">
+          <p class="text-dark">
+            <strong>
+              Does your Municipality share any active recreational facilities with
+              another municipality?
+            </strong>
+          </p>
+          <div class="form-group mat-radio-group">
+            <mat-radio-group formControlName="sharedFacilities">
+              <mat-radio-button value="true" disabled>Yes</mat-radio-button>
+              <mat-radio-button value="false" disabled>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
 
-      <div class="yes-group">
-        <p class="text-dark">
-          <strong>
-            Does your Municipality share any active recreational facilities with
-            another municipality?
-          </strong>
-        </p>
-        <div class="form-group mat-chk-group">
-          <span class="mr-4 mb-1">
-            <mat-checkbox color="primary"> Yes </mat-checkbox>
-          </span>
-          <span class="mb-1">
-            <mat-checkbox>No </mat-checkbox>
-          </span>
+        <div class="form-group" *ngIf="selectedOptionSharedFacilitites == 'true'">
+          <!--editProjectForm.value.sharedFacilities=='true'-->
+          <label>If yes, which town(s) and how? </label>
+          <mat-form-field appearance="outline">
+            <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="sharedFacilitiesTownsDesc" readonly></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <label><b>If acquired, how will the lands be managed?</b> </label>
+          <mat-form-field appearance="outline">
+            <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="landsManagedDesc" readonly></textarea>
+          </mat-form-field>
         </div>
       </div>
+      <div>
+        <div *ngIf="selectedOptionAgencyType == 'nonprofit' ">
+          <h6>Please upload the copy of the following: </h6>
 
-      <div class="form-group">
-        <label>If yes, which town’s and how? </label>
-        <mat-form-field appearance="outline">
-          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
-        </mat-form-field>
-        <!-- <textarea rows="4" class="form-control" placeholder="Please Enter Here"></textarea> -->
+       
+          <div class="py-2 mb-3">
+            <div><strong> Current proof of qualification as a charitable conservancy* </strong> </div>
+            <small class="text-muted">
+              <em>
+                * A qualified charitable conservancy is a corporation or trust whose purposes include the acquisition and preservation of land or water areas or of a particular land or water area, or either thereof, in a natural, scenic or open condition, no part of the net earnings of which inures to the benefit of any private shareholder or individual, and which has received tax exemption under section 501 of the 1954 Internal Revenue Code.
+              </em>
+            </small>
+          </div>
+          <div class="form-group">
+            <label>How will the charitable conservancy maintain the property? (Please explain) </label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="maintainPropertyDesc" readonly></textarea>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label>What would happen to land(s) if the conservancy no longer existed? (Please explain) </label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="conservancyNotExistedDesc" readonly></textarea>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label>What land(s) do you currently own? </label>
+            <mat-form-field appearance="outline">
+              <textarea matInput rows="4" placeholder="Please Enter Here" formControlName="currentLandsDesc" readonly></textarea>
+            </mat-form-field>
+          </div>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label>If acquired, how will the lands be managed? </label>
-        <mat-form-field appearance="outline">
-          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
-        </mat-form-field>
-      </div>
-      <h6>Please upload the copy of the following: </h6>
-      <div class="form-group mat-chk-group">
-        <span class="mr-4 mb-1">
-          <mat-checkbox color="primary"> The organiations by-Laws </mat-checkbox>
-        </span>
-        <span>
-          <label for="fileUpload"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-          <input hidden type="file" id="fileUpload" name="fileUpload" multiple="multiple" (change)="onFileSelected($event)"/>Upload</label>
-        </span>
-        <span>
-          <mat-form-field class="example-chip-list">
-            <mat-chip-list #chipList aria-label="Fruit selection">
-              <mat-chip
-                *ngFor="let file of currentInput;let i=index;"
-                [selectable]="selectable"
-                [removable]="removable"
-                (removed)="remove(i)">
-                <mat-icon>upload</mat-icon>{{file.name}}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-              </mat-chip>
-              </mat-chip-list>
-              </mat-form-field>
-        </span>
-      </div>
-      <div class="form-group mat-chk-group">
-        <span class="mr-4 mb-1">
-          <mat-checkbox color="primary"> The organiations certifications of incorporation </mat-checkbox>
-        </span>
-        <span>
-          <label for="fileUpload1"> <img  class="upload-file" src="../../../../assets/images/Upload-PNG-Image-File.png">
-          <input hidden type="file" id="fileUpload1" name="fileUpload" multiple="multiple" (change)="onFileSelected1($event)"/>Upload</label>
-        </span>
-        <span>
-          <mat-form-field class="example-chip-list">
-            <mat-chip-list #chipList aria-label="Fruit selection">
-              <mat-chip
-                *ngFor="let file of currentInput1;let i=index;"
-                [selectable]="selectable"
-                [removable]="removable"
-                (removed)="remove(i)">
-                <mat-icon>upload</mat-icon>{{file.name}}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-              </mat-chip>
-              </mat-chip-list>
-              </mat-form-field>
-        </span>
-      </div>
-      <div class="py-2 mb-3">
-        <div><strong> Current proof of qualification as a charitable conservancy* </strong> </div>
-        <small class="text-muted">
-          <em>* Is the site designated for compliance with a Mount Laurel court settlement or identified in
-            a Complaint for Declaratory Judgement for affordable housing, or designated in an adopted master Is the site
-            designated for compliance with a Mount Laurel court settlement or identified in a
-            Complaint for Declaratory Judgement for affordable housing, or designated in an adopted master </em>
-        </small>
-      </div>
-
-      <div class="form-group">
-        <label>How will the charitable conservancy maintain the property? (Please explain) </label>
-        <mat-form-field appearance="outline">
-          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <label>What would happen to land’s if the conservancy no longer existed? (Please explain) </label>
-        <mat-form-field appearance="outline">
-          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <label>What land’s do you currently own? </label>
-        <mat-form-field appearance="outline">
-          <textarea matInput rows="4" placeholder="Please Enter Here"></textarea>
-        </mat-form-field>
-      </div>
-
     </div>
-
   </form>
-
-  <div class="step-footer d-flex justify-content-end">
-    <button mat-flat-button color="accent" class="mr-2">Save Changes</button>
-    <button mat-flat-button color="primary" routerLink="/ostf/role/roleview/1">
-      Next <i class="la la-arrow-right ml-1"></i>
-    </button>
-  </div>
-
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <mat-card>
-  <mat-card-header>
-    <mat-card-title>Create Profile</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form>
-      <table class="example-full-width" cellspacing="0" align="cnetre">
-        <tr>
-          <td>
-            <table class="right-table">
-              <tr>
-                <td>
-                  <mat-label>Project Title </mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <input matInput placeholder="Project Titile" width="800px" />
-                  </mat-form-field>
-                </td>
-              </tr>
-              <td><table><tr><td>
-                <mat-checkbox>Municipality</mat-checkbox></td><td>
-                <mat-checkbox>Charitable Trust</mat-checkbox>
-              </td></tr></table></td>
-              <tr>
-                <td>
-                  <mat-label>Bonton Town </mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <input matInput placeholder="Bonton Town" />
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Address</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Is the site designated for compliance with a Mount Laurel court settlement or identified in a complaint</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
-                    <mat-checkbox>No</mat-checkbox>
-                  </td></tr></table>
-                </td>
-              </tr>
-              <mat-divider></mat-divider>
-              <tr>
-                <td>
-                  <mat-label>Does your Muncipality share any active recreation facilities with another municipality</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <table><tr><td><mat-checkbox>Yes</mat-checkbox></td><td>
-                    <mat-checkbox>No</mat-checkbox>
-                  </td></tr></table>
-                </td>
-              </tr> 
-              <tr>
-                <td>
-                  <mat-label>If yes which town's and how?</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>If acqired,how will the lands be managed</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-                <h4>Please upload the copy of the following:</h4>
-              <tr>
-                  <td>
-                    <table><tr><td><mat-checkbox> <button id="uploadButton" class="md-raised md-primary">The organiations by Laws </button>
-                      <input id="fileInput" name="file" type="file" class="ng-hide" multiple></mat-checkbox></td><td>
-                     </td></tr></table>
-                  </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-checkbox> <button id="uploadButton" class="md-raised md-primary">The organiations certifications of incorporation </button>
-                    <input id="fileInput" name="file" type="file" class="ng-hide" multiple></mat-checkbox>
-                  </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Current proof of qualification charitable conservancy*</mat-label>
-                  </td>
-              </tr>
-              <tr>
-                <td>
-                  *Is the site designated compliance
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>Is the charitable conservancy maintain the property?(Please explain)</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>What would happen if the if the conservancy no longer existed(Please explain)</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-label>What lands do you currently own</mat-label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <textarea matInput></textarea>
-                  </mat-form-field>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </form>
-  </mat-card-content>
-  <mat-card-actions align="right">
-    <button mat-raised-button color="primary">Save Changes</button>
-    <button mat-raised-button color="primary">Next </button>
-  </mat-card-actions>
-</mat-card> -->

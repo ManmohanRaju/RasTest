@@ -1,3 +1,4 @@
+import { SessionStorageService } from './../services/session-storage.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class PageHeaderComponent implements OnInit {
 
   countUnreadMessages = 1;
-  constructor(public router:Router) {}
+  constructor(
+    public router:Router,
+    private sessionService:SessionStorageService
+    ) {}
 
   ngOnInit() {
   }
 
+  logOut(){
+    this.sessionService.logoutSession();
+    this.router.navigate(["/"]);
+  }
 }
